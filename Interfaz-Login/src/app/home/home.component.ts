@@ -78,14 +78,57 @@ export class HomeComponent {
 
     console.log("Elemento a editar: ", element);
 
-    this.router.navigate(['/editarCC', element.Codigo, element.NombreCentroCostos ]);
+    this.router.navigate(['/editarCC', element.Codigo, element.NombreCentroCostos]);
   }
 
-  goToNewCC(){
+  goToNewCC() {
     this.router.navigate(['/nuevoCC']);
   }
 
-  buscar(){
-    
+  buscar() {
+    console.log(this.busquedaNombreCC);
+
+    if(this.busquedaNombreCC.length < 1){
+      return;
+    }
+
+    try {
+
+      const url = `https://localhost:5001/Usuario/SearchCentroDeCosto?descripcioncentrocostos=${this.busquedaNombreCC}`;
+
+      // this.http.get(url).subscribe(async (response) => {
+      //   console.log("Response: ", response);
+      // })
+      
+        this.http.get<CentroDeCosto[]>(url).subscribe(async (response) => {
+          
+          if(response == null){
+            alert("No se encontraron centros de costo con esa descripción");
+            return;
+          }
+          if(response.length > 0 ){
+            console.log("response: ", response);
+            this.costos = response;
+          }
+
+          
+
+          // if (response[0].NombreCentroCostos == this.element.NombreCentroCostos) {
+
+          //   alert("El centro de costos se creó correctamente");
+          //   //Redirecciona a home
+          //   this.router.navigate(['/home']);
+
+          // } else {
+          //   alert("El centro de costos no se actualizó correctamente");
+          // }
+
+        })
+    }
+    catch (error) {
+
+      console.log("erroree:", error);
+
+    }
   }
 }

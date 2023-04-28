@@ -167,7 +167,7 @@ namespace API_Auth.Controllers
 
         [HttpGet("CreateCentroDeCosto")]
 
-        public async Task<string> CreateeCentroDeCostos(String codigoCentroCostos, String descripcioncentrocostos)
+        public async Task<string> CreateCentroDeCostos(String codigoCentroCostos, String descripcioncentrocostos)
         {
             Console.WriteLine("codigoCentroCostos: ", codigoCentroCostos, " | descripcioncentrocostos: ", descripcioncentrocostos);
             try
@@ -194,5 +194,35 @@ namespace API_Auth.Controllers
                 return ("erooor: " + error);
             }
         }
+
+        [HttpGet("SearchCentroDeCosto")]
+
+        public async Task<string> SearchCentroDeCostos(String descripcioncentrocostos)
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/CentroCostosSearch?descripcioncentrocostos="+ descripcioncentrocostos;
+
+
+                    // Hacer una petición GET a la URL y esperar la respuesta
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    // Leer el contenido de la respuesta como una cadena de caracteres
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    // Mostrar el cuerpo de la respuesta en la consola
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+                //return "Holi";
+            }
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
+            }
+        }
+
     }
 }

@@ -6,21 +6,23 @@
       <mat-icon fontIcon="add-circle">Editar</mat-icon>
       Agregar Centro de Costo
     </button>
-
+  </div>
+  <div class="contenedorOpciones">
     <form>
       <!-- <div class="inputs"> -->
           <!-- <h1>Editar centro de costo</h1> -->
 
           <mat-form-field>
               <mat-label>Buscar Centro de Costos</mat-label>
-              <input name="nombreCentroCostos" matInput placeholder="Nombre Centro Costos">
+              <input [(ngModel)]="busquedaNombreCC" name="nombreCentroCostos" matInput placeholder="Nombre Centro Costos">
           </mat-form-field>
 
-          <button mat-raised-button color="edit" focusable="false">
-              <mat-icon fontIcon="edit">Editar</mat-icon>
-              Editar
+          <button mat-raised-button color="edit" focusable="false" (click)="buscar()">
+              <mat-icon fontIcon="edit">Buscar</mat-icon>
+              Buscar
             </button>
       <!-- </div> -->
+      
   </form>
   </div>
 
