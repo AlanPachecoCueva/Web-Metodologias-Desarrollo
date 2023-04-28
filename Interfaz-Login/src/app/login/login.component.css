@@ -1,0 +1,51 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(165, 165, 165);
+
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardContainer{
+  background-color: blue;
+  /* height: 50%; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.matCard{
+  /* width:40%;
+  height: 50%; */
+  background-color: #A1AEF4;
+}
+
+
+.cardTitle{
+  display: flex;
+  justify-content: center;
+  /* align-content: center; */
+}
+
+.imagen{
+  width:100%;
+  height: 60%;
+}
+
+
+
+.login-form {
+  max-width: 300px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  /* background-color: blue; */
+}
+
+.login-form-field {
+  width: 100%;
+  /* margin-bottom: 16px; */
+}
