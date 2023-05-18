@@ -4,7 +4,9 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Router } from '@angular/router';
-
+//Para variables de entorno
+import { environment } from '../../../environments/environments';
+const apiUrl = environment.API_URL;
 
 interface CentroDeCosto {
   Codigo: string;
@@ -31,7 +33,7 @@ export class HomeComponent {
   constructor(private http: HttpClient, private router: Router) { };
 
   ngOnInit(): void {
-    this.http.get<CentroDeCosto[]>('https://localhost:5001/Usuario/Costos').subscribe(response => {
+    this.http.get<CentroDeCosto[]>(`${apiUrl}/Costos`).subscribe(response => {
 
       this.costos = response;
 
@@ -39,19 +41,19 @@ export class HomeComponent {
     });
   }
 
-  btnBorrar(element: any) {
+  async btnBorrar(element: any) {
 
 
 
     console.log("Cod: ", element);
     try {
 
-      console.log("element.DescripcionCentroCostos: ", element.NombreCentroCostos, " | element.Codigo: ", element.Codigo);
-      const url = `https://localhost:5001/Usuario/DeleteCentroDeCosto?codigoCentroCostos=${element.Codigo}&descripcioncentrocostos=${element.NombreCentroCostos}`;
+      console.log("ELIMIINAR element.DescripcionCentroCostos: ", element.NombreCentroCostos, " | element.Codigo: ", element.Codigo);
+      const url = `${apiUrl}/DeleteCentroDeCosto?codigoCentroCostos=${element.Codigo}&descripcioncentrocostos=${element.NombreCentroCostos}`;
       console.log("element: ", element);
       this.http.get<CentroDeCosto[]>(url).subscribe(async (response) => {
 
-        console.log("response: ", response[0]);
+        console.log("response ELIMINAR: ", response);
         if (response[0].NombreCentroCostos == "Eliminación Correcta") {
 
           //Eliminar del arreglo
@@ -94,7 +96,7 @@ export class HomeComponent {
 
     try {
 
-      const url = `https://localhost:5001/Usuario/SearchCentroDeCosto?descripcioncentrocostos=${this.busquedaNombreCC}`;
+      const url = `${apiUrl}/SearchCentroDeCosto?descripcioncentrocostos=${this.busquedaNombreCC}`;
 
       // this.http.get(url).subscribe(async (response) => {
       //   console.log("Response: ", response);
@@ -111,17 +113,6 @@ export class HomeComponent {
             this.costos = response;
           }
 
-          
-
-          // if (response[0].NombreCentroCostos == this.element.NombreCentroCostos) {
-
-          //   alert("El centro de costos se creó correctamente");
-          //   //Redirecciona a home
-          //   this.router.navigate(['/home']);
-
-          // } else {
-          //   alert("El centro de costos no se actualizó correctamente");
-          // }
 
         })
     }

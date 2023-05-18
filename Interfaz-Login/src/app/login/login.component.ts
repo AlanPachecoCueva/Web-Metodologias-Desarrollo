@@ -5,6 +5,9 @@ import { Router } from '@angular/router';
 //para hacer llamadas a la api
 import { HttpClient } from '@angular/common/http';
 
+//Para variables de entorno
+import { environment } from '../../../environments/environments';
+const apiUrl = environment.API_URL;
 
 @Component({
   selector: 'app-login',
@@ -28,7 +31,8 @@ export class LoginComponent {
   }
 
   ngOnInit(): void {
-    this.http.get('https://localhost:5001/Usuario/Emisores').subscribe(response => {
+    console.log("apiUrl: ", apiUrl);
+    this.http.get(`${apiUrl}/Emisores`).subscribe(response => {
       
       this.emisores = response;
 
@@ -52,7 +56,7 @@ export class LoginComponent {
     console.log('Contraseña:', this.password);
     console.log("A Home");
 
-    const url = 'https://localhost:5001/Usuario?usuario=' + this.username + '&password=' + this.password;
+    const url = `${apiUrl}?usuario=` + this.username + '&password=' + this.password;
    
     this.http.get(url).subscribe(async (response) => {
 

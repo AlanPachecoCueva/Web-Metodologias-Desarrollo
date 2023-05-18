@@ -3,7 +3,9 @@ import { Component } from '@angular/core';
 //para hacer llamadas a la api
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-
+//Para variables de entorno
+import { environment } from '../../../environments/environments';
+const apiUrl = environment.API_URL;
 interface CentroDeCosto {
   Codigo: string;
   NombreCentroCostos: string;
@@ -25,7 +27,7 @@ export class NuevoCentroCostoComponent {
 
     try {
 
-      const url = `https://localhost:5001/Usuario/CreateCentroDeCosto?codigoCentroCostos=${this.element.Codigo}&descripcioncentrocostos=${this.element.NombreCentroCostos}`;
+      const url = `${apiUrl}/CreateCentroDeCosto?codigoCentroCostos=${this.element.Codigo}&descripcioncentrocostos=${this.element.NombreCentroCostos}`;
       
       this.http.get<CentroDeCosto[]>(url).subscribe(async (response) => {
 
