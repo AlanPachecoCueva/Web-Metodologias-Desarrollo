@@ -46,3 +46,25 @@
   flex-direction: column;
 
 }
+
+.agregarbutton {
+  border:0;
+  background: #464d64;
+  color: #dfdeee;
+  border-radius: 100px;
+  width: 340px;
+  height: 49px;
+  font-size: 16px;
+  position: absolute;
+  top: 60%;
+  display: flex;
+  justify-content: center;
+  transition: 0.3s;
+  margin-left: 22%;
+  cursor: pointer;
+  margin-top: 10%;
+}
+
+.h1 {
+  font-size: xx-large;
+}
