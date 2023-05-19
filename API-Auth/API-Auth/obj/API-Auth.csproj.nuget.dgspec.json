@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\josue\\Desktop\\Metodologias De Desarrollo\\Web-Metodologias-Desarrollo\\API-Auth\\API-Auth\\API-Auth.csproj": {}
   },
   "projects": {
@@ -13,29 +12,12 @@
         "projectPath": "C:\\Users\\josue\\Desktop\\Metodologias De Desarrollo\\Web-Metodologias-Desarrollo\\API-Auth\\API-Auth\\API-Auth.csproj",
         "packagesPath": "C:\\Users\\josue\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\josue\\Desktop\\Metodologias De Desarrollo\\Web-Metodologias-Desarrollo\\API-Auth\\API-Auth\\obj\\",
-=======
-    "C:\\Users\\gabol\\Documents\\Universidad\\Met Desarrollo de software\\M\\Web-Metodologias-Desarrollo\\API-Auth\\API-Auth\\API-Auth.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\gabol\\Documents\\Universidad\\Met Desarrollo de software\\M\\Web-Metodologias-Desarrollo\\API-Auth\\API-Auth\\API-Auth.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\gabol\\Documents\\Universidad\\Met Desarrollo de software\\M\\Web-Metodologias-Desarrollo\\API-Auth\\API-Auth\\API-Auth.csproj",
-        "projectName": "API-Auth",
-        "projectPath": "C:\\Users\\gabol\\Documents\\Universidad\\Met Desarrollo de software\\M\\Web-Metodologias-Desarrollo\\API-Auth\\API-Auth\\API-Auth.csproj",
-        "packagesPath": "C:\\Users\\gabol\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabol\\Documents\\Universidad\\Met Desarrollo de software\\M\\Web-Metodologias-Desarrollo\\API-Auth\\API-Auth\\obj\\",
->>>>>>> 8482677f5745a50ca0b93478c7b6090e07a65614
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\josue\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-          "C:\\Users\\gabol\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 8482677f5745a50ca0b93478c7b6090e07a65614
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
