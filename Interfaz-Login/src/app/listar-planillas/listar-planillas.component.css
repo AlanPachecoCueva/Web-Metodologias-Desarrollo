@@ -18,6 +18,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: #3b476b;
 }
 
 .contenedorOpciones {
@@ -35,10 +36,8 @@
   background: transparent;
   border-radius: 5px;
   border-style: double;
-
   padding: 14px 10px;
   width: 200px;
-
   color: #0e0a0a;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
@@ -53,6 +52,7 @@
   left: 10%;
   z-index: 5;
   width: -50px;
+ 
 }
 
 .btn2 {
@@ -93,6 +93,7 @@
   justify-content: center;
   font-size: xx-large;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin-top: 25px;
 }
 
 .buscador {
@@ -137,7 +138,7 @@
 
 .fl-table th {
   color: #ffffff;
-  background: #4fc3a1;
+  background: #79a6fe;
 }
 
 .fl-table th:nth-child(odd) {

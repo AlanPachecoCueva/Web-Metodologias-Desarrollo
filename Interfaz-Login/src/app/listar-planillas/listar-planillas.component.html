@@ -12,7 +12,14 @@
     <mat-card class="tableCard">
         <mat-card-title class="titulo">Lista de Movimientos de Planilla</mat-card-title>
         <div class="contenedorOpciones">
+
+            <div class="contenedorOpciones2">
+                <button mat-raised-button style="background-color: #eb5c94;" type="submit" focusable="false" (click)="showAdd()" class="btn2">
+                  + Agregar Movimiento de Planilla
+                </button>
+              </div>
             <form>
+                
                 <!-- <div class="inputs"> -->
                 <!-- <h1>Editar centro de costo</h1> -->
                 <div class="search">
@@ -53,7 +60,7 @@
                 </ng-container>
                 <!-- TipoOperacion Column -->
                 <ng-container matColumnDef="TipoOperacion">
-                    <th mat-header-cell *matHeaderCellDef> TipoOperacion </th>
+                    <th mat-header-cell *matHeaderCellDef> Tipo Operacion </th>
                     <td mat-cell *matCellDef="let element"> {{element.TipoOperacion}} </td>
 
                 </ng-container>
@@ -66,25 +73,25 @@
                 </ng-container>
                 <!-- Aplica_iess Column -->
                 <ng-container matColumnDef="Aplica_iess">
-                    <th mat-header-cell *matHeaderCellDef> Aplica_iess </th>
+                    <th mat-header-cell *matHeaderCellDef> Aplica IESS </th>
                     <td mat-cell *matCellDef="let element"> {{element.Aplica_iess}} </td>
 
                 </ng-container>
                 <!-- Aplica_imp_renta Column -->
                 <ng-container matColumnDef="Aplica_imp_renta">
-                    <th mat-header-cell *matHeaderCellDef> Aplica_imp_renta </th>
+                    <th mat-header-cell *matHeaderCellDef> Aplica Imp Renta </th>
                     <td mat-cell *matCellDef="let element"> {{element.Aplica_imp_renta}} </td>
 
                 </ng-container>
                 <!-- Empresa_Afecta_Iess Column -->
                 <ng-container matColumnDef="Empresa_Afecta_Iess">
-                    <th mat-header-cell *matHeaderCellDef> Empresa_Afecta_Iess </th>
+                    <th mat-header-cell *matHeaderCellDef> Empresa Afecta IESS </th>
                     <td mat-cell *matCellDef="let element"> {{element.Empresa_Afecta_Iess}} </td>
 
                 </ng-container>
 
                 <ng-container matColumnDef="Borrar">
-                    <th mat-header-cell *matHeaderCellDef> Borrar </th>
+                    <th mat-header-cell *matHeaderCellDef> Eliminar </th>
                     <td mat-cell *matCellDef="let element;">
                         <button mat-raised-button color="warn" focusable="false" (click)="btnBorrar(element)">
                             <mat-icon fontIcon="delete">Borrar</mat-icon>
@@ -94,7 +101,7 @@
                 </ng-container>
 
                 <ng-container matColumnDef="Editar">
-                    <th mat-header-cell *matHeaderCellDef> Editar </th>
+                    <th mat-header-cell *matHeaderCellDef> Edición </th>
                     <td mat-cell *matCellDef="let element;">
                         <button mat-raised-button color="edit" focusable="false" (click)="btnEditar(element)">
                             <mat-icon fontIcon="edit">Editar</mat-icon>
@@ -116,8 +123,3 @@
     </button>
 </div> -->
 
-<div class="contenedorOpciones2">
-    <button mat-raised-button color="primary" type="submit" focusable="false" (click)="showAdd()" class="btn2">
-      +Agregar Movimiento de Planilla
-    </button>
-  </div>

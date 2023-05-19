@@ -52,10 +52,10 @@
 
 .closeBtn {
   position: fixed;
-  top: 10%;
+  top: 12%;
   left: 10%;
   z-index: 5;
-  width: -50px;
+
 }
 
 .btn2 {
@@ -66,6 +66,7 @@
   font-size: 16px;
   transition: 0.3s;
   cursor: pointer;
+  
 }
 
 .btn3 {
@@ -81,6 +82,7 @@
 .contenedorOpciones2 {
   justify-content: center;
   display: flex;
+  margin-left: 5%
   
 }
 
@@ -88,32 +90,33 @@
 
 @import url("https://fonts.googleapis.com/css?family=Amarante");
 
-.mat-mdc-button-touch-target {
-  
-}
 
 .titulo {
   display: flex;
   justify-content: center;
   font-size: xx-large;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin-top: 25px;
 }
 
 .buscador {
   display: flex;
   align-items: center;
+  
 }
 
 .busqueda {
   display: flex;
   /* flex-direction: row; */
   /* margin-left: 490px; */
+  margin-left: 10vh;
 }
 
 .search {
   display: flex;
   flex-direction: row;
   justify-content: end;
+  
 }
 
 .fl-table {
@@ -141,7 +144,7 @@
 
 .fl-table th {
   color: #ffffff;
-  background: #4fc3a1;
+  background: #79a6fe;
 }
 
 .fl-table th:nth-child(odd) {
