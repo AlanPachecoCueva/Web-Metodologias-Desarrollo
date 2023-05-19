@@ -94,3 +94,35 @@ C:\Users\chris\OneDrive\Escritorio\Web-Metodologias-Desarrollo\API-Auth\API-Auth
 C:\Users\chris\OneDrive\Escritorio\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\API-Auth.pdb
 C:\Users\chris\OneDrive\Escritorio\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\API-Auth.genruntimeconfig.cache
 C:\Users\chris\OneDrive\Escritorio\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\ref\API-Auth.dll
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\bin\Debug\net6.0\appsettings.json
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\bin\Debug\net6.0\API-Auth.exe
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\bin\Debug\net6.0\API-Auth.deps.json
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\bin\Debug\net6.0\API-Auth.runtimeconfig.json
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\bin\Debug\net6.0\API-Auth.dll
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\bin\Debug\net6.0\API-Auth.pdb
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\API-Auth.csproj.AssemblyReference.cache
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\API-Auth.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\API-Auth.AssemblyInfoInputs.cache
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\API-Auth.AssemblyInfo.cs
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\API-Auth.csproj.CoreCompileInputs.cache
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\API-Auth.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\API-Auth.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\staticwebassets\msbuild.API-Auth.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\staticwebassets\msbuild.build.API-Auth.props
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.API-Auth.props
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.API-Auth.props
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\scopedcss\bundle\API-Auth.styles.css
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\API-Auth.csproj.CopyComplete
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\API-Auth.dll
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\refint\API-Auth.dll
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\API-Auth.pdb
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\API-Auth.genruntimeconfig.cache
+C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\ref\API-Auth.dll

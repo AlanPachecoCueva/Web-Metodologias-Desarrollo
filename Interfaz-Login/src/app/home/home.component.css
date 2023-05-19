@@ -1,0 +1,31 @@
+.contenedor-campos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1rem;
+  row-gap: 5rem;
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.container {
+  text-align: center;
+}
+
+.btn1 {
+  border: 0;
+  background: #3c4a75;
+  color: #dfdeee;
+  border-radius: 100px;
+  width: 70%;
+  height: 50px;
+  font-size: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.btn1:hover {
+  background: #5d33e6;
+}

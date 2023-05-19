@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'editarCC/:codigo/:nombreCC', component: EditarCentroCostoComponent},
   { path: 'nuevoCC', component: NuevoCentroCostoComponent },
-  // { path: 'concepto', component: ListarConceptoNomina },
+  { path: 'listarcc', component: ListarCComponent },
 ];
 
 @NgModule({
