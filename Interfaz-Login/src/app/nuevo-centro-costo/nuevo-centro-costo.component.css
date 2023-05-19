@@ -3,15 +3,11 @@
   height: 70%;
   display: flex;
   justify-content: center;
-
   position: fixed;
   top: 0px;
   left: 0px;
   transform: translate(0%, 25%);
-
   z-index: 2;
-
-
 }
 
 .containerAdd {
@@ -48,8 +44,8 @@
 }
 
 .agregarbutton {
-  border:0;
-  background: #464d64;
+  border: 0;
+  background: #c05c6d;
   color: #dfdeee;
   border-radius: 100px;
   width: 340px;
@@ -67,4 +63,5 @@
 
 .h1 {
   font-size: xx-large;
+
 }
