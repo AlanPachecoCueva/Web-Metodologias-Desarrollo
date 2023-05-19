@@ -49,7 +49,7 @@ export class ListarPlanillasComponent {
   displayedColumns: string[] = ['Codigo', 'Concepto', 'Prioridad', 'TipoOperacion', 'Cuenta1', 'Aplica_iess', 'Aplica_imp_renta', 'Empresa_Afecta_Iess','Borrar', 'Editar'];
   planillas: MovimientoPlanilla[] = [];
 
-  busquedaNombreCC: String = "";
+  busquedaConcepto: String = "";
 
   mostrarAgregar: boolean = false;
 
@@ -74,7 +74,7 @@ export class ListarPlanillasComponent {
     //Validación de seguridad
     await Swal.fire({
       title: '¡Acción crítica!',
-      text: '¿Desea eliminar el centro de costos?',
+      text: '¿Desea eliminar el movimiento de planilla?',
       icon: 'question',
       showCancelButton: true,
       confirmButtonText: 'Aceptar',
@@ -137,24 +137,21 @@ export class ListarPlanillasComponent {
     this.router.navigate(['/editarCC', element.Codigo, element.NombreCentroCostos]);
   }
 
-  goToNewCC() {
-    this.router.navigate(['/nuevoCC']);
-  }
 
   buscar() {
     //Si el nombre está vacío no busca
-    if (this.busquedaNombreCC.length < 1) {
+    if (this.busquedaConcepto.length < 1) {
       return;
     }
 
     try {
 
       //Si hay datos válidos busca en la api
-      const url = `${apiUrl}/SearchCentroDeCosto?descripcioncentrocostos=${this.busquedaNombreCC}`;
+      const url = `${apiUrl}/SearchMovimientoPlanilla?concepto=${this.busquedaConcepto}`;
 
       this.http.get<MovimientoPlanilla[]>(url).subscribe(async (response) => {
 
-        if (response == null) {
+        if (!response || response == null) {
 
           await Swal.fire({
             title: 'Búsqueda incorrecta',

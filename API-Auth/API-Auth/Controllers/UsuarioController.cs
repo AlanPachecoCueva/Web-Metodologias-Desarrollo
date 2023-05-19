@@ -255,5 +255,65 @@ namespace API_Auth.Controllers
             }
         }
 
+        [HttpGet("DeleteMovimientoPlanilla")]
+
+        public async Task<string> DeleteMovimientoPlanilla(int codigoMovimiento, String descripcionMovimiento)
+        {
+            Console.WriteLine("Entra a Eliminar Planilla");
+            Console.WriteLine("codigoMovimiento: ", codigoMovimiento, " | descripcionMovimiento: ", descripcionMovimiento);
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimeintoPlanillaDelete?codigomovimiento="+codigoMovimiento+"&descripcionomovimiento="+descripcionMovimiento;
+
+
+                    // Hacer una petición GET a la URL y esperar la respuesta
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    // Leer el contenido de la respuesta como una cadena de caracteres
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    // Mostrar el cuerpo de la respuesta en la consola
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
+            }
+        }
+
+        [HttpGet("SearchMovimientoPlanilla")]
+
+        public async Task<string> SearchMovimientoPlanilla(String concepto)
+        {
+            Console.WriteLine("SearchMovimientoPlanilla");
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaSearch?Concepto="+concepto;
+
+
+                    // Hacer una petición GET a la URL y esperar la respuesta
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    // Leer el contenido de la respuesta como una cadena de caracteres
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    // Mostrar el cuerpo de la respuesta en la consola
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+                //return "Holi";
+            }
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
+            }
+        }
+
     }
 }
