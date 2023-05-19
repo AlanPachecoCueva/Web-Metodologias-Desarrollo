@@ -29,7 +29,7 @@
 
                             <mat-form-field>
                                 <mat-label>Tipo Operacion</mat-label>
-                                <mat-select [(ngModel)]="element.TipoOperacion" placeholder="Tipo Operacion">
+                                <mat-select [(ngModel)]="element.TipoOperacion" placeholder="Tipo Operacion" (selectionChange)="actualizarValor('TipoOperacion', $event.value)" name="TipoOperacion">
                                     <mat-option *ngFor="let tipoOperacion of tiposOperaciones"
                                         [value]="tipoOperacion.CodigoTipooperacion">
                                         {{tipoOperacion.CodigoTipooperacion}}
@@ -70,7 +70,7 @@
 
                             <mat-form-field>
                                 <mat-label>Movimiento Excepcion 1</mat-label>
-                                <mat-select [(ngModel)]="element.MovimientoExcepcion1" placeholder="Movimiento Excepcion 1">
+                                <mat-select [(ngModel)]="element.MovimientoExcepcion1" placeholder="Movimiento Excepcion 1" (selectionChange)="actualizarValor('MovimientoExcepcion1', $event.value)" name="MovimientoExcepcion1">
                                     <mat-option *ngFor="let movimientoExcepcion of movimientosExcepcion12"
                                         [value]="movimientoExcepcion.CodigoMovimientoExce">
                                         {{movimientoExcepcion.CodigoMovimientoExce}}
@@ -86,7 +86,7 @@
 
                             <mat-form-field>
                                 <mat-label>Movimiento Excepcion 2</mat-label>
-                                <mat-select [(ngModel)]="element.MovimientoExcepcion2" placeholder="Movimiento Excepcion 2">
+                                <mat-select [(ngModel)]="element.MovimientoExcepcion2" placeholder="Movimiento Excepcion 2" (selectionChange)="actualizarValor('MovimientoExcepcion2', $event.value)" name="MovimientoExcepcion2">
                                     <mat-option *ngFor="let movimientoExcepcion of movimientosExcepcion12"
                                         [value]="movimientoExcepcion.CodigoMovimientoExce">
                                         {{movimientoExcepcion.CodigoMovimientoExce}}
@@ -104,7 +104,7 @@
 
                             <mat-form-field>
                                 <mat-label>Movimiento Excepcion 3</mat-label>
-                                <mat-select [(ngModel)]="element.MovimientoExcepcion3" placeholder="Movimiento Excepcion 3">
+                                <mat-select  [(ngModel)]="element.MovimientoExcepcion3" placeholder="Movimiento Excepcion 3" (selectionChange)="actualizarValor('MovimientoExcepcion3', $event.value)" name="MovimientoExcepcion3">
                                     <mat-option *ngFor="let movimientoExcepcion of movimientosExcepcion3"
                                         [value]="movimientoExcepcion.CodigoMovimientoExce">
                                         {{movimientoExcepcion.CodigoMovimientoExce}}
@@ -122,7 +122,7 @@
 
                             <mat-form-field>
                                 <mat-label>Traba_Aplica_iess</mat-label>
-                                <mat-select [(ngModel)]="element.Traba_Aplica_iess" placeholder="Traba_Aplica_iess">
+                                <mat-select [(ngModel)]="element.Traba_Aplica_iess" placeholder="Traba_Aplica_iess" (selectionChange)="actualizarValor('Traba_Aplica_iess', $event.value)" name="Traba_Aplica_iess">
                                     <mat-option *ngFor="let Traba_Aplica_iess of opcionesTraba_Aplica_iess"
                                         [value]="Traba_Aplica_iess.CodigoMovimientoExce">
                                         {{Traba_Aplica_iess.CodigoMovimientoExce}}
@@ -140,7 +140,7 @@
 
                             <mat-form-field>
                                 <mat-label>Traba_Proyecto_imp_renta</mat-label>
-                                <mat-select [(ngModel)]="element.Traba_Aplica_iess" placeholder="Traba_Proyecto_imp_renta">
+                                <mat-select [(ngModel)]="element.Traba_Aplica_iess" placeholder="Traba_Proyecto_imp_renta" (selectionChange)="actualizarValor('Traba_Proyecto_imp_renta', $event.value)" name="Traba_Proyecto_imp_renta">
                                     <mat-option *ngFor="let Traba_Proyecto_imp_renta of opcionesTrabAfecImpuestoRenta"
                                         [value]="Traba_Proyecto_imp_renta.CodigoMovimientoExce">
                                         {{Traba_Proyecto_imp_renta.CodigoMovimientoExce}}
@@ -157,7 +157,7 @@
 
                             <mat-form-field>
                                 <mat-label>Aplica_Proy_Renta</mat-label>
-                                <mat-select [(ngModel)]="element.Aplica_Proy_Renta" placeholder="Aplica_Proy_Renta">
+                                <mat-select [(ngModel)]="element.Aplica_Proy_Renta" placeholder="Aplica_Proy_Renta" (selectionChange)="actualizarValor('Aplica_Proy_Renta', $event.value)" name="Aplica_Proy_Renta">
                                     <mat-option value="Si">Si</mat-option>
                                     <mat-option value="No">No</mat-option>
                                 </mat-select>
@@ -172,7 +172,7 @@
 
                             <mat-form-field>
                                 <mat-label>Empresa_Afecta_Iess</mat-label>
-                                <mat-select [(ngModel)]="element.Empresa_Afecta_Iess" placeholder="Empresa_Afecta_Iess">
+                                <mat-select [(ngModel)]="element.Empresa_Afecta_Iess" placeholder="Empresa_Afecta_Iess" (selectionChange)="actualizarValor('Empresa_Afecta_Iess', $event.value)" name="Empresa_Afecta_Iess">
                                     <mat-option value="Si">Si</mat-option>
                                     <mat-option value="No">No</mat-option>
                                 </mat-select>

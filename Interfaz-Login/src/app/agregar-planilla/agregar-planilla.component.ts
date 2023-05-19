@@ -48,10 +48,10 @@ export class AgregarPlanillaComponent {
     MovimientoExcepcion1: "",
     MovimientoExcepcion2: "",
     MovimientoExcepcion3: "",
-    Traba_Aplica_iess: "",
-    Traba_Proyecto_imp_renta: "",
-    Aplica_Proy_Renta: "",
-    Empresa_Afecta_Iess: ""
+    Traba_Aplica_iess: "-",
+    Traba_Proyecto_imp_renta: "-",
+    Aplica_Proy_Renta: "-",
+    Empresa_Afecta_Iess: "-"
   };
 
   tiposOperaciones: any;
@@ -61,6 +61,34 @@ export class AgregarPlanillaComponent {
   opcionesTraba_Aplica_iess: any;
   opcionesTrabAfecImpuestoRenta: any;
   constructor(private http: HttpClient, private router: Router) { }
+
+  actualizarValor(type: string, content: string){
+    console.log("Actualiza: ", type, content);
+    if(type.localeCompare("TipoOperacion") === 0){
+      this.element.TipoOperacion = content;
+    }
+    if(type.localeCompare("MovimientoExcepcion1") === 0){
+      this.element.MovimientoExcepcion1 = content;
+    }
+    if(type.localeCompare("MovimientoExcepcion2") === 0){
+      this.element.MovimientoExcepcion2 = content;
+    }
+    if(type.localeCompare("MovimientoExcepcion3") === 0){
+      this.element.MovimientoExcepcion3 = content;
+    }
+    if(type.localeCompare("Traba_Aplica_iess") === 0){
+      this.element.Traba_Aplica_iess = content;
+    }
+    if(type.localeCompare("Traba_Proyecto_imp_renta") === 0){
+      this.element.Traba_Proyecto_imp_renta = content;
+    }
+    if(type.localeCompare("Aplica_Proy_Renta") === 0){
+      this.element.Aplica_Proy_Renta = content;
+    }
+    if(type.localeCompare("Empresa_Afecta_Iess") === 0){
+      this.element.Empresa_Afecta_Iess = content;
+    }
+  }
 
   ngOnInit(): void {
     this.http.get(`${apiUrl}/TipoOperacion`).subscribe(response => {
@@ -104,10 +132,10 @@ export class AgregarPlanillaComponent {
 
     try {
 
-      const url = `${apiUrl}/CreateMovimientoPlanilla?conceptos=${this.element.Concepto}&prioridad=${this.element.Prioridad}&tipooperacion=${this.element.TipoOperacion}&cuenta1=${this.element.Cuenta1}&cuenta2=${this.element.Cuenta2}&cuenta3=${this.element.Cuenta3}&cuenta4=${this.element.Cuenta4}&MovimientoExcepcion1=${this.element.MovimientoExcepcion1}`;
-      const url2 = `&MovimientoExcepcion2=${this.element.MovimientoExcepcion2}&MovimientoExcepcion3=${this.element.MovimientoExcepcion3}&Traba_Aplica_iess=${this.element.Traba_Aplica_iess}&Traba_Proyecto_imp_renta=${this.element.Traba_Proyecto_imp_renta}&Aplica_Proy_Renta=${this.element.Aplica_Proy_Renta}&Empresa_Afecta_Iess=${this.element.Empresa_Afecta_Iess}`;
+      const url = `${apiUrl}/CreateMovimientoPlanilla?concepto=${this.element.Concepto}&prioridad=${this.element.Prioridad}&tipoOperacion=${this.element.TipoOperacion}&c1=${this.element.Cuenta1}&c2=${this.element.Cuenta2}&c3=${this.element.Cuenta3}&c4=${this.element.Cuenta4}&me1=${this.element.MovimientoExcepcion1}`;
+      const url2 = `&me2=${this.element.MovimientoExcepcion2}&me3=${this.element.MovimientoExcepcion3}&Traba_Aplica_iess=${this.element.Traba_Aplica_iess}&Traba_Proyecto_imp_renta=${this.element.Traba_Proyecto_imp_renta}&Aplica_Proy_Renta=${this.element.Aplica_Proy_Renta}&Empresa_Afecta_Iess=${this.element.Empresa_Afecta_Iess}`;
 
-      this.http.get<MovimientoPlanilla[]>(url).subscribe(async (response) => {
+      this.http.get<MovimientoPlanilla[]>(url+url2).subscribe(async (response) => {
 
 
         console.log("Create planilla response: ", response);
