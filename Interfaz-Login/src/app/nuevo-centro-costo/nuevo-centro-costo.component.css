@@ -49,7 +49,7 @@
 
 .agregarbutton {
   border:0;
-  background: #464d64;
+  background: #c05c6d;
   color: #dfdeee;
   border-radius: 100px;
   width: 340px;
@@ -67,4 +67,5 @@
 
 .h1 {
   font-size: xx-large;
+  
 }

@@ -66,19 +66,22 @@
           </button>
         </td>
       </ng-container>
+      
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
     </table>
   
   </mat-card>
+  
+  <div class="contenedorOpciones2">
+    <button mat-raised-button style="background-color: #c05c6d;" type="submit" focusable="false" (click)="showAdd()" class="btn2">
+      + Agregar Centro de Costo
+    </button>
+  </div>
+  
 </div>
 
-<div class="contenedorOpciones2">
-  <button mat-raised-button color="primary" type="submit" focusable="false" (click)="showAdd()" class="btn2">
-    +Agregar Centro de Costo
-  </button>
-</div>
 
 
 <!-- <th mat-header-cell *matHeaderCellDef> Borra? </th>

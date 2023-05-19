@@ -11,13 +11,16 @@
     justify-content: center; */
   line-height: 24px;
   flex-direction: column;
+  
 }
 
 .cardContainer {
   width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: #3b476b;
 }
 
 
@@ -86,6 +89,7 @@
 .contenedorOpciones2 {
   justify-content: center;
   display: flex;
+  
 }
 
 
@@ -94,7 +98,7 @@
 @import url('https://fonts.googleapis.com/css?family=Amarante');
 
 .mat-mdc-button-touch-target {
-  background-color: aqua;
+  
 }
 
 .titulo {
