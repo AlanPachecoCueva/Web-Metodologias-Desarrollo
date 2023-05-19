@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'nuevoCC', component: NuevoCentroCostoComponent },
   {path : 'listarcc', component : ListarCComponent},
   { path: 'listarPlanillas', component: ListarPlanillasComponent },
+
 ];
 
 @NgModule({
