@@ -1,41 +1,53 @@
 import { Component } from '@angular/core';
 
+import { Router } from '@angular/router';
+
 //para hacer llamadas a la api
 import { HttpClient } from '@angular/common/http';
 
-import { Router } from '@angular/router';
 //Para variables de entorno
 import { environment } from '../../../environments/environments';
-
 //Alertas
 import Swal from 'sweetalert2'
 
 //URL DE LA API
 const apiUrl = environment.API_URL;
 
-//Componente flotante
-import { NuevoCentroCostoComponent } from '../nuevo-centro-costo/nuevo-centro-costo.component';
-
 //CLASE para parsear el resultado de la api
-interface CentroDeCosto {
-  Codigo: string;
-  NombreCentroCostos: string;
+interface MovimientoPlanilla {
+  CodigoConcepto: number,
+  Concepto: string,
+  Prioridad: number,
+  TipoOperacion:string,
+  Cuenta1:string,
+  Cuenta2:string,
+  Cuenta3:string,
+  Cuenta4:string,
+  MovimientoExcepcion1:string,
+  MovimientoExcepcion2:string,
+  MovimientoExcepcion3:string,
+  Aplica_iess:string,
+  Aplica_imp_renta:string,
+  Empresa_Afecta_Iess:string,
+  Mensaje:null
 }
 
+
 @Component({
-  selector: 'app-home',
-  templateUrl: './listarcc.component.html',
-  styleUrls: ['./listarcc.component.css']
+  selector: 'app-listar-planillas',
+  templateUrl: './listar-planillas.component.html',
+  styleUrls: ['./listar-planillas.component.css']
 })
 
 
-export class ListarCComponent {
+export class ListarPlanillasComponent {
 
+  
   title = 'Interfaz-Login';
 
   //Para las columnas de la tabla
-  displayedColumns: string[] = ['Codigo', 'NombreCentroCostos', 'Borrar', 'Editar'];
-  costos: CentroDeCosto[] = [];
+  displayedColumns: string[] = ['Codigo', 'Concepto', 'Prioridad', 'TipoOperacion', 'Cuenta1', 'Aplica_iess', 'Aplica_imp_renta', 'Empresa_Afecta_Iess','Borrar', 'Editar'];
+  planillas: MovimientoPlanilla[] = [];
 
   busquedaNombreCC: String = "";
 
@@ -45,8 +57,8 @@ export class ListarCComponent {
 
   //Cuando se inicia la página, lo primero que se hace es cargar los costos
   ngOnInit(): void {
-    this.http.get<CentroDeCosto[]>(`${apiUrl}/Costos`).subscribe(response => {
-      this.costos = response;
+    this.http.get<MovimientoPlanilla[]>(`${apiUrl}/ListarPlanillas`).subscribe(response => {
+      this.planillas = response;
     });
   }
 
@@ -78,28 +90,28 @@ export class ListarCComponent {
           const url = `${apiUrl}/DeleteCentroDeCosto?codigoCentroCostos=${element.Codigo}&descripcioncentrocostos=${element.NombreCentroCostos}`;
 
           //Se hace la eliminación en la api
-          this.http.get<CentroDeCosto[]>(url).subscribe(async (response) => {
+          this.http.get<MovimientoPlanilla[]>(url).subscribe(async (response) => {
 
             //Si la eliminación fue exitosa
-            if (response[0].NombreCentroCostos.localeCompare("Eliminación Exitosa") === 0) {
+            // if (response[0].NombreCentroCostos.localeCompare("Eliminación Exitosa") === 0) {
 
-              await Swal.fire({
-                title: 'Eliminación correcta',
-                text: 'El centro de costos se eliminó correctamente',
-                icon: 'success',
-                confirmButtonText: 'Aceptar',
-              })
-              //Se recarga la página
-              location.reload();
-            } else {
-              //Si la eliminación falló
-              Swal.fire({
-                title: 'Eliminación fallida',
-                text: 'El centro de costos NO se eliminó correctamente',
-                icon: 'error',
-                confirmButtonText: 'Aceptar',
-              })
-            }
+            //   await Swal.fire({
+            //     title: 'Eliminación correcta',
+            //     text: 'El centro de costos se eliminó correctamente',
+            //     icon: 'success',
+            //     confirmButtonText: 'Aceptar',
+            //   })
+            //   //Se recarga la página
+            //   location.reload();
+            // } else {
+            //   //Si la eliminación falló
+            //   Swal.fire({
+            //     title: 'Eliminación fallida',
+            //     text: 'El centro de costos NO se eliminó correctamente',
+            //     icon: 'error',
+            //     confirmButtonText: 'Aceptar',
+            //   })
+            // }
 
           })
         }
@@ -140,7 +152,7 @@ export class ListarCComponent {
       //Si hay datos válidos busca en la api
       const url = `${apiUrl}/SearchCentroDeCosto?descripcioncentrocostos=${this.busquedaNombreCC}`;
 
-      this.http.get<CentroDeCosto[]>(url).subscribe(async (response) => {
+      this.http.get<MovimientoPlanilla[]>(url).subscribe(async (response) => {
 
         if (response == null) {
 
@@ -155,7 +167,7 @@ export class ListarCComponent {
         }
         if (response.length > 0) {
 
-          this.costos = response;
+          this.planillas = response;
         }
 
 
