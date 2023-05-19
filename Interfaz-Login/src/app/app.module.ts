@@ -13,7 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
-import { HomeComponent } from './home/home.component';
+import { ListarCComponent } from './listarcc/listarcc.component';
 
 import { MatListModule } from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
@@ -25,15 +25,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { EditarCentroCostoComponent } from './editar-centro-costo/editar-centro-costo.component';
 import { NuevoCentroCostoComponent } from './nuevo-centro-costo/nuevo-centro-costo.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HomeComponent } from './home/home.component';
 
+
+// Los iconos por defecto de SweetAlert2 son los siguientes: error, warning, success y question
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
+    ListarCComponent,
     EditarCentroCostoComponent,
-    NuevoCentroCostoComponent
+    NuevoCentroCostoComponent,
+    NavBarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

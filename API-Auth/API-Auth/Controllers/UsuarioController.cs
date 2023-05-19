@@ -104,8 +104,9 @@ namespace API_Auth.Controllers
 
         [HttpGet("DeleteCentroDeCosto")]
 
-        public async Task<string> DeleteCentroDeCostos(String codigoCentroCostos, String descripcioncentrocostos)
+        public async Task<string> DeleteCentroDeCostos(int codigoCentroCostos, String descripcioncentrocostos)
         {
+            Console.WriteLine("Entra a Eliminar");
             Console.WriteLine("codigoCentroCostos: ", codigoCentroCostos, " | descripcioncentrocostos: ", descripcioncentrocostos);
             try
             {

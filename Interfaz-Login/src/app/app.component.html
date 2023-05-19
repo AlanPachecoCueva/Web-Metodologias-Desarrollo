@@ -13,5 +13,5 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<router-outlet></router-outlet>
+<app-nav-bar *ngIf="shouldShowNavBar()"></app-nav-bar>
+<router-outlet :key="$route.path"></router-outlet>
