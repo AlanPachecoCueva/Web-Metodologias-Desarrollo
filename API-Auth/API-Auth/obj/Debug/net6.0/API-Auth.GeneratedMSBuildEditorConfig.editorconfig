@@ -9,9 +9,17 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = API_Auth
 build_property.RootNamespace = API_Auth
+<<<<<<< HEAD
+build_property.ProjectDir = C:\Users\josue\Desktop\Metodologias De Desarrollo\Web-Metodologias-Desarrollo\API-Auth\API-Auth\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\josue\Desktop\Metodologias De Desarrollo\Web-Metodologias-Desarrollo\API-Auth\API-Auth
+=======
 build_property.ProjectDir = C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\gabol\Documents\Universidad\Met Desarrollo de software\M\Web-Metodologias-Desarrollo\API-Auth\API-Auth
+>>>>>>> 8482677f5745a50ca0b93478c7b6090e07a65614
 build_property._RazorSourceGeneratorDebug = 

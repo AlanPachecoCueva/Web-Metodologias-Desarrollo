@@ -224,23 +224,40 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
+    "C:\\Users\\josue\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+=======
     "C:\\Users\\gabol\\.nuget\\packages\\": {},
     "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+>>>>>>> 8482677f5745a50ca0b93478c7b6090e07a65614
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\josue\\Desktop\\Metodologias De Desarrollo\\Web-Metodologias-Desarrollo\\API-Auth\\API-Auth\\API-Auth.csproj",
+      "projectName": "API-Auth",
+      "projectPath": "C:\\Users\\josue\\Desktop\\Metodologias De Desarrollo\\Web-Metodologias-Desarrollo\\API-Auth\\API-Auth\\API-Auth.csproj",
+      "packagesPath": "C:\\Users\\josue\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\josue\\Desktop\\Metodologias De Desarrollo\\Web-Metodologias-Desarrollo\\API-Auth\\API-Auth\\obj\\",
+=======
       "projectUniqueName": "C:\\Users\\gabol\\Documents\\Universidad\\Met Desarrollo de software\\M\\Web-Metodologias-Desarrollo\\API-Auth\\API-Auth\\API-Auth.csproj",
       "projectName": "API-Auth",
       "projectPath": "C:\\Users\\gabol\\Documents\\Universidad\\Met Desarrollo de software\\M\\Web-Metodologias-Desarrollo\\API-Auth\\API-Auth\\API-Auth.csproj",
       "packagesPath": "C:\\Users\\gabol\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\gabol\\Documents\\Universidad\\Met Desarrollo de software\\M\\Web-Metodologias-Desarrollo\\API-Auth\\API-Auth\\obj\\",
+>>>>>>> 8482677f5745a50ca0b93478c7b6090e07a65614
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
+        "C:\\Users\\josue\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
         "C:\\Users\\gabol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 8482677f5745a50ca0b93478c7b6090e07a65614
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -249,6 +266,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -291,7 +309,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

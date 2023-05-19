@@ -27,6 +27,7 @@ import { EditarCentroCostoComponent } from './editar-centro-costo/editar-centro-
 import { NuevoCentroCostoComponent } from './nuevo-centro-costo/nuevo-centro-costo.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
+import { ListarPlanillasComponent } from './listar-planillas/listar-planillas.component';
 
 
 // Los iconos por defecto de SweetAlert2 son los siguientes: error, warning, success y question
@@ -39,7 +40,8 @@ import { HomeComponent } from './home/home.component';
     EditarCentroCostoComponent,
     NuevoCentroCostoComponent,
     NavBarComponent,
-    HomeComponent
+    HomeComponent,
+    ListarPlanillasComponent
   ],
   imports: [
     BrowserModule,

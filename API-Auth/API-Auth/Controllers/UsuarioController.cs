@@ -225,5 +225,35 @@ namespace API_Auth.Controllers
             }
         }
 
+
+        // ACTUALIZACION DE APIS
+         [HttpGet("ListarPlanillas")]
+
+        public async Task<string> GetPlanillas()
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaSelect";
+
+                    // Hacer una petición GET a la URL y esperar la respuesta
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    // Leer el contenido de la respuesta como una cadena de caracteres
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    // Mostrar el cuerpo de la respuesta en la consola
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+                //return "Holi";
+            }
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
+            }
+        }
+
     }
 }

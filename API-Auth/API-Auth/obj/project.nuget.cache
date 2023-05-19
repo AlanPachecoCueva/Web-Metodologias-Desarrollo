@@ -1,5 +1,17 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "M4Vq4X8xvScGVW0sf632+l0zdovWHRlltsVOdJ5iIb0OyiqHq0RPh7uTre7YxBOVpuKJEv9fSrHutc4ilOZEEA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\josue\\Desktop\\Metodologias De Desarrollo\\Web-Metodologias-Desarrollo\\API-Auth\\API-Auth\\API-Auth.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\josue\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\josue\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\josue\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\josue\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\josue\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\josue\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+=======
   "dgSpecHash": "Iqns5/rxDrsKqKOsKiZGkc2b5jYQnoOqlfnPeGS6OFEAVc/bzCi4+mF3Zz7/AQvymhZ0OOp2VFHMyEM4MhdfPg==",
   "success": true,
   "projectFilePath": "C:\\Users\\gabol\\Documents\\Universidad\\Met Desarrollo de software\\M\\Web-Metodologias-Desarrollo\\API-Auth\\API-Auth\\API-Auth.csproj",
@@ -10,6 +22,7 @@
     "C:\\Users\\gabol\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\gabol\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
     "C:\\Users\\gabol\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+>>>>>>> 8482677f5745a50ca0b93478c7b6090e07a65614
   ],
   "logs": []
 }
