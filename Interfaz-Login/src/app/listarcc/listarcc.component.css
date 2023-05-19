@@ -28,36 +28,101 @@
   flex-direction: row;
   justify-content:space-around;
   align-items:center;
+  padding-top: 3%;
+  
 }
 
 .inputsBusqueda {
-  width: 100% !important;
-  height: 100%;
-  display:flex;
+  
+  margin: 20px auto;
+  background: transparent;  
+  border-radius: 5px;
+  border-style:double;
+  
+  padding: 14px 10px;
+  width: 200px;
+  
+  color: #fffefe;
+      -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -ms-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+  
+  
 }
 
 .closeBtn {
   position: fixed;
   top: 10%;
   left: 10%;
-
-  z-index: 3;
+  z-index: 5;
+  width: -50px;
 }
 
 .btn2 {
   border:0;
-  color: #dfdeee;
   border-radius: 100px;
   width: 340px;
   height: 49px;
   font-size: 16px;
   transition: 0.3s;
   cursor: pointer;
-
-
+  
 }
+ 
+.btn3 {
+  /* border-radius: 5px; */
+  color: #262e49;
+  width: 110px;
+  height: 43px;
+  font-size: 14px;
+  transition: 0.3s;
+  cursor: pointer;
+  
+}
+
 
 .contenedorOpciones2 {
   justify-content: center;
   display: flex;
 }
+
+
+/*Tabla de contenidos*/
+
+@import url('https://fonts.googleapis.com/css?family=Amarante');
+
+.mat-mdc-button-touch-target {
+  background-color: aqua;
+}
+
+.titulo {
+  display: flex;
+  justify-content: center;
+  font-size:xx-large;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+.buscador {
+  display: flex;
+  align-items: center;
+   
+}
+
+.busqueda { 
+  display: flex;
+  flex-direction: row;
+  margin-left: 490px;
+  
+}
+
+.search {
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  
+}
+
