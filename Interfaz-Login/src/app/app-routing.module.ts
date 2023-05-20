@@ -9,6 +9,7 @@ import { NuevoCentroCostoComponent } from './nuevo-centro-costo/nuevo-centro-cos
 import { HomeComponent } from './home/home.component';
 import { ListarPlanillasComponent } from './listar-planillas/listar-planillas.component';
 import { AgregarPlanillaComponent } from './agregar-planilla/agregar-planilla.component';
+import { EditarPlanillaComponent } from './editar-planilla/editar-planilla.component';
 
 const routes: Routes = [
   // Otras rutas de tu aplicación
@@ -17,9 +18,11 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'editarCC/:codigo/:nombreCC', component: EditarCentroCostoComponent},
   { path: 'nuevoCC', component: NuevoCentroCostoComponent },
-  {path : 'listarcc', component : ListarCComponent},
+  { path: 'listarcc', component : ListarCComponent},
   { path: 'listarPlanillas', component: ListarPlanillasComponent },
   { path: 'agregarPlanilla', component: AgregarPlanillaComponent },
+  { path: 'editarPlanilla/:codigoConcepto', component: EditarPlanillaComponent },
+  { path: 'editarPlanilla/:codigo', component: EditarPlanillaComponent },
 ];
 
 @NgModule({

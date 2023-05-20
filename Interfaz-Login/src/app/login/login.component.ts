@@ -76,6 +76,8 @@ export class LoginComponent {
       }
 
       if(this.respuestaApi.OBSERVACION == "INGRESO EXITOSO"){
+
+        dwdadw
         this.router.navigate(['/home']);
       }
       

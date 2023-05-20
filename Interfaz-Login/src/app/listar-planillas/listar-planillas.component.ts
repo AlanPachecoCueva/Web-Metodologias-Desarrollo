@@ -18,18 +18,56 @@ interface MovimientoPlanilla {
   CodigoConcepto: number,
   Concepto: string,
   Prioridad: number,
-  TipoOperacion:string,
-  Cuenta1:string,
-  Cuenta2:string,
-  Cuenta3:string,
-  Cuenta4:string,
-  MovimientoExcepcion1:string,
-  MovimientoExcepcion2:string,
-  MovimientoExcepcion3:string,
-  Aplica_iess:string,
-  Aplica_imp_renta:string,
-  Empresa_Afecta_Iess:string,
-  Mensaje:null
+  TipoOperacion: string,
+  Cuenta1: string,
+  Cuenta2: string,
+  Cuenta3: string,
+  Cuenta4: string,
+  MovimientoExcepcion1: string,
+  MovimientoExcepcion2: string,
+  MovimientoExcepcion3: string,
+  Aplica_iess: string,
+  Aplica_imp_renta: string,
+  Empresa_Afecta_Iess: string,
+  Mensaje: null
+}
+
+interface Trabajador {
+  COMP_Codigo: string,
+  Id_Trabajador: string,
+  Tipo_trabajador: string,
+  Apellido_Paterno: string,
+  Apellido_Materno: string,
+  Nombres: string,
+  Identificacion: string,
+  Entidad_Bancaria: string,
+  CarnetIESS: string,
+  Direccion: string,
+  Telefono_Fijo: string,
+  Telefono_Movil: string,
+  Genero: string,
+  Nro_Cuenta_Bancaria: string,
+  Codigo_Categoria_Ocupacion: string,
+  Ocupacion: string,
+  Centro_Costos: string,
+  Nivel_Salarial: string,
+  EstadoTrabajador: string,
+  Tipo_Contrato: string,
+  Tipo_Cese: string,
+  EstadoCivil: string,
+  TipodeComision: string,
+  FechaNacimiento: string,
+  FechaIngreso: string,
+  FechaCese: string,
+  PeriododeVacaciones: string,
+  FechaReingreso: string,
+  Fecha_Ult_Actualizacion: string,
+  EsReingreso: string,
+  BancoCTA_CTE: string,
+  Tipo_Cuenta: string,
+  RSV_Indem_Acumul: string,
+  Año_Ult_Rsva_Indemni: string,
+  Mes_Ult_Rsva_Indemni: string,
 }
 
 
@@ -42,13 +80,13 @@ interface MovimientoPlanilla {
 
 export class ListarPlanillasComponent {
 
-  
+
   title = 'Interfaz-Login';
 
   //Para las columnas de la tabla
-  displayedColumns: string[] = ['Codigo', 'Concepto', 'Prioridad', 'TipoOperacion', 'Cuenta1', 'Aplica_iess', 'Aplica_imp_renta', 'Empresa_Afecta_Iess','Borrar', 'Editar'];
+  displayedColumns: string[] = ['Codigo', 'Concepto', 'Prioridad', 'TipoOperacion', 'Cuenta1', 'Aplica_iess', 'Aplica_imp_renta', 'Empresa_Afecta_Iess', 'Borrar', 'Editar'];
   planillas: MovimientoPlanilla[] = [];
-
+trabajadores: Trabajador[] = [];
   busquedaConcepto: String = "";
 
   mostrarAgregar: boolean = false;
@@ -57,8 +95,9 @@ export class ListarPlanillasComponent {
 
   //Cuando se inicia la página, lo primero que se hace es cargar los costos
   ngOnInit(): void {
-    this.http.get<MovimientoPlanilla[]>(`${apiUrl}/ListarPlanillas`).subscribe(response => {
-      this.planillas = response;
+    const url = `${apiUrl}/GetTrabajadorPorEmisor?codigo=` + this.router.snapshot.paramMap.get('codigo');
+    this.http.get<Trabajador[]>(`${url}`).subscribe(response => {
+      this.trabajadores = response;
     });
   }
 
@@ -134,7 +173,7 @@ export class ListarPlanillasComponent {
   }
 
   btnEditar(element: any) {
-    this.router.navigate(['/editarCC', element.Codigo, element.NombreCentroCostos]);
+    this.router.navigate(['/editarPlanilla', element.CodigoConcepto]);
   }
 
 

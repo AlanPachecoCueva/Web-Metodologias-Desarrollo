@@ -31,6 +31,7 @@ import { ListarPlanillasComponent } from './listar-planillas/listar-planillas.co
 import { AgregarPlanillaComponent } from './agregar-planilla/agregar-planilla.component';
 //Para hacer los selectde la interfaz
 import { MatSelectModule } from '@angular/material/select';
+import { EditarPlanillaComponent } from './editar-planilla/editar-planilla.component';
 
 // Los iconos por defecto de SweetAlert2 son los siguientes: error, warning, success y question
 
@@ -44,7 +45,8 @@ import { MatSelectModule } from '@angular/material/select';
     NavBarComponent,
     HomeComponent,
     ListarPlanillasComponent,
-    AgregarPlanillaComponent
+    AgregarPlanillaComponent,
+    EditarPlanillaComponent
   ],
   imports: [
     MatSelectModule,
