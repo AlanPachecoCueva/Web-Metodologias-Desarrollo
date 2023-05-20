@@ -8,6 +8,7 @@ import { EditarCentroCostoComponent } from './editar-centro-costo/editar-centro-
 import { NuevoCentroCostoComponent } from './nuevo-centro-costo/nuevo-centro-costo.component';
 import { HomeComponent } from './home/home.component';
 import { ListarPlanillasComponent } from './listar-planillas/listar-planillas.component';
+import { ListarTrabajadoresComponent } from './listar-trabajadores/listar-trabajadores.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'nuevoCC', component: NuevoCentroCostoComponent },
   {path : 'listarcc', component : ListarCComponent},
   { path: 'listarPlanillas', component: ListarPlanillasComponent },
+  { path: 'listar-trabajadores/:codigo', component: ListarTrabajadoresComponent},
 
 ];
 

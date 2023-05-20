@@ -76,11 +76,13 @@ export class LoginComponent {
       }
 
       if(this.respuestaApi.OBSERVACION == "INGRESO EXITOSO"){
-        this.router.navigate(['/home']);
-      }
-      
-    });
 
-  }
+        this.router.navigate(['/listar-trabajadores', this.emisorSeleccionado.Codigo]);
+        
+      }
+      
+    });
+
+  }
 
 }
