@@ -39,7 +39,7 @@ interface MovimientoPlanilla {
 export class AgregarPlanillaComponent {
   element = {
     Concepto: "",
-    Prioridad: 1,
+    Prioridad: "",
     TipoOperacion: "",
     Cuenta1: "",
     Cuenta2: "",
@@ -48,10 +48,10 @@ export class AgregarPlanillaComponent {
     MovimientoExcepcion1: "",
     MovimientoExcepcion2: "",
     MovimientoExcepcion3: "",
-    Traba_Aplica_iess: "-",
-    Traba_Proyecto_imp_renta: "-",
-    Aplica_Proy_Renta: "-",
-    Empresa_Afecta_Iess: "-"
+    Traba_Aplica_iess: "",
+    Traba_Proyecto_imp_renta: "",
+    Aplica_Proy_Renta: "",
+    Empresa_Afecta_Iess: ""
   };
 
   tiposOperaciones: any;
@@ -62,33 +62,7 @@ export class AgregarPlanillaComponent {
   opcionesTrabAfecImpuestoRenta: any;
   constructor(private http: HttpClient, private router: Router) { }
 
-  actualizarValor(type: string, content: string){
-    console.log("Actualiza: ", type, content);
-    if(type.localeCompare("TipoOperacion") === 0){
-      this.element.TipoOperacion = content;
-    }
-    if(type.localeCompare("MovimientoExcepcion1") === 0){
-      this.element.MovimientoExcepcion1 = content;
-    }
-    if(type.localeCompare("MovimientoExcepcion2") === 0){
-      this.element.MovimientoExcepcion2 = content;
-    }
-    if(type.localeCompare("MovimientoExcepcion3") === 0){
-      this.element.MovimientoExcepcion3 = content;
-    }
-    if(type.localeCompare("Traba_Aplica_iess") === 0){
-      this.element.Traba_Aplica_iess = content;
-    }
-    if(type.localeCompare("Traba_Proyecto_imp_renta") === 0){
-      this.element.Traba_Proyecto_imp_renta = content;
-    }
-    if(type.localeCompare("Aplica_Proy_Renta") === 0){
-      this.element.Aplica_Proy_Renta = content;
-    }
-    if(type.localeCompare("Empresa_Afecta_Iess") === 0){
-      this.element.Empresa_Afecta_Iess = content;
-    }
-  }
+
 
   ngOnInit(): void {
     this.http.get(`${apiUrl}/TipoOperacion`).subscribe(response => {
@@ -127,44 +101,129 @@ export class AgregarPlanillaComponent {
     });
   }
 
+  actualizarValor(type: string, content: string) {
+    console.log("Actualiza: ", type, content);
+    if (type.localeCompare("TipoOperacion") === 0) {
+      this.element.TipoOperacion = content;
+    }
+    if (type.localeCompare("MovimientoExcepcion1") === 0) {
+      this.element.MovimientoExcepcion1 = content;
+    }
+    if (type.localeCompare("MovimientoExcepcion2") === 0) {
+      this.element.MovimientoExcepcion2 = content;
+    }
+    if (type.localeCompare("MovimientoExcepcion3") === 0) {
+      this.element.MovimientoExcepcion3 = content;
+    }
+    if (type.localeCompare("Traba_Aplica_iess") === 0) {
+      this.element.Traba_Aplica_iess = content;
+    }
+    if (type.localeCompare("Traba_Proyecto_imp_renta") === 0) {
+      this.element.Traba_Proyecto_imp_renta = content;
+    }
+    if (type.localeCompare("Aplica_Proy_Renta") === 0) {
+      this.element.Aplica_Proy_Renta = content;
+    }
+    if (type.localeCompare("Empresa_Afecta_Iess") === 0) {
+      this.element.Empresa_Afecta_Iess = content;
+    }
+  }
+
   crearNuevoCC() {
     console.log("element a crear: ", this.element);
 
     try {
 
-      const url = `${apiUrl}/CreateMovimientoPlanilla?concepto=${this.element.Concepto}&prioridad=${this.element.Prioridad}&tipoOperacion=${this.element.TipoOperacion}&c1=${this.element.Cuenta1}&c2=${this.element.Cuenta2}&c3=${this.element.Cuenta3}&c4=${this.element.Cuenta4}&me1=${this.element.MovimientoExcepcion1}`;
-      const url2 = `&me2=${this.element.MovimientoExcepcion2}&me3=${this.element.MovimientoExcepcion3}&Traba_Aplica_iess=${this.element.Traba_Aplica_iess}&Traba_Proyecto_imp_renta=${this.element.Traba_Proyecto_imp_renta}&Aplica_Proy_Renta=${this.element.Aplica_Proy_Renta}&Empresa_Afecta_Iess=${this.element.Empresa_Afecta_Iess}`;
+      //Configura los valores
+      if (this.element.TipoOperacion.localeCompare("Ingresos") === 0) {
+        this.element.TipoOperacion = "I";
+      } else {
+        this.element.TipoOperacion = "E";
+      }
 
-      this.http.get<MovimientoPlanilla[]>(url+url2).subscribe(async (response) => {
+
+      if (this.element.MovimientoExcepcion1.localeCompare("Horas Movimiento Planilla") === 0) {
+        this.element.MovimientoExcepcion1 = "H";
+      } else if (this.element.MovimientoExcepcion1.localeCompare("Movimiento Planilla") === 0) {
+        this.element.MovimientoExcepcion1 = "M";
+      } else {
+        this.element.MovimientoExcepcion1 = "C";
+      }
+
+      if (this.element.MovimientoExcepcion2.localeCompare("Horas Movimiento Planilla") === 0) {
+        this.element.MovimientoExcepcion2 = "H";
+      } else if (this.element.MovimientoExcepcion2.localeCompare("Movimiento Planilla") === 0) {
+        this.element.MovimientoExcepcion2 = "M";
+      } else {
+        this.element.MovimientoExcepcion2 = "C";
+      }
+
+      if (this.element.MovimientoExcepcion3.localeCompare("Sierra") === 0) {
+        this.element.MovimientoExcepcion3 = "S";
+      } else if (this.element.MovimientoExcepcion3.localeCompare("Costa") === 0) {
+        this.element.MovimientoExcepcion3 = "C";
+      } else if (this.element.MovimientoExcepcion3.localeCompare("No Aplica") === 0) {
+        this.element.MovimientoExcepcion3 = "N";
+      } else {
+        this.element.MovimientoExcepcion3 = "X";
+      }
+
+      if (this.element.Traba_Aplica_iess.localeCompare("Si") === 0) {
+        this.element.Traba_Aplica_iess = "1";
+      } else {
+        this.element.Traba_Aplica_iess = "0";
+      }
+      if (this.element.Traba_Proyecto_imp_renta.localeCompare("Aplica") === 0) {
+        this.element.Traba_Proyecto_imp_renta = "1";
+      } else {
+        this.element.Traba_Proyecto_imp_renta = "0";
+      }
+    
+      if (this.element.Aplica_Proy_Renta.localeCompare("Si") === 0) {
+        this.element.Aplica_Proy_Renta = "1";
+      } else {
+        this.element.Aplica_Proy_Renta = "0";
+      }
+
+      if (this.element.Empresa_Afecta_Iess.localeCompare("Si") === 0) {
+        this.element.Empresa_Afecta_Iess = "1";
+      } else {
+        this.element.Empresa_Afecta_Iess = "0";
+      }
+      console.log("element a crear: ", this.element);
+    const url = `${apiUrl}/CreateMovimientoPlanilla?concepto=${this.element.Concepto}&prioridad=${this.element.Prioridad}&tipoOperacion=${this.element.TipoOperacion}&c1=${this.element.Cuenta1}&c2=${this.element.Cuenta2}&c3=${this.element.Cuenta3}&c4=${this.element.Cuenta4}&me1=${this.element.MovimientoExcepcion1}`;
+    const url2 = `&me2=${this.element.MovimientoExcepcion2}&me3=${this.element.MovimientoExcepcion3}&Traba_Aplica_iess=${this.element.Traba_Aplica_iess}&Traba_Proyecto_imp_renta=${this.element.Traba_Proyecto_imp_renta}&Aplica_Proy_Renta=${this.element.Aplica_Proy_Renta}&Empresa_Afecta_Iess=${this.element.Empresa_Afecta_Iess}`;
+
+    this.http.get<MovimientoPlanilla[]>(url + url2).subscribe(async (response) => {
 
 
-        console.log("Create planilla response: ", response);
-        if (response == null || response == undefined) {
-          alert("El movimiento de plantilla no se actualizó correctamente");
-          return;
-        }
+      console.log("Create planilla response: ", response);
+      if (response == null || response == undefined) {
+        alert("El movimiento de plantilla no se actualizó correctamente");
+        return;
+      }
 
-        console.log("response: ", response[0]);
+      console.log("response: ", response[0]);
 
-        if (response[0].Concepto == this.element.Concepto) {
+      if (response[0].Concepto == this.element.Concepto) {
 
-          alert("El centro de costos se creó correctamente");
-          //Redirecciona a home
-          this.router.navigate(['/home']);
+        alert("El centro de costos se creó correctamente");
+        //Redirecciona a home
+        this.router.navigate(['/home']);
 
-        } else {
-          alert("El centro de costos no se actualizó correctamente");
-        }
+      } else {
+        alert("El centro de costos no se actualizó correctamente");
+      }
 
-      })
-    }
-    catch (error) {
-
-      console.log("error:", error);
-
-    }
+    })
   }
-  
+  catch(error) {
+
+    console.log("error:", error);
+
+  }
+}
+
 
 
 }

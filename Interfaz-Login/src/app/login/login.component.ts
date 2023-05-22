@@ -1,4 +1,4 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -22,18 +22,18 @@ export class LoginComponent {
   emisores: any;
 
   constructor(private router: Router, private http: HttpClient) { };
-  
+
   emisorSeleccionado: any;
 
   onEmisorSeleccionado() {
-    console.log("emisorSeleccionado: ",this.emisorSeleccionado);
+    console.log("emisorSeleccionado: ", this.emisorSeleccionado);
     // aquí puedes hacer lo que necesites con el valor seleccionado
   }
 
   ngOnInit(): void {
     console.log("apiUrl: ", apiUrl);
     this.http.get(`${apiUrl}/Emisores`).subscribe(response => {
-      
+
       this.emisores = response;
 
       console.log("Emisores: ", this.emisores);
@@ -43,7 +43,7 @@ export class LoginComponent {
   async onSubmit() {
 
     //Si aún no ha seleccionado una sucursal
-    if(this.emisorSeleccionado == ""){
+    if (this.emisorSeleccionado == "") {
       console.log("Se debe seleccionar una sucursal");
       return;
     }
@@ -57,7 +57,7 @@ export class LoginComponent {
     console.log("A Home");
 
     const url = `${apiUrl}?usuario=` + this.username + '&password=' + this.password;
-   
+
     this.http.get(url).subscribe(async (response) => {
 
       this.respuestaApi = response;
@@ -65,22 +65,23 @@ export class LoginComponent {
       this.respuestaApi = this.respuestaApi[0];
 
       //Comparar si las sucursales son iguales
-      if(this.emisorSeleccionado.Codigo != this.respuestaApi.COMPANIA){
+      if (this.emisorSeleccionado.Codigo != this.respuestaApi.COMPANIA) {
         console.log("El código de la sucursal no coincide. Emisor seleccionado: ", this.emisorSeleccionado.Codigo, ", la compania es: ", this.respuestaApi.COMPANIA);
         return;
       }
 
-      if(this.respuestaApi == null){
+      if (this.respuestaApi == null) {
         this.router.navigate(['/login']);
         return;
       }
 
-      if(this.respuestaApi.OBSERVACION == "INGRESO EXITOSO"){
 
-        dwdadw
+      if (this.respuestaApi.OBSERVACION == "INGRESO EXITOSO") {
         this.router.navigate(['/home']);
+        //this.router.navigate(['/listar-trabajadores', this.emisorSeleccionado.Codigo]);
+
       }
-      
+
     });
 
   }

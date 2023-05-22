@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using System.Net.Http;
+using System.Web;
 using static System.Net.WebRequestMethods;
 
 namespace API_Auth.Controllers
@@ -10,17 +11,17 @@ namespace API_Auth.Controllers
     public class UsuarioController : ControllerBase
     {
 
-        
 
-            private readonly ILogger<UsuarioController> _logger;
 
-            public UsuarioController(ILogger<UsuarioController> logger)
-            {
-                _logger = logger;
-            }
+        private readonly ILogger<UsuarioController> _logger;
+
+        public UsuarioController(ILogger<UsuarioController> logger)
+        {
+            _logger = logger;
+        }
         //http://apiservicios.ecuasolmovsa.com:3009/api/Usuarios?usuario=5001&password=5001u
         [HttpGet(Name = "getUser")]
-        
+
         public async Task<string> Get(string usuario, string password)
         {
             try
@@ -41,13 +42,14 @@ namespace API_Auth.Controllers
                 }
                 //return "Holi";
             }
-            catch (Exception error) {
-                return ("erooor: "+ error);
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
             }
         }
 
         [HttpGet("Emisores")]
-        
+
         public async Task<string> Get()
         {
             try
@@ -112,7 +114,7 @@ namespace API_Auth.Controllers
             {
                 using (var httpClient = new HttpClient())
                 {
-                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/CentroCostosDelete?codigocentrocostos="+codigoCentroCostos+"&descripcioncentrocostos="+ descripcioncentrocostos;
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/CentroCostosDelete?codigocentrocostos=" + codigoCentroCostos + "&descripcioncentrocostos=" + descripcioncentrocostos;
 
 
                     // Hacer una petición GET a la URL y esperar la respuesta
@@ -133,9 +135,9 @@ namespace API_Auth.Controllers
             }
         }
 
-        
-        
-            [HttpGet("UpdateCentroDeCosto")]
+
+
+        [HttpGet("UpdateCentroDeCosto")]
 
         public async Task<string> UpdateCentroDeCostos(String codigoCentroCostos, String descripcioncentrocostos)
         {
@@ -144,7 +146,7 @@ namespace API_Auth.Controllers
             {
                 using (var httpClient = new HttpClient())
                 {
-                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/CentroCostosUpdate?codigocentrocostos="+codigoCentroCostos+ "&descripcioncentrocostos="+descripcioncentrocostos ;
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/CentroCostosUpdate?codigocentrocostos=" + codigoCentroCostos + "&descripcioncentrocostos=" + descripcioncentrocostos;
 
 
                     // Hacer una petición GET a la URL y esperar la respuesta
@@ -204,7 +206,7 @@ namespace API_Auth.Controllers
             {
                 using (var httpClient = new HttpClient())
                 {
-                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/CentroCostosSearch?descripcioncentrocostos="+ descripcioncentrocostos;
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/CentroCostosSearch?descripcioncentrocostos=" + descripcioncentrocostos;
 
 
                     // Hacer una petición GET a la URL y esperar la respuesta
@@ -227,7 +229,7 @@ namespace API_Auth.Controllers
 
 
         // ACTUALIZACION DE APIS
-         [HttpGet("ListarPlanillas")]
+        [HttpGet("ListarPlanillas")]
 
         public async Task<string> GetPlanillas()
         {
@@ -256,17 +258,24 @@ namespace API_Auth.Controllers
         }
 
         [HttpGet("DeleteMovimientoPlanilla")]
-
-        public async Task<string> DeleteMovimientoPlanilla(int codigoMovimiento, String descripcionMovimiento)
+        public async Task<string> DeleteMovimientoPlanilla(int codigoMovimiento, string descripcionMovimiento)
         {
             Console.WriteLine("Entra a Eliminar Planilla");
-            Console.WriteLine("codigoMovimiento: ", codigoMovimiento, " | descripcionMovimiento: ", descripcionMovimiento);
+            Console.WriteLine("codigoMovimiento: " + codigoMovimiento + " | descripcionMovimiento: " + descripcionMovimiento);
             try
             {
                 using (var httpClient = new HttpClient())
                 {
-                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimeintoPlanillaDelete?codigomovimiento="+codigoMovimiento+"&descripcionomovimiento="+descripcionMovimiento;
+                    var baseUrl = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios";
+                    var endpoint = "/MovimeintoPlanillaDelete";
+                    var queryParams = $"?codigomovimiento={codigoMovimiento}&descripcionomovimiento={descripcionMovimiento}";
+                    var url = baseUrl + endpoint + queryParams;
 
+                    // Agrega los encabezados necesarios si la API los requiere
+                    // httpClient.DefaultRequestHeaders.Add("NombreEncabezado", "ValorEncabezado");
+
+                    // Configura la autenticación si es necesario
+                    // httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("TipoAutenticacion", "Token");
 
                     // Hacer una petición GET a la URL y esperar la respuesta
                     HttpResponseMessage response = await httpClient.GetAsync(url);
@@ -285,6 +294,38 @@ namespace API_Auth.Controllers
             }
         }
 
+        [HttpGet("TipoOperacion")]
+
+        public async Task<string> GetTipoOperacion()
+        {
+            Console.WriteLine("GetTipoOperacion()");
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/TipoOperacion";
+
+
+                    // Hacer una petición GET a la URL y esperar la respuesta
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    // Leer el contenido de la respuesta como una cadena de caracteres
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    // Mostrar el cuerpo de la respuesta en la consola
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+                //return "Holi";
+            }
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
+            }
+        }
+
+
+
         [HttpGet("SearchMovimientoPlanilla")]
 
         public async Task<string> SearchMovimientoPlanilla(String concepto)
@@ -294,7 +335,7 @@ namespace API_Auth.Controllers
             {
                 using (var httpClient = new HttpClient())
                 {
-                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaSearch?Concepto="+concepto;
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaSearch?Concepto=" + concepto;
 
 
                     // Hacer una petición GET a la URL y esperar la respuesta
@@ -344,8 +385,8 @@ namespace API_Auth.Controllers
                     //if(Empresa_Afecta_Iess.CompareTo("-") == 0){
                     //    //url1 = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaInsert?conceptos="+concepto+"&prioridad="+prioridad+"&tipooperacion="+tipoOperacion+"&cuenta1="+c1+"&cuenta2="+c2+"&cuenta3="+c3+"&cuenta4="+c4+"&MovimientoExcepcion1="+me1+"&MovimientoExcepcion2="+me2+"&MovimientoExcepcion3="+me3+"&Traba_Aplica_iess="+Traba_Aplica_iess+"&Traba_Proyecto_imp_renta="+Traba_Proyecto_imp_renta+"&Aplica_Proy_Renta="+Aplica_Proy_Renta;
                     //    Empresa_Afecta_Iess = "";
-                    //}+ "&Traba_Aplica_iess=" + Traba_Aplica_iess + "&Traba_Proyecto_imp_renta=" + Traba_Proyecto_imp_renta + "&Aplica_Proy_Renta=" + Aplica_Proy_Renta+ "&Empresa_Afecta_Iess="+ Empresa_Afecta_Iess
-                    url1 = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaInsert?conceptos=" + concepto + "&prioridad=" + prioridad + "&tipooperacion=" + tipoOperacion + "&cuenta1=" + c1 + "&cuenta2=" + c2 + "&cuenta3=" + c3 + "&cuenta4=" + c4 + "&MovimientoExcepcion1=" + me1 + "&MovimientoExcepcion2=" + me2 + "&MovimientoExcepcion3=" + me3 ;
+                    //}
+                    url1 = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaInsert?conceptos=" + concepto + "&prioridad=" + prioridad + "&tipooperacion=" + tipoOperacion + "&cuenta1=" + c1 + "&cuenta2=" + c2 + "&cuenta3=" + c3 + "&cuenta4=" + c4 + "&MovimientoExcepcion1=" + me1 + "&MovimientoExcepcion2=" + me2 + "&MovimientoExcepcion3=" + me3+ "&Traba_Aplica_iess=" + Traba_Aplica_iess + "&Traba_Proyecto_imp_renta=" + Traba_Proyecto_imp_renta + "&Aplica_Proy_Renta=" + Aplica_Proy_Renta+ "&Empresa_Afecta_Iess="+ Empresa_Afecta_Iess;
 
 
                     // Hacer una petición GET a la URL y esperar la respuesta
@@ -421,17 +462,18 @@ namespace API_Auth.Controllers
             }
         }
 
-        [HttpGet("TipoOperacion")]
 
-        public async Task<string> GetTipoOperacion()
+        // ACTUALIZACION DE APIS
+        [HttpGet("ListarTrabajadores")]
+
+        public async Task<string> GetTrabajador(String sucursal)
         {
-            Console.WriteLine("GetTipoOperacion()");
             try
             {
                 using (var httpClient = new HttpClient())
                 {
-                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/TipoOperacion";
 
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/TrabajadorSelect?sucursal=" + sucursal;
 
                     // Hacer una petición GET a la URL y esperar la respuesta
                     HttpResponseMessage response = await httpClient.GetAsync(url);
@@ -440,6 +482,8 @@ namespace API_Auth.Controllers
                     string responseBody = await response.Content.ReadAsStringAsync();
 
                     // Mostrar el cuerpo de la respuesta en la consola
+
+                    Console.WriteLine("trabajadoreeeeeeeeeeees");
                     Console.WriteLine(responseBody);
                     return responseBody;
                 }
@@ -450,6 +494,7 @@ namespace API_Auth.Controllers
                 return ("erooor: " + error);
             }
         }
+
 
         [HttpGet("MovimientosExcepcion12")]
 

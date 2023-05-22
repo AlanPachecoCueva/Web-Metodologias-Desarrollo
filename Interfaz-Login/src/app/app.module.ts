@@ -28,10 +28,14 @@ import { NuevoCentroCostoComponent } from './nuevo-centro-costo/nuevo-centro-cos
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { ListarPlanillasComponent } from './listar-planillas/listar-planillas.component';
+
 import { AgregarPlanillaComponent } from './agregar-planilla/agregar-planilla.component';
 //Para hacer los selectde la interfaz
 import { MatSelectModule } from '@angular/material/select';
 import { EditarPlanillaComponent } from './editar-planilla/editar-planilla.component';
+
+import { ListarTrabajadoresComponent } from './listar-trabajadores/listar-trabajadores.component';
+
 
 // Los iconos por defecto de SweetAlert2 son los siguientes: error, warning, success y question
 
@@ -46,7 +50,8 @@ import { EditarPlanillaComponent } from './editar-planilla/editar-planilla.compo
     HomeComponent,
     ListarPlanillasComponent,
     AgregarPlanillaComponent,
-    EditarPlanillaComponent
+    EditarPlanillaComponent,
+    ListarTrabajadoresComponent
   ],
   imports: [
     MatSelectModule,

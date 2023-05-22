@@ -10,6 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { ListarPlanillasComponent } from './listar-planillas/listar-planillas.component';
 import { AgregarPlanillaComponent } from './agregar-planilla/agregar-planilla.component';
 import { EditarPlanillaComponent } from './editar-planilla/editar-planilla.component';
+import { ListarTrabajadoresComponent } from './listar-trabajadores/listar-trabajadores.component';
+
+
 
 const routes: Routes = [
   // Otras rutas de tu aplicación
@@ -21,8 +24,11 @@ const routes: Routes = [
   { path: 'listarcc', component : ListarCComponent},
   { path: 'listarPlanillas', component: ListarPlanillasComponent },
   { path: 'agregarPlanilla', component: AgregarPlanillaComponent },
-  { path: 'editarPlanilla/:codigoConcepto', component: EditarPlanillaComponent },
-  { path: 'editarPlanilla/:codigo', component: EditarPlanillaComponent },
+  { path: 'editarPlanilla/:concepto', component: EditarPlanillaComponent },
+  
+
+  { path: 'listar-trabajadores/:codigo', component: ListarTrabajadoresComponent},
+
 ];
 
 @NgModule({

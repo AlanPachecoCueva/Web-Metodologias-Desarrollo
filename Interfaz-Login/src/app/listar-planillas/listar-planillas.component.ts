@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 //para hacer llamadas a la api
 import { HttpClient } from '@angular/common/http';
-
+import { ActivatedRoute } from '@angular/router';
 //Para variables de entorno
 import { environment } from '../../../environments/environments';
 //Alertas
@@ -86,19 +86,22 @@ export class ListarPlanillasComponent {
   //Para las columnas de la tabla
   displayedColumns: string[] = ['Codigo', 'Concepto', 'Prioridad', 'TipoOperacion', 'Cuenta1', 'Aplica_iess', 'Aplica_imp_renta', 'Empresa_Afecta_Iess', 'Borrar', 'Editar'];
   planillas: MovimientoPlanilla[] = [];
-trabajadores: Trabajador[] = [];
+
   busquedaConcepto: String = "";
 
   mostrarAgregar: boolean = false;
 
-  constructor(private http: HttpClient, private router: Router) { };
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { };
 
   //Cuando se inicia la página, lo primero que se hace es cargar los costos
   ngOnInit(): void {
-    const url = `${apiUrl}/GetTrabajadorPorEmisor?codigo=` + this.router.snapshot.paramMap.get('codigo');
-    this.http.get<Trabajador[]>(`${url}`).subscribe(response => {
-      this.trabajadores = response;
+    const url = `${apiUrl}/ListarPlanillas`;
+    this.http.get<MovimientoPlanilla[]>(`${url}`).subscribe(response => {
+      this.planillas = response;
+      console.log("this.planillas: ", this.planillas);
     });
+
+    
   }
 
 
@@ -126,31 +129,32 @@ trabajadores: Trabajador[] = [];
           //Si el usuario confirmó que quiere borrar el centro de costos
 
           //Url que lleva el código y el nombre del centro de costos como parámetros
-          const url = `${apiUrl}/DeleteCentroDeCosto?codigoCentroCostos=${element.Codigo}&descripcioncentrocostos=${element.NombreCentroCostos}`;
+          const url = `${apiUrl}/DeleteMovimientoPlanilla?codigoMovimiento=${element.CodigoConcepto}&descripcionMovimiento=${element.Concepto}`;
 
           //Se hace la eliminación en la api
           this.http.get<MovimientoPlanilla[]>(url).subscribe(async (response) => {
 
             //Si la eliminación fue exitosa
-            // if (response[0].NombreCentroCostos.localeCompare("Eliminación Exitosa") === 0) {
+            console.log("response[0]: ", response[0]);
+            if (response[0].Concepto.localeCompare("Eliminación Exitosa") === 0) {
 
-            //   await Swal.fire({
-            //     title: 'Eliminación correcta',
-            //     text: 'El centro de costos se eliminó correctamente',
-            //     icon: 'success',
-            //     confirmButtonText: 'Aceptar',
-            //   })
-            //   //Se recarga la página
-            //   location.reload();
-            // } else {
-            //   //Si la eliminación falló
-            //   Swal.fire({
-            //     title: 'Eliminación fallida',
-            //     text: 'El centro de costos NO se eliminó correctamente',
-            //     icon: 'error',
-            //     confirmButtonText: 'Aceptar',
-            //   })
-            // }
+              await Swal.fire({
+                title: 'Eliminación correcta',
+                text: 'El movimiento de planilla se eliminó correctamente',
+                icon: 'success',
+                confirmButtonText: 'Aceptar',
+              })
+              //Se recarga la página
+              location.reload();
+            } else {
+              //Si la eliminación falló
+              Swal.fire({
+                title: 'Eliminación fallida',
+                text: 'El movimiento de planilla  NO se eliminó correctamente',
+                icon: 'error',
+                confirmButtonText: 'Aceptar',
+              })
+            }
 
           })
         }
@@ -173,7 +177,7 @@ trabajadores: Trabajador[] = [];
   }
 
   btnEditar(element: any) {
-    this.router.navigate(['/editarPlanilla', element.CodigoConcepto]);
+    this.router.navigate(['/editarPlanilla', element.Concepto]);
   }
 
 
