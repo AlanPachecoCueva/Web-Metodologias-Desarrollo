@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'editarCC/:codigo/:nombreCC', component: EditarCentroCostoComponent},
   { path: 'nuevoCC', component: NuevoCentroCostoComponent },
-  {path : 'listarcc', component : ListarCComponent},
+  { path : 'listarcc', component : ListarCComponent },
   { path: 'listarPlanillas', component: ListarPlanillasComponent },
   { path: 'listar-trabajadores/:codigo', component: ListarTrabajadoresComponent},
 

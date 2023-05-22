@@ -50,7 +50,7 @@ interface Trabajador {
   Tipo_Cuenta: string,
   RSV_Indem_Acumul: string,
   Año_Ult_Rsva_Indemni: string,
-  Mes_Ult_Rsva_Indemni: string,
+  Mes_Ult_Rsva_Indemni: string,
 }
 
 
@@ -62,12 +62,12 @@ interface Trabajador {
 
 export class ListarTrabajadoresComponent {
 
-  
+
   title = 'Interfaz-Login';
 
   //Para las columnas de la tabla
-  displayedColumns: string[] = ['COMP_Codigo', 'Id_Trabajador', 'Tipo_trabajador','Apellido_Paterno', 'Apellido_Materno', 
-  'Nombres', 'Identificacion', 'Entidad_Bancaria', 'Direccion'];
+  displayedColumns: string[] = ['COMP_Codigo', 'Id_Trabajador', 'Tipo_trabajador', 'Apellido_Paterno', 'Apellido_Materno',
+    'Nombres', 'Identificacion', 'Entidad_Bancaria', 'Direccion'];
   trabajadores: Trabajador[] = [];
 
   mostrarAgregar: boolean = false;
@@ -79,9 +79,9 @@ export class ListarTrabajadoresComponent {
     const url = `${apiUrl}/ListarTrabajadores?sucursal=` + this.outer.snapshot.paramMap.get('codigo');
     this.http.get<Trabajador[]>(`${url}`).subscribe(response => {
       this.trabajadores = response;
-    });
-    
-  }
+    });
+
+  }
 
 
   //Para mostrar el agregar o no
