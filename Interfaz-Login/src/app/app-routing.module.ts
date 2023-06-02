@@ -18,15 +18,13 @@ const routes: Routes = [
   // Otras rutas de tu aplicación
   { path: '', component: LoginComponent }, 
   { path: 'login', component: LoginComponent }, // Agrega esta línea para la ruta del LoginComponent
-  { path: 'home', component: HomeComponent },
+  { path: 'home/:codigo', component: HomeComponent },
   { path: 'editarCC/:codigo/:nombreCC', component: EditarCentroCostoComponent},
   { path: 'nuevoCC', component: NuevoCentroCostoComponent },
   { path: 'listarcc', component : ListarCComponent},
   { path: 'listarPlanillas', component: ListarPlanillasComponent },
   { path: 'agregarPlanilla', component: AgregarPlanillaComponent },
   { path: 'editarPlanilla/:concepto', component: EditarPlanillaComponent },
-  
-
   { path: 'listar-trabajadores/:codigo', component: ListarTrabajadoresComponent},
 
 ];
