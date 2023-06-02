@@ -23,13 +23,12 @@ interface MovimientoPlanilla {
   Empresa_Afecta_Iess: string,
   Mensaje: null
 }
-
 @Component({
-  selector: 'app-agregar-planilla',
-  templateUrl: './agregar-planilla.component.html',
-  styleUrls: ['./agregar-planilla.component.css']
+  selector: 'app-agregar-trabajador',
+  templateUrl: './agregar-trabajador.component.html',
+  styleUrls: ['./agregar-trabajador.component.css']
 })
-export class AgregarPlanillaComponent {
+export class AgregarTrabajadorComponent {
   element = {
     Concepto: "",
     Prioridad: "",
@@ -208,8 +207,6 @@ export class AgregarPlanillaComponent {
         alert("El centro de costos no se actualizó correctamente");
       }
 
-      
-
     })
   }
   catch(error) {
@@ -218,7 +215,4 @@ export class AgregarPlanillaComponent {
 
   }
 }
-
-
-
 }

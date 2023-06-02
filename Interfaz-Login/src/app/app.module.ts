@@ -35,6 +35,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { EditarPlanillaComponent } from './editar-planilla/editar-planilla.component';
 
 import { ListarTrabajadoresComponent } from './listar-trabajadores/listar-trabajadores.component';
+import { AgregarTrabajadorComponent } from './agregar-trabajador/agregar-trabajador.component';
 
 
 // Los iconos por defecto de SweetAlert2 son los siguientes: error, warning, success y question
@@ -51,7 +52,8 @@ import { ListarTrabajadoresComponent } from './listar-trabajadores/listar-trabaj
     ListarPlanillasComponent,
     AgregarPlanillaComponent,
     EditarPlanillaComponent,
-    ListarTrabajadoresComponent
+    ListarTrabajadoresComponent,
+    AgregarTrabajadorComponent
   ],
   imports: [
     MatSelectModule,

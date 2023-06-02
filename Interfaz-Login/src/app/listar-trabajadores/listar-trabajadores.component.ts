@@ -62,7 +62,7 @@ interface Trabajador {
 
 export class ListarTrabajadoresComponent {
 
-
+  busquedaTrabajador: String = "";
   title = 'Interfaz-Login';
 
   //Para las columnas de la tabla
@@ -156,6 +156,45 @@ export class ListarTrabajadoresComponent {
   //Para mostrar el agregar o no
   showAdd() {
     this.mostrarAgregar = !this.mostrarAgregar;
+  }
+
+  buscar() {
+    //Si el nombre está vacío no busca
+    if (this.busquedaTrabajador.length < 1) {
+      return;
+    }
+
+    try {
+
+      //Si hay datos válidos busca en la api
+      const url = `${apiUrl}/SearchMovimientoPlanilla?concepto=${this.busquedaTrabajador}`;
+
+      this.http.get<Trabajador[]>(url).subscribe(async (response) => {
+
+        if (!response || response == null) {
+
+          await Swal.fire({
+            title: 'Búsqueda incorrecta',
+            text: 'No se encontró un centro de costos con la descripción proporcionada',
+            icon: 'error',
+            confirmButtonText: 'Aceptar',
+          })
+
+          return;
+        }
+        if (response.length > 0) {
+
+          this.trabajadores = response;
+        }
+
+
+      })
+    }
+    catch (error) {
+
+      console.error("Error en búsqueda en home component:", error);
+
+    }
   }
 
 }

@@ -1,10 +1,42 @@
+<div *ngIf="mostrarAgregar">
+    <button class="closeBtn" mat-raised-button focusable="false" (click)="showAdd()">
+        <mat-icon fontIcon="close-box"></mat-icon>
+    </button>
+    <app-agregar-trabajador></app-agregar-trabajador>
+</div>
+
+
 <div class="cardContainer">
 
     <mat-card class="tableCard">
         <mat-card-title class="titulo">Lista de Trabajadores</mat-card-title>
         <div class="contenedorOpciones">
 
+            <div class="contenedorOpciones2">
+                <button mat-raised-button style="background-color: #eb5c94;" type="submit" focusable="false"
+                    (click)="showAdd()" class="btn2">
+                    + Agregar Movimiento de Planilla
+                </button>
+            </div>
+            <form>
 
+                <!-- <div class="inputs"> -->
+                <!-- <h1>Editar centro de costo</h1> -->
+                <div class="search">
+                    <div class="busqueda">
+                        <input class="inputsBusqueda" type="text" matInput placeholder="Buscar Movimiento de Planilla"
+                            [(ngModel)]="busquedaTrabajador" name="nombreCentroCostos" required>
+
+                        <div class="buscador">
+                            <button mat-raised-button color="edit" type="submit" focusable="false" (click)="buscar()"
+                                class="btn3">
+                                <mat-icon fontIcon="search">Buscar</mat-icon>
+                                Buscar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
 
         <div>
