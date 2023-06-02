@@ -135,7 +135,7 @@ export class ListarPlanillasComponent {
           this.http.get<MovimientoPlanilla[]>(url).subscribe(async (response) => {
 
             //Si la eliminación fue exitosa
-            console.log("response[0]: ", response[0]);
+            console.log("response[0]: ", response);
             if (response[0].Concepto.localeCompare("Eliminación Exitosa") === 0) {
 
               await Swal.fire({
@@ -165,15 +165,13 @@ export class ListarPlanillasComponent {
         //Si el usuario canceló la eliminación
         Swal.fire({
           title: 'Acción cancelada',
-          text: 'No se eliminó el centro de costos',
+          text: 'No se eliminó el movimiento de planilla',
           icon: 'warning',
           confirmButtonText: 'Aceptar',
         })
         return;
       }
     })
-
-
   }
 
   btnEditar(element: any) {
@@ -218,5 +216,10 @@ export class ListarPlanillasComponent {
       console.error("Error en búsqueda en home component:", error);
 
     }
+  }
+
+
+  navegarAtras() {
+    this.router.navigate(['/home']);
   }
 }

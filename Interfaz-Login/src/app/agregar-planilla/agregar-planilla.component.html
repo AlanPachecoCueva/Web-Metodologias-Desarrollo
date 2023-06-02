@@ -10,7 +10,7 @@
                         <div class="inputsSide">
                             <mat-form-field>
                                 <mat-label>Conceptos</mat-label>
-                                <input name="codigo" matInput [(ngModel)]="element.Concepto" placeholder="Codigo"
+                                <input name="codigo" matInput [(ngModel)]="element.Concepto" placeholder="Conceptos"
                                     value="Concepto">
                             </mat-form-field>
 
@@ -140,7 +140,7 @@
 
                             <mat-form-field>
                                 <mat-label>Traba_Proyecto_imp_renta</mat-label>
-                                <mat-select [(ngModel)]="element.Traba_Aplica_iess" placeholder="Traba_Proyecto_imp_renta" (selectionChange)="actualizarValor('Traba_Proyecto_imp_renta', $event.value)" name="Traba_Proyecto_imp_renta">
+                                <mat-select [(ngModel)]="element.Traba_Proyecto_imp_renta" placeholder="Traba_Proyecto_imp_renta" (selectionChange)="actualizarValor('Traba_Proyecto_imp_renta', $event.value)" name="Traba_Proyecto_imp_renta">
                                     <mat-option *ngFor="let Traba_Proyecto_imp_renta of opcionesTrabAfecImpuestoRenta"
                                         [value]="Traba_Proyecto_imp_renta.CodigoMovimientoExce">
                                         {{Traba_Proyecto_imp_renta.CodigoMovimientoExce}}

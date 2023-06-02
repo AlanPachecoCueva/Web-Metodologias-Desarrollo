@@ -7,6 +7,10 @@ import { HttpClient } from '@angular/common/http';
 
 //Para variables de entorno
 import { environment } from '../../../environments/environments';
+
+//Alertas
+import Swal from 'sweetalert2'
+
 const apiUrl = environment.API_URL;
 
 interface CentroDeCosto {
@@ -51,12 +55,23 @@ export class EditarCentroCostoComponent {
         console.log("response: ", response[0]);
         if (response[0].NombreCentroCostos == "Actualizacíón Correcta") {
 
-          alert("El centro de costos no se actualizó correctamente");
-          //Redirecciona a home
+          
+          await Swal.fire({
+            title: "Confirmación", 
+            text:"El centro de costos no se actualizó correctamente", 
+            icon:"warning", 
+            confirmButtonText:"Aceptar", 
+          })
           this.route.navigate(['/home']);
 
         } else {
-          alert("El centro de costos se actualizó correctamente");
+          await Swal.fire({
+            title: "Confirmación", 
+            text:"El centro de costos se actualizó correctamente", 
+            icon:"success", 
+            confirmButtonText:"Aceptar", 
+          })
+          this.route.navigate(['/listarcc']);
         }
 
       })
@@ -64,5 +79,9 @@ export class EditarCentroCostoComponent {
     catch (error) {
       console.log("error:", error);
     }
+  }
+
+  navegarAtras() {
+    this.route.navigate(['/listarcc']);
   }
 }

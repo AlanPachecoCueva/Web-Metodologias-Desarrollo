@@ -67,7 +67,7 @@ export class ListarTrabajadoresComponent {
 
   //Para las columnas de la tabla
   displayedColumns: string[] = ['COMP_Codigo', 'Id_Trabajador', 'Tipo_trabajador', 'Apellido_Paterno', 'Apellido_Materno',
-    'Nombres', 'Identificacion', 'Entidad_Bancaria', 'Direccion'];
+    'Nombres', 'Identificacion', 'Entidad_Bancaria', 'Direccion', 'Borrar', 'Editar'];
   trabajadores: Trabajador[] = [];
 
   mostrarAgregar: boolean = false;
@@ -82,7 +82,76 @@ export class ListarTrabajadoresComponent {
     });
 
   }
+  btnEditar(element: any) {
+    this.router.navigate(['/editarPlanilla', element.Concepto]);
+  }
 
+  //Borrar un centro de costos
+  async btnBorrar(element: any) {
+
+    //Validación de seguridad
+    await Swal.fire({
+      title: '¡Acción crítica!',
+      text: '¿Desea eliminar el trabajador?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Aceptar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+
+      if (result.isConfirmed) {
+        try {
+
+          //Si el usuario confirmó que quiere borrar el centro de costos
+
+          //Url que lleva el código y el nombre del centro de costos como parámetros
+          //const url = `${apiUrl}/DeleteMovimientoPlanilla?codigoMovimiento=${element.CodigoConcepto}&descripcionMovimiento=${element.Concepto}`;
+          const url = `${apiUrl}/DeleteTrabajador?sucursal=${element.COMP_Codigo}&codigoEmpleado=${element.Id_Trabajador}`;
+
+          //Se hace la eliminación en la api
+          this.http.get<Trabajador[]>(url).subscribe(async (response) => {
+
+            //Si la eliminación fue exitosa
+            console.log("response[0]: ", response);
+            if (response[0].COMP_Codigo.localeCompare("Eliminación Exitosa") === 0) {
+
+              await Swal.fire({
+                title: 'Eliminación correcta',
+                text: 'El movimiento de planilla se eliminó correctamente',
+                icon: 'success',
+                confirmButtonText: 'Aceptar',
+              })
+              //Se recarga la página
+              location.reload();
+            } else {
+              //Si la eliminación falló
+              Swal.fire({
+                title: 'Eliminación fallida',
+                text: 'El movimiento de planilla  NO se eliminó correctamente',
+                icon: 'error',
+                confirmButtonText: 'Aceptar',
+              })
+            }
+
+          })
+        }
+        catch (error) {
+          console.error("error en home component:", error);
+        }
+      } else {
+        //Si el usuario canceló la eliminación
+        Swal.fire({
+          title: 'Acción cancelada',
+          text: 'No se eliminó el movimiento de planilla',
+          icon: 'warning',
+          confirmButtonText: 'Aceptar',
+        })
+        return;
+      }
+    })
+
+
+  }
 
   //Para mostrar el agregar o no
   showAdd() {

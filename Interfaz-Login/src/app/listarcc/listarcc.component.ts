@@ -118,7 +118,6 @@ export class ListarCComponent {
       }
     })
 
-
   }
 
   btnEditar(element: any) {
@@ -166,5 +165,10 @@ export class ListarCComponent {
       console.error("Error en búsqueda en home component:", error);
 
     }
+  }
+
+
+  navegarAtras() {
+    this.router.navigate(['/home']);
   }
 }

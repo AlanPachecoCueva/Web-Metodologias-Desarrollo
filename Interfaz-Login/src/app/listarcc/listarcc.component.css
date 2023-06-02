@@ -256,3 +256,11 @@
 .fl-table tr:nth-child(even) {
   background: #F8F8F8;
 } */
+
+
+
+.atras {
+  width: 10px;
+  background-color: transparent;
+  border: transparent;
+}

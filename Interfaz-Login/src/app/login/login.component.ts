@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 //Para variables de entorno
 import { environment } from '../../../environments/environments';
 const apiUrl = environment.API_URL;
+//Alertas
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -43,8 +45,13 @@ export class LoginComponent {
   async onSubmit() {
 
     //Si aún no ha seleccionado una sucursal
-    if (this.emisorSeleccionado == "") {
-      console.log("Se debe seleccionar una sucursal");
+    if (this.emisorSeleccionado == "" || !this.emisorSeleccionado) {
+      Swal.fire({
+        title: 'Error',
+        text: 'Se debe seleccionar una sucursal',
+        icon: 'error',
+        confirmButtonText: 'Aceptar',
+      })
       return;
     }
 
@@ -52,10 +59,6 @@ export class LoginComponent {
 
     // Lógica para procesar el formulario de login
     // Puedes usar this.username y this.password para acceder a los valores del formulario
-    console.log('Usuario:', this.username);
-    console.log('Contraseña:', this.password);
-    console.log("A Home");
-
     const url = `${apiUrl}?usuario=` + this.username + '&password=' + this.password;
 
     this.http.get(url).subscribe(async (response) => {
@@ -66,7 +69,12 @@ export class LoginComponent {
 
       //Comparar si las sucursales son iguales
       if (this.emisorSeleccionado.Codigo != this.respuestaApi.COMPANIA) {
-        console.log("El código de la sucursal no coincide. Emisor seleccionado: ", this.emisorSeleccionado.Codigo, ", la compania es: ", this.respuestaApi.COMPANIA);
+        Swal.fire({
+          title: 'Error',
+          text: '¡Credenciales incorrectas, asegurese que los datos son correctos!',
+          icon: 'error',
+          confirmButtonText: 'Aceptar',
+        })
         return;
       }
 
@@ -77,7 +85,8 @@ export class LoginComponent {
 
 
       if (this.respuestaApi.OBSERVACION == "INGRESO EXITOSO") {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/home', this.emisorSeleccionado.Codigo]);
+       
         //this.router.navigate(['/listar-trabajadores', this.emisorSeleccionado.Codigo]);
 
       }

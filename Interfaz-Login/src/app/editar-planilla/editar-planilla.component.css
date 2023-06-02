@@ -1,9 +1,9 @@
-
 .containerAdd {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
+  background-color: #3b476b;
 }
 
 .tableCard {
@@ -42,3 +42,26 @@
   display: flex;
   flex-direction: column;
 }
+
+.atras {
+  width: 10px;
+  background-color: transparent;
+  border: transparent;
+}
+
+.contenedorOpciones2 {
+  justify-content: center;
+  display: flex;
+}
+
+.btn2 {
+  border: 0;
+  border-radius: 100px;
+  width: 200px;
+  height: 49px;
+  font-size: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
