@@ -51,12 +51,12 @@ export class EditarCentroCostoComponent {
         console.log("response: ", response[0]);
         if (response[0].NombreCentroCostos == "Actualizacíón Correcta") {
 
-          alert("El centro de costos se actualizó correctamente");
+          alert("El centro de costos no se actualizó correctamente");
           //Redirecciona a home
           this.route.navigate(['/home']);
 
         } else {
-          alert("El centro de costos no se actualizó correctamente");
+          alert("El centro de costos se actualizó correctamente");
         }
 
       })
