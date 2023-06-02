@@ -462,7 +462,7 @@ namespace API_Auth.Controllers
 
                     // Mostrar el cuerpo de la respuesta en la consola
 
-                    Console.WriteLine("trabajadoreeeeeeeeeeees");
+                    Console.WriteLine("trabajadores");
                     Console.WriteLine(responseBody);
                     return responseBody;
                 }
