@@ -67,6 +67,7 @@
   font-size: 16px;
   transition: 0.3s;
   cursor: pointer;
+  
 }
 
 .btn3 {
@@ -152,4 +153,12 @@
 
 .fl-table tr:nth-child(even) {
   background: #f8f8f8;
+}
+
+
+
+.atras {
+  width: 10px;
+  background-color: transparent;
+  border: transparent;
 }

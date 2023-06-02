@@ -343,4 +343,8 @@ export class EditarPlanillaComponent {
 
     }
   }
+
+  navegarAtras() {
+    this.route.navigate(['/listarPlanillas']);
+  }
 }

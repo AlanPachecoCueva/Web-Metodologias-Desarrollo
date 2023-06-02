@@ -8,7 +8,7 @@
   left: 0px;
   transform: translate(0%, 25%);
   z-index: 2;
-}
+ }
 
 .containerAdd {
   width: 70%;
@@ -16,11 +16,12 @@
   background-color: rgba(87, 87, 87, 0.884);
   display: flex;
   justify-content: center;
+  border-radius: 10px;
 }
 
 .tableCard {
   /* all: unset; */
-  border-radius: 4px;
+  border-radius: 10px;
   border: 1px solid #eee;
   background-color: #fafafa;
   width: 80%;
@@ -31,17 +32,26 @@
   /* flex-direction: row;
     justify-content: center; */
   line-height: 24px;
+  height: 90%;
+  
+}
+.titulo {
+   justify-content: center;   
+   height: 40px;
+   margin-bottom: 10%;
 }
 
 .inputs {
   margin: 5%;
-  width: 90%;
-  height: 90%;
+  width: 70%;
+  height: 75%;
   text-align: center;
   display: flex;
   flex-direction: column;
-
+  justify-content: center;
+  margin-left: 15%;
 }
+
 
 .agregarbutton {
   border: 0;
@@ -56,12 +66,19 @@
   display: flex;
   justify-content: center;
   transition: 0.3s;
-  margin-left: 22%;
+  margin-left: 14%;
   cursor: pointer;
-  margin-top: 10%;
+  margin-top: 15%;
 }
 
 .h1 {
-  font-size: xx-large;
+  font-size: xx-large;  
+}
 
+.centro {
+  height: 35%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  margin-left: 35%;
 }

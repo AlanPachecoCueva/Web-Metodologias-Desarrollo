@@ -208,6 +208,8 @@ export class AgregarPlanillaComponent {
         alert("El centro de costos no se actualizó correctamente");
       }
 
+      
+
     })
   }
   catch(error) {

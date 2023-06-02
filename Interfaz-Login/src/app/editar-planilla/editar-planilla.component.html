@@ -1,8 +1,11 @@
 <div class="cardContainer cardContainerAdd">
     <div class="containerAdd">
 
-
+       
         <mat-card class="tableCard">
+            <button class="atras" (click)="navegarAtras()">
+                <mat-icon class="flecha-icon" >arrow_backward</mat-icon>
+              </button>
             <form>
                 <div class="inputs">
                     <h1>Editar movimiento de planilla</h1>
@@ -121,7 +124,7 @@
 
 
                             <mat-form-field>
-                                <mat-label>Traba_Aplica_iess</mat-label>
+                                <mat-label>Trabajador Aplica IESS</mat-label>
                                 <mat-select [(ngModel)]="element.Traba_Aplica_iess" placeholder="Traba_Aplica_iess" (selectionChange)="actualizarValor('Traba_Aplica_iess', $event.value)" name="Traba_Aplica_iess">
                                     <mat-option *ngFor="let Traba_Aplica_iess of opcionesTraba_Aplica_iess"
                                         [value]="Traba_Aplica_iess.CodigoMovimientoExce">
@@ -171,7 +174,7 @@
                             </mat-form-field> -->
 
                             <mat-form-field>
-                                <mat-label>Empresa_Afecta_Iess</mat-label>
+                                <mat-label>Empresa Afecta Iess</mat-label>
                                 <mat-select [(ngModel)]="element.Empresa_Afecta_Iess" placeholder="Empresa_Afecta_Iess" (selectionChange)="actualizarValor('Empresa_Afecta_Iess', $event.value)" name="Empresa_Afecta_Iess">
                                     <mat-option value="Si">Si</mat-option>
                                     <mat-option value="No">No</mat-option>
@@ -180,10 +183,14 @@
                         </div>
                     </div>
 
-                    <button mat-raised-button focusable="false" (click)="editarMovimientoPlanilla()">
-                        <mat-icon fontIcon="edit">Editar</mat-icon>
-                        Editar
-                    </button>
+                   
+                    <div class="contenedorOpciones2">
+                        <button mat-raised-button style="background-color: #eb5f95; color: white;" type="submit" focusable="false" (click)="editarMovimientoPlanilla()" class="btn2">
+                          <mat-icon fontIcon="edit">Editar</mat-icon>
+                          Editar
+                        </button>
+                      </div>
+
                 </div>
             </form>
         </mat-card>

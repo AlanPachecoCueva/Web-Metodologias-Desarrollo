@@ -217,4 +217,9 @@ export class ListarPlanillasComponent {
 
     }
   }
+
+
+  navegarAtras() {
+    this.router.navigate(['/home']);
+  }
 }

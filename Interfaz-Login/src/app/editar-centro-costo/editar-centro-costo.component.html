@@ -1,9 +1,13 @@
 <div class="cardContainer">
     <mat-card class="tableCard">
-
+        <button class="atras" (click)="navegarAtras()">
+            <mat-icon class="flecha-icon" >arrow_backward</mat-icon>
+          </button>
         <form>
-            <div class="inputs">
+            <div class="titulo">
                 <h1>Editar centro de costo</h1>
+            </div>
+            <div class="inputs">             
 
                 <mat-form-field>
                     <mat-label>Edita el nombre del centro de costos</mat-label>
@@ -11,11 +15,16 @@
                         placeholder="Nombre Centro Costos" value="{{element.NombreCentroCostos}}">
                 </mat-form-field>
 
-                <button mat-raised-button color="edit" focusable="false" (click)="editar()">
-                    <mat-icon fontIcon="edit">Editar</mat-icon>
-                    Editar
-                  </button>
+                
             </div>
+            <div class="contenedorOpciones2">
+              <button mat-raised-button style="background-color: #eb5f95; color: white;" type="submit" focusable="false" (click)="editar()" class="btn2">
+                <mat-icon fontIcon="edit">Editar</mat-icon>
+                Editar
+              </button>
+            </div>
+
+
         </form>
     </mat-card>
 </div>

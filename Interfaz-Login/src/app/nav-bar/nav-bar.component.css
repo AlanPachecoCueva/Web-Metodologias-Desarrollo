@@ -80,3 +80,17 @@
       height: calc(100vh - 50px);
     }
   }
+
+  .nav-title {
+    height: 20%;
+  }
+
+  .icono {   
+    display: flex;
+    height: 6vh;
+  }
+
+  .nav-list {
+    display: flex;
+    margin-right: 100%;
+  }
