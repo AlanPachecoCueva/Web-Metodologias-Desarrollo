@@ -1,5 +1,9 @@
-.closeBtn{
-  z-index: 3;
+.closeBtn {
+  position: absolute;
+ 
+  margin-left: 2%;
+  border-radius: 50px; 
+  margin-top: -70px;
 }
 
 .tableCard {
@@ -7,7 +11,7 @@
   border-radius: 4px;
   border: 1px solid #eee;
   background-color: #fafafa;
-  width: 80%;
+  width: 70%;
   margin: 0 8px 16px;
   margin: 2%;
   display: flex;
@@ -156,9 +160,12 @@
 }
 
 
-
 .atras {
   width: 10px;
   background-color: transparent;
   border: transparent;
+}
+
+.tabla {
+  overflow-y: auto;  
 }

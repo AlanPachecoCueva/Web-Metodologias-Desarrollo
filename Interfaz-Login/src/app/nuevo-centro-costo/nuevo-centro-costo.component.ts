@@ -24,10 +24,6 @@ export class NuevoCentroCostoComponent {
   element = { Codigo: "", NombreCentroCostos: "" };
   constructor(private http: HttpClient, private router: Router) { }
 
-
-
-
-
   crearNuevoCC() {
     console.log("element a crear: ", this.element);
 

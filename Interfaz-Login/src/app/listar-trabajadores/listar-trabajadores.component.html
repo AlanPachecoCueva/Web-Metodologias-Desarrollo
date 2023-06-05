@@ -16,8 +16,7 @@
         <div class="contenedorOpciones">
 
             <div class="contenedorOpciones2">
-
-                <button mat-raised-button style="background-color: #eb5c94; color: white;" type="submit" focusable="false"
+                <button mat-raised-button style="background-color: #eb5c94;color:white" type="submit" focusable="false"
                     (click)="showAdd()" class="btn2">
                     + Agregar Trabajador
                 </button>
@@ -43,7 +42,7 @@
             </form>
         </div>
 
-        <div>
+        <div class="tabla">
             <table mat-table [dataSource]="trabajadores" class="fl-table">
                 <ng-container matColumnDef="COMP_Codigo">
                     <th mat-header-cell *matHeaderCellDef> COMP_Codigo </th>
@@ -112,6 +111,8 @@
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
             </table>
+
         </div>
-    </mat-card>
+
+</mat-card>
 </div>

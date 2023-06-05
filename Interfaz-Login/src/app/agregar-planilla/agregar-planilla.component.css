@@ -3,14 +3,11 @@
   height: 100%;
   display: flex;
   justify-content: center;
-
   position: fixed;
   top: 0px;
   left: 0px;
   transform: translate(0%, 0%);
-
   z-index: 2;
-
 
 }
 
@@ -58,3 +55,18 @@
   display: flex;
   flex-direction: column;
 }
+
+.agregarbutton {
+  background: #c05c6d;
+  color: #dfdeee;
+  border-radius: 100px;
+  width: 340px;
+  height: 49px !important;
+  font-size: 16px;
+  background-position-y: absolute; 
+  display: flex;  
+  transition: 0.3s;  
+  cursor: pointer;
+  
+}
+
