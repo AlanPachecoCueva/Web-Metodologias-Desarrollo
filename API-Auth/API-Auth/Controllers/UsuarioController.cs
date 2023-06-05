@@ -653,5 +653,92 @@ namespace API_Auth.Controllers
                 return ("erooor: " + error);
             }
         }
+
+        [HttpGet("TipoTrabajador")]
+
+        public async Task<string> GetTipoTrabajador()
+        {
+            Console.WriteLine("GetTipoTrabajador()");
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/TipoTrabajador";
+
+
+                    // Hacer una petición GET a la URL y esperar la respuesta
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    // Leer el contenido de la respuesta como una cadena de caracteres
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    // Mostrar el cuerpo de la respuesta en la consola
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
+            }
+        }
+
+        [HttpGet("Generos")]
+
+        public async Task<string> GetGeneros()
+        {
+            Console.WriteLine("GetGeneros()");
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/Genero";
+
+
+                    // Hacer una petición GET a la URL y esperar la respuesta
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    // Leer el contenido de la respuesta como una cadena de caracteres
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    // Mostrar el cuerpo de la respuesta en la consola
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
+            }
+        }
+
+        [HttpGet("EstadoTrabajador")]
+
+        public async Task<string> GetEstadoTrabajador()
+        {
+            Console.WriteLine("GetEstadoTrabajador()");
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/EstadoTrabajador";
+
+
+                    // Hacer una petición GET a la URL y esperar la respuesta
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    // Leer el contenido de la respuesta como una cadena de caracteres
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    // Mostrar el cuerpo de la respuesta en la consola
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
+            }
+        }
     }
 }

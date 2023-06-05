@@ -9,13 +9,17 @@
 <div class="cardContainer">
 
     <mat-card class="tableCard">
+        <button class="atras" (click)="navegarAtras()">
+            <mat-icon class="flecha-icon" >arrow_backward</mat-icon>
+          </button>
         <mat-card-title class="titulo">Lista de Trabajadores</mat-card-title>
         <div class="contenedorOpciones">
 
             <div class="contenedorOpciones2">
-                <button mat-raised-button style="background-color: #eb5c94;" type="submit" focusable="false"
+
+                <button mat-raised-button style="background-color: #eb5c94; color: white;" type="submit" focusable="false"
                     (click)="showAdd()" class="btn2">
-                    + Agregar Movimiento de Planilla
+                    + Agregar Trabajador
                 </button>
             </div>
             <form>
@@ -24,7 +28,7 @@
                 <!-- <h1>Editar centro de costo</h1> -->
                 <div class="search">
                     <div class="busqueda">
-                        <input class="inputsBusqueda" type="text" matInput placeholder="Buscar Movimiento de Planilla"
+                        <input class="inputsBusqueda" type="text" matInput placeholder="Buscar Trabajador"
                             [(ngModel)]="busquedaTrabajador" name="nombreCentroCostos" required>
 
                         <div class="buscador">
