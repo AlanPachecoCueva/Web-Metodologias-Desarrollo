@@ -386,7 +386,7 @@ namespace API_Auth.Controllers
                     //    //url1 = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaInsert?conceptos="+concepto+"&prioridad="+prioridad+"&tipooperacion="+tipoOperacion+"&cuenta1="+c1+"&cuenta2="+c2+"&cuenta3="+c3+"&cuenta4="+c4+"&MovimientoExcepcion1="+me1+"&MovimientoExcepcion2="+me2+"&MovimientoExcepcion3="+me3+"&Traba_Aplica_iess="+Traba_Aplica_iess+"&Traba_Proyecto_imp_renta="+Traba_Proyecto_imp_renta+"&Aplica_Proy_Renta="+Aplica_Proy_Renta;
                     //    Empresa_Afecta_Iess = "";
                     //}
-                    url1 = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaInsert?conceptos=" + concepto + "&prioridad=" + prioridad + "&tipooperacion=" + tipoOperacion + "&cuenta1=" + c1 + "&cuenta2=" + c2 + "&cuenta3=" + c3 + "&cuenta4=" + c4 + "&MovimientoExcepcion1=" + me1 + "&MovimientoExcepcion2=" + me2 + "&MovimientoExcepcion3=" + me3+ "&Traba_Aplica_iess=" + Traba_Aplica_iess + "&Traba_Proyecto_imp_renta=" + Traba_Proyecto_imp_renta + "&Aplica_Proy_Renta=" + Aplica_Proy_Renta+ "&Empresa_Afecta_Iess="+ Empresa_Afecta_Iess;
+                    url1 = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaInsert?conceptos=" + concepto + "&prioridad=" + prioridad + "&tipooperacion=" + tipoOperacion + "&cuenta1=" + c1 + "&cuenta2=" + c2 + "&cuenta3=" + c3 + "&cuenta4=" + c4 + "&MovimientoExcepcion1=" + me1 + "&MovimientoExcepcion2=" + me2 + "&MovimientoExcepcion3=" + me3 + "&Traba_Aplica_iess=" + Traba_Aplica_iess + "&Traba_Proyecto_imp_renta=" + Traba_Proyecto_imp_renta + "&Aplica_Proy_Renta=" + Aplica_Proy_Renta + "&Empresa_Afecta_Iess=" + Empresa_Afecta_Iess;
 
 
                     // Hacer una petición GET a la URL y esperar la respuesta
@@ -411,7 +411,7 @@ namespace API_Auth.Controllers
 
         [HttpGet("UpdateMovimientoPlanilla")]
 
-        public async Task<string> UpdateMovimientoPlanilla( String codigo, String concepto, int prioridad, String tipoOperacion, String c1, String c2, String c3, String c4, String me1, String me2, String me3, String Traba_Aplica_iess, String Traba_Proyecto_imp_renta, String Aplica_Proy_Renta, String Empresa_Afecta_Iess)
+        public async Task<string> UpdateMovimientoPlanilla(String codigo, String concepto, int prioridad, String tipoOperacion, String c1, String c2, String c3, String c4, String me1, String me2, String me3, String Traba_Aplica_iess, String Traba_Proyecto_imp_renta, String Aplica_Proy_Renta, String Empresa_Afecta_Iess)
         {
             Console.WriteLine("UpdateMovimientoPlanilla");
             try
@@ -419,8 +419,8 @@ namespace API_Auth.Controllers
                 Console.WriteLine("Traba_Aplica_iess, Traba_Proyecto_imp_renta, Aplica_Proy_Renta, Empresa_Afecta_Iess: ", Traba_Aplica_iess, Traba_Proyecto_imp_renta, Aplica_Proy_Renta, Empresa_Afecta_Iess);
                 using (var httpClient = new HttpClient())
                 {
-                    String url1 = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaUpdate?codigoplanilla="+codigo+"&conceptos=" + concepto + "&prioridad=" + prioridad + "&tipooperacion=" + tipoOperacion + "&cuenta1=" + c1 + "&cuenta2=" + c2 + "&cuenta3=" + c3 + "&cuenta4=" + c4 + "&MovimientoExcepcion1=" + me1 + "&MovimientoExcepcion2=" + me2 + "&MovimientoExcepcion3=" + me3+ "&Traba_Aplica_iess=" + Traba_Aplica_iess + "&Traba_Proyecto_imp_renta=" + Traba_Proyecto_imp_renta + "&Aplica_Proy_Renta=" + Aplica_Proy_Renta+ "&Empresa_Afecta_Iess="+ Empresa_Afecta_Iess;
-                           
+                    String url1 = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaUpdate?codigoplanilla=" + codigo + "&conceptos=" + concepto + "&prioridad=" + prioridad + "&tipooperacion=" + tipoOperacion + "&cuenta1=" + c1 + "&cuenta2=" + c2 + "&cuenta3=" + c3 + "&cuenta4=" + c4 + "&MovimientoExcepcion1=" + me1 + "&MovimientoExcepcion2=" + me2 + "&MovimientoExcepcion3=" + me3 + "&Traba_Aplica_iess=" + Traba_Aplica_iess + "&Traba_Proyecto_imp_renta=" + Traba_Proyecto_imp_renta + "&Aplica_Proy_Renta=" + Aplica_Proy_Renta + "&Empresa_Afecta_Iess=" + Empresa_Afecta_Iess;
+
                     // Hacer una petición GET a la URL y esperar la respuesta
                     Console.Write("URL: ", url1);
                     HttpResponseMessage response = await httpClient.GetAsync(url1);
@@ -624,18 +624,18 @@ namespace API_Auth.Controllers
 
 
         // Trabajadores
-        
+
         [HttpGet("DeleteTrabajador")]
 
         public async Task<string> DeleteTrabajador(String sucursal, String codigoEmpleado)
         {
-            
+
             try
             {
                 using (var httpClient = new HttpClient())
                 {
                     var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/TrabajadorDelete?sucursal=" + sucursal + "&codigoempleado=" + codigoEmpleado;
-              
+
                     // Hacer una petición GET a la URL y esperar la respuesta
                     HttpResponseMessage response = await httpClient.GetAsync(url);
 
@@ -740,5 +740,209 @@ namespace API_Auth.Controllers
                 return ("erooor: " + error);
             }
         }
+
+        [HttpGet("EstadoCivil")]
+
+        public async Task<string> GetEstadoCivil()
+        {
+            Console.WriteLine("GetEstadoCivil()");
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/EstadoCivil";
+
+
+                    // Hacer una petición GET a la URL y esperar la respuesta
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    // Leer el contenido de la respuesta como una cadena de caracteres
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    // Mostrar el cuerpo de la respuesta en la consola
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
+            }
+        }
+
+        [HttpGet("TipoCese")]
+
+        public async Task<string> GetTipoCese()
+        {
+            Console.WriteLine("GetTipoCese()");
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/TipoCese";
+
+
+                    // Hacer una petición GET a la URL y esperar la respuesta
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    // Leer el contenido de la respuesta como una cadena de caracteres
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    // Mostrar el cuerpo de la respuesta en la consola
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
+            }
+        }
+
+        [HttpGet("TipoContrato")]
+
+        public async Task<string> GetTipoContrato()
+        {
+            Console.WriteLine("GetTipoContrato()");
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/TipoContrato";
+
+
+                    // Hacer una petición GET a la URL y esperar la respuesta
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    // Leer el contenido de la respuesta como una cadena de caracteres
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    // Mostrar el cuerpo de la respuesta en la consola
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
+            }
+        }
+
+        [HttpGet("TipoComision")]
+
+        public async Task<string> GetTipoComision()
+        {
+            Console.WriteLine("GetTipoComision()");
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/TipoComision";
+
+
+                    // Hacer una petición GET a la URL y esperar la respuesta
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    // Leer el contenido de la respuesta como una cadena de caracteres
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    // Mostrar el cuerpo de la respuesta en la consola
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
+            }
+        }
+
+        [HttpGet("TipoVacacion")]
+
+        public async Task<string> GetTipoVacacion()
+        {
+            Console.WriteLine("GetTipoVacacion()");
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/PeriodoVacaciones";
+
+
+                    // Hacer una petición GET a la URL y esperar la respuesta
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    // Leer el contenido de la respuesta como una cadena de caracteres
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    // Mostrar el cuerpo de la respuesta en la consola
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
+            }
+        }
+
+        [HttpGet("EsReingreso")]
+
+        public async Task<string> GetEsReingreso()
+        {
+            Console.WriteLine("GetEsReingreso()");
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/EsReingreso";
+
+
+                    // Hacer una petición GET a la URL y esperar la respuesta
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    // Leer el contenido de la respuesta como una cadena de caracteres
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    // Mostrar el cuerpo de la respuesta en la consola
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
+            }
+        }
+        [HttpGet("TipoCuenta")]
+
+        public async Task<string> GetTipoCuenta()
+        {
+            Console.WriteLine("GetTipoCuenta()");
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/TipoCuenta";
+
+
+                    // Hacer una petición GET a la URL y esperar la respuesta
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    // Leer el contenido de la respuesta como una cadena de caracteres
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    // Mostrar el cuerpo de la respuesta en la consola
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
+            }
+        }
     }
+
+
 }
