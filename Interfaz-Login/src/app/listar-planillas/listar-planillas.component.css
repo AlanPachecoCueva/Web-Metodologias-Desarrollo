@@ -162,3 +162,11 @@
   background-color: transparent;
   border: transparent;
 }
+
+.tabla {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 500px; /* Adjust the maximum height as needed */
+  max-width: 1300px;
+  justify-content: center;
+}

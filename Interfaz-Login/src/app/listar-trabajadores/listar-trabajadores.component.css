@@ -254,3 +254,13 @@
     background: #F8F8F8;
   } */
   
+
+    .tabla {
+      overflow-x: auto;
+      overflow-y: auto;
+      max-height: 500px; /* Adjust the maximum height as needed */
+      max-width: 1300px;
+      justify-content: center;
+    }
+    
+  
