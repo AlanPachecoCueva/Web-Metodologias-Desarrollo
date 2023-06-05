@@ -197,4 +197,8 @@ export class ListarTrabajadoresComponent {
     }
   }
 
+  navegarAtras() {
+    this.router.navigate(['/home']);
+  }
+
 }
