@@ -1,8 +1,10 @@
 <!-- Para que el agregar se muestre como un componente encima del resto -->
 <div *ngIf="mostrarAgregar">
-  <button class="closeBtn" mat-raised-button focusable="false" (click)="showAdd()">
-    <mat-icon fontIcon="close-box"></mat-icon>
+  <div class="close">
+  <button class="closeBtn" mat-raised-button focusable="false" (click)="showAdd()" style="background-color: #eb5f95; color: white;">
+   X
   </button>
+</div>
   <app-nuevo-centro-costo></app-nuevo-centro-costo>
 </div>
 
