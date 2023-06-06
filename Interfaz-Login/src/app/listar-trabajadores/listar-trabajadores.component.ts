@@ -79,6 +79,7 @@ export class ListarTrabajadoresComponent {
     const url = `${apiUrl}/ListarTrabajadores?sucursal=` + this.route.snapshot.paramMap.get('codigo');
     this.http.get<Trabajador[]>(`${url}`).subscribe(response => {
       this.trabajadores = response;
+      console.log("this.trabajadores: ", this.trabajadores);
     });
 
   }
