@@ -1,7 +1,7 @@
 <!-- Para que el agregar se muestre como un componente encima del resto -->
 <div *ngIf="mostrarAgregar">
   <div class="close">
-  <button class="closeBtn" mat-raised-button focusable="false" (click)="showAdd()" style="background-color: #eb5f95; color: white;">
+  <button class="closeBtn" mat-raised-button focusable="false" (click)="showAdd()" style="background-color: #79a6fe; color: white;">
    X
   </button>
 </div>
@@ -15,17 +15,11 @@
     <button class="atras" (click)="navegarAtras()">
       <mat-icon class="flecha-icon" >arrow_backward</mat-icon>
     </button>
-    <mat-card-title class="titulo">Lista de Centros de Costos</mat-card-title>
+    <mat-card-title class="titulo">Centros de Costos</mat-card-title>
    
     
     <div class="contenedorOpciones">
       
-      <div class="contenedorOpciones2">
-        <button mat-raised-button style="background-color: #eb5f95; color: white;" type="submit" focusable="false" (click)="showAdd()" class="btn2">
-          + Agregar Centro de Costo
-        </button>
-      </div>
-
       <form>
         <!-- <div class="inputs"> -->
         <!-- <h1>Editar centro de costo</h1> -->
@@ -43,6 +37,13 @@
           </div>
         </div>
       </form>
+
+      <div class="contenedorOpciones2">
+        <button mat-raised-button style="background-color: #79a6fe; color: white;" type="submit" focusable="false" (click)="showAdd()" class="btn2">
+          + Agregar Centro de Costo
+        </button>
+      </div>
+
     </div>
 
     <div class="tabla">
@@ -59,18 +60,7 @@
           <td mat-cell *matCellDef="let element"> {{element.NombreCentroCostos}} </td>
         </ng-container>
 
-
-        <ng-container matColumnDef="Borrar">
-          <th mat-header-cell *matHeaderCellDef> Borrar </th>
-          <td mat-cell *matCellDef="let element;">
-            <button mat-raised-button color="warn" focusable="false" (click)="btnBorrar(element)">
-              <mat-icon fontIcon="delete">Borrar</mat-icon>
-              Borrar
-            </button>
-          </td>
-        </ng-container>
-
-      <ng-container matColumnDef="Editar">
+       <ng-container matColumnDef="Editar">
         <th mat-header-cell *matHeaderCellDef> Editar </th>
         <td mat-cell *matCellDef="let element;">
           <button mat-raised-button color="edit" focusable="false" (click)="btnEditar(element)">
@@ -79,16 +69,24 @@
           </button>
         </td>
       </ng-container>
+
+      <ng-container matColumnDef="Borrar">
+        <th mat-header-cell *matHeaderCellDef> Borrar </th>
+        <td mat-cell *matCellDef="let element;">
+          <button mat-raised-button color="warn" focusable="false" (click)="btnBorrar(element)">
+            <mat-icon fontIcon="delete">Borrar</mat-icon>
+            Borrar
+          </button>
+        </td>
+      </ng-container>
+
       
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
       </table>
     </div>
-  </mat-card>
-  
-
-  
+  </mat-card>  
 </div>
 
 
