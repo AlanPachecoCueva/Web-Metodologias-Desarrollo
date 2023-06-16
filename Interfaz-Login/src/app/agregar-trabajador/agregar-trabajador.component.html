@@ -94,7 +94,7 @@
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
-                            
+
                             <mat-form-field>
                                 <mat-label>FechaNacimiento</mat-label>
                                 <input name="FechaNacimiento" matInput [(ngModel)]="element.FechaNacimiento"
@@ -123,29 +123,29 @@
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
-                            
+
                             <mat-form-field>
                                 <mat-label>FormaCalculo13ro</mat-label>
-                                <input name="FormaCalculo13ro" matInput [(ngModel)]="element.FormaCalculo13ro" placeholder="FormaCalculo13ro"
-                                    value="FormaCalculo13ro">
+                                <input name="FormaCalculo13ro" matInput [(ngModel)]="element.FormaCalculo13ro"
+                                    placeholder="FormaCalculo13ro" value="FormaCalculo13ro">
                             </mat-form-field>
 
                             <mat-form-field>
                                 <mat-label>FormaCalculo14ro</mat-label>
-                                <input name="FormaCalculo14ro" matInput [(ngModel)]="element.FormaCalculo14ro" placeholder="FormaCalculo14ro"
-                                    value="FormaCalculo14ro">
+                                <input name="FormaCalculo14ro" matInput [(ngModel)]="element.FormaCalculo14ro"
+                                    placeholder="FormaCalculo14ro" value="FormaCalculo14ro">
                             </mat-form-field>
 
                             <mat-form-field>
                                 <mat-label>BoniComplementaria</mat-label>
-                                <input name="BoniComplementaria" matInput [(ngModel)]="element.BoniComplementaria" placeholder="BoniComplementaria"
-                                    value="BoniComplementaria">
+                                <input name="BoniComplementaria" matInput [(ngModel)]="element.BoniComplementaria"
+                                    placeholder="BoniComplementaria" value="BoniComplementaria">
                             </mat-form-field>
 
                             <mat-form-field>
                                 <mat-label>BoniEspecial</mat-label>
-                                <input name="BoniEspecial" matInput [(ngModel)]="element.BoniEspecial" placeholder="BoniEspecial"
-                                    value="BoniEspecial">
+                                <input name="BoniEspecial" matInput [(ngModel)]="element.BoniEspecial"
+                                    placeholder="BoniEspecial" value="BoniEspecial">
                             </mat-form-field>
                         </div>
 
@@ -217,8 +217,7 @@
                             <mat-form-field>
                                 <mat-label>Tipo_Cese</mat-label>
                                 <mat-select [(ngModel)]="element.Tipo_Cese" placeholder="Tipo_Cese"
-                                    (selectionChange)="actualizarValor('TipoOperacion', $event.value)"
-                                    name="Tipo_Cese">
+                                    (selectionChange)="actualizarValor('TipoOperacion', $event.value)" name="Tipo_Cese">
                                     <mat-option *ngFor="let tc of tiposCese" [value]="tc.Descripcion">
                                         {{tc.Codigo}}
                                     </mat-option>
@@ -272,8 +271,9 @@
 
                             <mat-form-field>
                                 <mat-label>Fecha_Ult_Actualizacion</mat-label>
-                                <input name="Fecha_Ult_Actualizacion" matInput [(ngModel)]="element.Fecha_Ult_Actualizacion"
-                                    placeholder="Fecha_Ult_Actualizacion" value="Fecha_Ult_Actualizacion">
+                                <input name="Fecha_Ult_Actualizacion" matInput
+                                    [(ngModel)]="element.Fecha_Ult_Actualizacion" placeholder="Fecha_Ult_Actualizacion"
+                                    value="Fecha_Ult_Actualizacion">
                             </mat-form-field>
 
                             <mat-form-field>
@@ -289,14 +289,14 @@
 
                             <mat-form-field>
                                 <mat-label>Remuneracion_Minima</mat-label>
-                                <input name="Remuneracion_Minima" matInput [(ngModel)]="element.Remuneracion_Minima" placeholder="Remuneracion_Minima"
-                                    value="Remuneracion_Minima">
+                                <input name="Remuneracion_Minima" matInput [(ngModel)]="element.Remuneracion_Minima"
+                                    placeholder="Remuneracion_Minima" value="Remuneracion_Minima">
                             </mat-form-field>
 
                             <mat-form-field>
                                 <mat-label>Fondo_Reserva</mat-label>
-                                <input name="Fondo_Reserva" matInput [(ngModel)]="element.Fondo_Reserva" placeholder="Fondo_Reserva"
-                                    value="Fondo_Reserva">
+                                <input name="Fondo_Reserva" matInput [(ngModel)]="element.Fondo_Reserva"
+                                    placeholder="Fondo_Reserva" value="Fondo_Reserva">
                             </mat-form-field>
 
                             <mat-form-field>
@@ -307,10 +307,13 @@
                         </div>
                     </div>
 
-                    <button mat-raised-button focusable="false" (click)="crearNuevoCC()">
-                        <mat-icon fontIcon="edit">Agregar</mat-icon>
-                        Agregar
-                    </button>
+                    <div class="botonagregar">
+                        <button style="background-color: #79a6fe; color: white;" class="agregarbutton" mat-raised-button
+                            focusable="false" (click)="crearNuevoCC()">
+                            <mat-icon>add_circle_outline</mat-icon>
+                            Agregar
+                        </button>
+                    </div>
                 </div>
             </form>
         </mat-card>

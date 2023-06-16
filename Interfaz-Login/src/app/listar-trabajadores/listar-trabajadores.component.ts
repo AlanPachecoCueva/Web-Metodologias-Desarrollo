@@ -67,7 +67,7 @@ export class ListarTrabajadoresComponent {
 
   //Para las columnas de la tabla
   displayedColumns: string[] = ['COMP_Codigo', 'Id_Trabajador', 'Tipo_trabajador', 'Apellido_Paterno', 'Apellido_Materno',
-    'Nombres', 'Identificacion', 'Entidad_Bancaria', 'Direccion', 'Borrar', 'Editar'];
+    'Nombres', 'Identificacion', 'Entidad_Bancaria', 'CarnetIESS', 'Direccion', 'Telefono Fijo', 'Telefono Movil', 'Genero', 'Nro_Cuenta_Bancaria', 'Ocupacion', 'FechaIngreso','Tipo_Contrato', 'Editar', 'Borrar'];
   trabajadores: Trabajador[] = [];
 
   mostrarAgregar: boolean = false;
