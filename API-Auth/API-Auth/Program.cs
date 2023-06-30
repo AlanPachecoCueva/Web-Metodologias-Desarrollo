@@ -2,16 +2,27 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+var MyAllowSpecificOrigins = "MyAllowSpecificOrigins";
+
+// builder.Services.AddCors(options =>
+// {
+
+//     options.AddPolicy(name: MyAllowSpecificOrigins,
+//                   policy =>
+//                   {
+//                       policy.AllowAnyOrigin();
+//                   });
+// });
 
 builder.Services.AddCors(options =>
 {
-
-    options.AddPolicy(name: MyAllowSpecificOrigins,
-                  policy =>
-                  {
-                      policy.AllowAnyOrigin();
-                  });
+    options.AddPolicy(name: "MyAllowSpecificOrigins",
+                      builder =>
+                      {
+                          builder.AllowAnyOrigin()
+                                 .AllowAnyMethod()
+                                 .AllowAnyHeader();
+                      });
 });
 
 

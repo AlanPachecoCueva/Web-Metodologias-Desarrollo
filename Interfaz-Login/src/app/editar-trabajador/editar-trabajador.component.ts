@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input  } from '@angular/core';
 
 //para hacer llamadas a la api
 import { HttpClient } from '@angular/common/http';
@@ -6,98 +6,56 @@ import { Router } from '@angular/router';
 //Para variables de entorno
 import { environment } from '../../../environments/environments';
 const apiUrl = environment.API_URL;
-
-//CLASE para parsear el resultado de la api
-interface Trabajador {
-  COMP_Codigo: number;
-  Id_Trabajador: string;
-  Tipo_trabajador: string;
-  Apellido_Paterno: string;
-  Apellido_Materno: string;
-  Nombres: string;
-  Identificacion: string;
-  Entidad_Bancaria: string;
-  CarnetIESS: string;
-  Direccion: string;
-  Telefono_Fijo: string;
-  Telefono_Movil: string;
-  Genero: string;
-  Nro_Cuenta_Bancaria: string;
-  Codigo_Categoria_Ocupacion: string;
-  Ocupacion: string;
-  Centro_Costos: number;
-  Nivel_Salarial: string;
-  EstadoTrabajador: string;
-  Tipo_Contrato: string;
-  Tipo_Cese: string;
-  EstadoCivil: string;
-  TipodeComision: string;
-  FechaNacimiento: string;
-  FechaIngreso: string;
-  FechaCese: string;
-  PeriododeVacaciones: string;
-  FechaReingreso: string;
-  Fecha_Ult_Actualizacion: string;
-  EsReingreso: string;
-  BancoCTA_CTE: string;
-  Tipo_Cuenta: string;
-  FormaCalculo13ro: number;
-  FormaCalculo14ro: number;
-  BoniComplementaria: number;
-  BoniEspecial: number;
-  Remuneracion_Minima: number;
-  Fondo_Reserva: string;
-  Mensaje: string;
-}
-
 @Component({
-  selector: 'app-agregar-trabajador',
-  templateUrl: './agregar-trabajador.component.html',
-  styleUrls: ['./agregar-trabajador.component.css'],
+  selector: 'app-editar-trabajador',
+  templateUrl: './editar-trabajador.component.html',
+  styleUrls: ['./editar-trabajador.component.css']
 })
-export class AgregarTrabajadorComponent {
-  element = {
-    //TRABAJADOR
-    COMP_Codigo: 1,
-    Id_Trabajador: '',
-    Tipo_trabajador: '',
-    Apellido_Paterno: '',
-    Apellido_Materno: '',
-    Nombres: '',
-    Identificacion: '',
-    Entidad_Bancaria: '',
-    CarnetIESS: 'NA',
-    Direccion: '',
-    Telefono_Fijo: '',
-    Telefono_Movil: '',
-    Genero: '',
-    Nro_Cuenta_Bancaria: '',
-    Codigo_Categoria_Ocupacion: '',
-    Ocupacion: '2',
-    Centro_Costos: 1,
-    Nivel_Salarial: '',
-    EstadoTrabajador: '',
-    Tipo_Contrato: '',
-    Tipo_Cese: '',
-    EstadoCivil: '',
-    TipodeComision: '',
-    FechaNacimiento: '',
-    FechaIngreso: '',
-    FechaCese: '',
-    PeriododeVacaciones: '',
-    FechaReingreso: '',
-    Fecha_Ult_Actualizacion: '',
-    EsReingreso: '',
-    BancoCTA_CTE: '',
-    Tipo_Cuenta: null,
-    FormaCalculo13ro: 1,
-    FormaCalculo14ro: 0,
-    BoniComplementaria: 0,
-    BoniEspecial: 0,
-    Remuneracion_Minima: 480,
-    Fondo_Reserva: '',
-    Mensaje: '',
-  };
+export class EditarTrabajadorComponent {
+  @Input() element: any;
+  //element = this.trabajador;
+  // element = {
+  //   //TRABAJADOR
+  //   COMP_Codigo: 1,
+  //   Id_Trabajador: '',
+  //   Tipo_trabajador: '',
+  //   Apellido_Paterno: '',
+  //   Apellido_Materno: '',
+  //   Nombres: '',
+  //   Identificacion: '',
+  //   Entidad_Bancaria: '',
+  //   CarnetIESS: 'NA',
+  //   Direccion: '',
+  //   Telefono_Fijo: '',
+  //   Telefono_Movil: '',
+  //   Genero: '',
+  //   Nro_Cuenta_Bancaria: '',
+  //   Codigo_Categoria_Ocupacion: '',
+  //   Ocupacion: '2',
+  //   Centro_Costos: 1,
+  //   Nivel_Salarial: '',
+  //   EstadoTrabajador: '',
+  //   Tipo_Contrato: '',
+  //   Tipo_Cese: '',
+  //   EstadoCivil: '',
+  //   TipodeComision: '',
+  //   FechaNacimiento: '',
+  //   FechaIngreso: '',
+  //   FechaCese: '',
+  //   PeriododeVacaciones: '',
+  //   FechaReingreso: '',
+  //   Fecha_Ult_Actualizacion: '',
+  //   EsReingreso: '',
+  //   BancoCTA_CTE: '',
+  //   Tipo_Cuenta: null,
+  //   FormaCalculo13ro: 1,
+  //   FormaCalculo14ro: 0,
+  //   BoniComplementaria: 0,
+  //   BoniEspecial: 0,
+  //   Remuneracion_Minima: 480,
+  //   Fondo_Reserva: '',
+  //   Mensaje: '',
+  // };
 
   tiposOperaciones: any;
 
@@ -266,6 +224,4 @@ export class AgregarTrabajadorComponent {
       return 'error: ' + error;
     }
   }
-
- // agregar trabajardor queryParams: COMP_Codigo=1&Tipo_trabajador=Servicios&Apellido_Paterno=Pachequito&Apellido_Materno=Cuevita&Nombres=Alansito&Identificacion=2200247860&Entidad_Bancaria=Bp&CarnetIESS=&Direccion=Interfaz&Telefono_Fijo=02840034&Telefono_Movil=0993507153&Genero=Masculino &Nro_Cuenta_Bancaria=0976839202&Codigo_Categoria_Ocupacion=1&Ocupacion=&Centro_Costos=0&Nivel_Salarial=1&EstadoTrabajador=Vacaciones&Tipo_Contrato=Entre_Artesanos_Operarios&Tipo_Cese=3&EstadoCivil=4&TipodeComision=N&FechaNacimiento=05/11/2001&FechaIngreso=06/06/2020&FechaCese=09/06/2020&FechaReingreso=06/07/2020&Fecha_Ult_Actualizacion=06/06/2023&EsReingreso=1&Tipo_Cuenta=2&FormaCalculo13ro=1&FormaCalculo14ro=0&BoniComplementaria=0&BoniEspecial=0&Remuneracion_Minima=480&Fondo_Reserva=0
 }

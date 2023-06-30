@@ -71,7 +71,8 @@ export class ListarTrabajadoresComponent {
   trabajadores: Trabajador[] = [];
 
   mostrarAgregar: boolean = false;
-
+  mostrarEditar: boolean = false;
+  elementToEdit: any;
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { };
 
   //Cuando se inicia la página, lo primero que se hace es cargar los costos
@@ -157,6 +158,12 @@ export class ListarTrabajadoresComponent {
   //Para mostrar el agregar o no
   showAdd() {
     this.mostrarAgregar = !this.mostrarAgregar;
+  }
+  showEdit(element?: any) {
+    this.elementToEdit = element;
+    console.log("this.elementToEdit: ", this.elementToEdit);
+    this.mostrarEditar = !this.mostrarEditar;
+
   }
 
   buscar() {

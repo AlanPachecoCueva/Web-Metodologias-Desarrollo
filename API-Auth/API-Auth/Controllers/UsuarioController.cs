@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
-using System.Net.Http;
 using System.Web;
+
+using Newtonsoft.Json;
 using static System.Net.WebRequestMethods;
+using Newtonsoft.Json.Linq;
 
 namespace API_Auth.Controllers
 {
@@ -942,6 +944,200 @@ namespace API_Auth.Controllers
                 return ("erooor: " + error);
             }
         }
+
+        public class TrabajadorModel
+        {
+            public int COMP_Codigo { get; set; }
+            public string Tipo_trabajador { get; set; }
+            public string Apellido_Paterno { get; set; }
+            public string Apellido_Materno { get; set; }
+            public string Nombres { get; set; }
+            public string Identificacion { get; set; }
+            public string Entidad_Bancaria { get; set; }
+            public string CarnetIESS { get; set; }
+            public string Direccion { get; set; }
+            public string Telefono_Fijo { get; set; }
+            public string Telefono_Movil { get; set; }
+            public string Genero { get; set; }
+            public string Nro_Cuenta_Bancaria { get; set; }
+            public string Codigo_Categoria_Ocupacion { get; set; }
+            public string Ocupacion { get; set; }
+            public int Centro_Costos { get; set; }
+            public string Nivel_Salarial { get; set; }
+            public string EstadoTrabajador { get; set; }
+            public string Tipo_Contrato { get; set; }
+            public string Tipo_Cese { get; set; }
+            public string EstadoCivil { get; set; }
+            public string TipodeComision { get; set; }
+            public string FechaNacimiento { get; set; }
+            public string FechaIngreso { get; set; }
+            public string FechaCese { get; set; }
+            public string FechaReingreso { get; set; }
+            public string Fecha_Ult_Actualizacion { get; set; }
+            public string EsReingreso { get; set; }
+            public string Tipo_Cuenta { get; set; }
+            public int FormaCalculo13ro { get; set; }
+            public int FormaCalculo14ro { get; set; }
+            public int BoniComplementaria { get; set; }
+            public int BoniEspecial { get; set; }
+            public int Remuneracion_Minima { get; set; }
+            public string Fondo_Reserva { get; set; }
+        }
+
+        [HttpPost("CreateTrabajador")]
+
+        //36
+        public async Task<string> CreateTrabajador([FromBody] TrabajadorModel trabajador)
+        {
+
+            
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var baseUrl = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/TrabajadorInsert";
+                    var queryParams = $"COMP_Codigo={trabajador.COMP_Codigo}&Tipo_trabajador={trabajador.Tipo_trabajador}&Apellido_Paterno={trabajador.Apellido_Paterno}&Apellido_Materno={trabajador.Apellido_Materno}&Nombres={trabajador.Nombres}&Identificacion={trabajador.Identificacion}&Entidad_Bancaria={trabajador.Entidad_Bancaria}&CarnetIESS={trabajador.CarnetIESS}&Direccion={trabajador.Direccion}&Telefono_Fijo={trabajador.Telefono_Fijo}&Telefono_Movil={trabajador.Telefono_Movil}&Genero={trabajador.Genero}&Nro_Cuenta_Bancaria={trabajador.Nro_Cuenta_Bancaria}&Codigo_Categoria_Ocupacion={trabajador.Codigo_Categoria_Ocupacion}&Ocupacion={trabajador.Ocupacion}&Centro_Costos={trabajador.Centro_Costos}&Nivel_Salarial={trabajador.Nivel_Salarial}&EstadoTrabajador={trabajador.EstadoTrabajador}&Tipo_Contrato={trabajador.Tipo_Contrato}&Tipo_Cese={trabajador.Tipo_Cese}&EstadoCivil={trabajador.EstadoCivil}&TipodeComision={trabajador.TipodeComision}&FechaNacimiento={trabajador.FechaNacimiento}&FechaIngreso={trabajador.FechaIngreso}&FechaCese={trabajador.FechaCese}&FechaReingreso={trabajador.FechaReingreso}&Fecha_Ult_Actualizacion={trabajador.Fecha_Ult_Actualizacion}&EsReingreso={trabajador.EsReingreso}&Tipo_Cuenta={trabajador.Tipo_Cuenta}&FormaCalculo13ro={trabajador.FormaCalculo13ro}&FormaCalculo14ro={trabajador.FormaCalculo14ro}&BoniComplementaria={trabajador.BoniComplementaria}&BoniEspecial={trabajador.BoniEspecial}&Remuneracion_Minima={trabajador.Remuneracion_Minima}&Fondo_Reserva={trabajador.Fondo_Reserva}";
+                    
+                    var url = $"{baseUrl}?{queryParams}";
+                    Console.WriteLine("agregar trabajardor url: {0}", url);
+                    HttpResponseMessage response = await httpClient.PostAsync(url, null);
+
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("error: " + error);
+            }
+        }
+
+
+        //[HttpPost("CreateTrabajador")]
+
+        ////36
+        //public async Task<string> CreateTrabajador([FromBody] TrabajadorModel trabajador)
+        //{
+        //    int COMP_Codigo = trabajador.COMP_Codigo;
+        //    string Tipo_trabajador = trabajador.Tipo_trabajador;
+        //    string Apellido_Paterno = trabajador.Apellido_Paterno;
+        //    string Apellido_Materno = trabajador.Apellido_Materno;
+        //    string Nombres = trabajador.Nombres;
+        //    string Identificacion = trabajador.Identificacion;
+        //    string Entidad_Bancaria = trabajador.Entidad_Bancaria;
+        //    string CarnetIESS = trabajador.CarnetIESS;
+        //    string Direccion = trabajador.Direccion;
+        //    string Telefono_Fijo = trabajador.Telefono_Fijo;
+        //    string Telefono_Movil = trabajador.Telefono_Movil;
+        //    string Genero = trabajador.Genero;
+        //    string Nro_Cuenta_Bancaria = trabajador.Nro_Cuenta_Bancaria;
+        //    string Codigo_Categoria_Ocupacion = trabajador.Codigo_Categoria_Ocupacion;
+        //    string Ocupacion = trabajador.Ocupacion;
+        //    int Centro_Costos = trabajador.Centro_Costos;
+        //    string Nivel_Salarial = trabajador.Nivel_Salarial;
+        //    string EstadoTrabajador = trabajador.EstadoTrabajador;
+        //    string Tipo_Contrato = trabajador.Tipo_Contrato;
+        //    string Tipo_Cese = trabajador.Tipo_Cese;
+        //    string EstadoCivil = trabajador.EstadoCivil;
+        //    string TipodeComision = trabajador.TipodeComision;
+        //    string FechaNacimiento = trabajador.FechaNacimiento;
+        //    string FechaIngreso = trabajador.FechaIngreso;
+        //    string FechaCese = trabajador.FechaCese;
+        //    string FechaReingreso = trabajador.FechaReingreso;
+        //    string Fecha_Ult_Actualizacion = trabajador.Fecha_Ult_Actualizacion;
+        //    string EsReingreso = trabajador.EsReingreso;
+        //    string Tipo_Cuenta = trabajador.Tipo_Cuenta;
+        //    int FormaCalculo13ro = trabajador.FormaCalculo13ro;
+        //    int FormaCalculo14ro = trabajador.FormaCalculo14ro;
+        //    int BoniComplementaria = trabajador.BoniComplementaria;
+        //    int BoniEspecial = trabajador.BoniEspecial;
+        //    int Remuneracion_Minima = trabajador.Remuneracion_Minima;
+        //    string Fondo_Reserva = trabajador.Fondo_Reserva;
+
+        //    Console.WriteLine("agregar trabajardor: ");
+        //    Console.WriteLine("agregar trabajardor FechaNacimiento: {0}", FechaNacimiento);
+        //    try
+        //    {
+        //        using (var httpClient = new HttpClient())
+        //        {
+        //            // Crear un objeto JSON vacío
+        //            JObject data = new JObject();
+
+        //            // Agregar propiedades al objeto JSON
+        //            data["FormaCalculo14ro"] = FormaCalculo14ro;
+        //            data["BoniComplementaria"] = BoniComplementaria;
+        //            data["BoniEspecial"] = BoniEspecial;
+        //            data["Remuneracion_Minima"] = Remuneracion_Minima;
+        //            data["Fondo_Reserva"] = Fondo_Reserva;
+
+        //            data["FechaReingreso"] = FechaReingreso;
+        //            data["Fecha_Ult_Actualizacion"] = Fecha_Ult_Actualizacion;
+        //            data["EsReingreso"] = EsReingreso;
+        //            data["Tipo_Cuenta"] = Tipo_Cuenta;
+        //            data["FormaCalculo13ro"] = FormaCalculo13ro;
+
+        //            data["EstadoCivil"] = EstadoCivil;
+        //            data["TipodeComision"] = TipodeComision;
+        //            data["FechaNacimiento"] = FechaNacimiento;
+        //            data["FechaIngreso"] = FechaIngreso;
+        //            data["FechaCese"] = FechaCese;
+
+        //            data["Nivel_Salarial"] = Nivel_Salarial;
+        //            data["EstadoTrabajador"] = EstadoTrabajador;
+        //            data["Codigo_Categoria_Ocupacion"] = Codigo_Categoria_Ocupacion;
+        //            data["Tipo_Contrato"] = Tipo_Contrato;
+        //            data["Tipo_Cese"] = Tipo_Cese;
+
+
+        //            data["Genero"] = Genero;
+        //            data["Nro_Cuenta_Bancaria"] = Nro_Cuenta_Bancaria;
+        //            data["Codigo_Categoria_Ocupacion"] = Codigo_Categoria_Ocupacion;
+        //            data["Ocupacion"] = Ocupacion;
+        //            data["Centro_Costos"] = Centro_Costos;
+
+
+        //            data["COMP_Codigo"] = COMP_Codigo;
+        //            data["Tipo_trabajador"] = Tipo_trabajador;
+        //            data["Apellido_Paterno"] = Apellido_Paterno;
+        //            data["Apellido_Materno"] = Apellido_Materno;
+        //            data["Nombres"] = Nombres;
+        //            data["Identificacion"] = Identificacion;
+        //            data["Entidad_Bancaria"] = Entidad_Bancaria;
+        //            data["CarnetIESS"] = CarnetIESS;
+        //            data["Direccion"] = Direccion;
+        //            data["Telefono_Fijo"] = Telefono_Fijo;
+        //            data["Telefono_Movil"] = Telefono_Movil;
+        //            data["Mensaje"] = "M";
+
+        //            Console.WriteLine("data agregar trabajardor: {0}", data.ToString());
+
+        //            var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/TrabajadorInsert";
+
+
+        //            var jsonTrabajadorData = data.ToString();
+
+        //            // Crea el contenido de la solicitud HTTP
+        //            var content = new StringContent(jsonTrabajadorData);
+
+        //            // Hacer una petición POST a la URL y esperar la respuesta
+        //            HttpResponseMessage response = await httpClient.PostAsync(url, content);
+
+        //            // Leer el contenido de la respuesta como una cadena de caracteres
+        //            string responseBody = await response.Content.ReadAsStringAsync();
+
+        //            // Mostrar el cuerpo de la respuesta en la consola
+        //            Console.WriteLine(responseBody);
+        //            return responseBody;
+        //        }
+        //        //return "Holi";
+        //    }
+        //    catch (Exception error)
+        //    {
+        //        return ("erooor: " + error);
+        //    }
+        //}
     }
 
 

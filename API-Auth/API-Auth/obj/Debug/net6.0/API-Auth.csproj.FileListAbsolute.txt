@@ -158,3 +158,4 @@ C:\Users\Admin\Desktop\Metodologías De Desarrollo\Web-Metodologias-Desarrollo\A
 C:\Users\Admin\Desktop\Metodologías De Desarrollo\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\API-Auth.pdb
 C:\Users\Admin\Desktop\Metodologías De Desarrollo\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\API-Auth.genruntimeconfig.cache
 C:\Users\Admin\Desktop\Metodologías De Desarrollo\Web-Metodologias-Desarrollo\API-Auth\API-Auth\obj\Debug\net6.0\ref\API-Auth.dll
+C:\Users\Admin\Desktop\Metodologías De Desarrollo\Web-Metodologias-Desarrollo\API-Auth\API-Auth\bin\Debug\net6.0\Newtonsoft.Json.dll
