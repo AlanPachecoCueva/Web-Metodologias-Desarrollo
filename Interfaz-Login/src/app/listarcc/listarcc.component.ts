@@ -34,7 +34,7 @@ export class ListarCComponent {
   title = 'Interfaz-Login';
 
   //Para las columnas de la tabla
-  displayedColumns: string[] = ['Codigo', 'NombreCentroCostos', 'Borrar', 'Editar'];
+  displayedColumns: string[] = ['Codigo', 'NombreCentroCostos', 'Editar', 'Borrar'];
   costos: CentroDeCosto[] = [];
 
   busquedaNombreCC: String = "";

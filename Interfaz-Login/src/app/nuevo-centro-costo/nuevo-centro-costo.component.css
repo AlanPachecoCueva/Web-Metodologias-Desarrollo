@@ -13,7 +13,7 @@
 .containerAdd {
   width: 75%;
   height: 110%;
-  background-color: rgba(87, 87, 87, 0.884);
+  background-color: rgba(87, 87, 87, 0.884);  
   display: flex;
   justify-content: center;
   border-radius: 10px;
@@ -35,6 +35,7 @@
   height: 90%;
   
 }
+
 .titulo {
    justify-content: center;   
    height: 40px;
@@ -55,7 +56,6 @@
 
 .agregarbutton {
   border: 0;
-  background: #c05c6d;
   color: #dfdeee;
   border-radius: 100px;
   width: 340px;

@@ -84,7 +84,7 @@ export class ListarPlanillasComponent {
   title = 'Interfaz-Login';
 
   //Para las columnas de la tabla
-  displayedColumns: string[] = ['Codigo', 'Concepto', 'Prioridad', 'TipoOperacion', 'Cuenta1', 'Aplica_iess', 'Aplica_imp_renta', 'Empresa_Afecta_Iess', 'Borrar', 'Editar'];
+  displayedColumns: string[] = ['Codigo', 'Concepto', 'Prioridad', 'TipoOperacion', 'Cuenta1', 'Aplica_iess', 'Aplica_imp_renta', 'Empresa_Afecta_Iess', 'Editar', 'Borrar'];
   planillas: MovimientoPlanilla[] = [];
 
   busquedaConcepto: String = "";

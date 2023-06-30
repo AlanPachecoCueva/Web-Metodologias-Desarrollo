@@ -1,9 +1,8 @@
 .closeBtn {
-  position: absolute;
- 
+  position: absolute; 
   margin-left: 2%;
   border-radius: 50px; 
-  margin-top: -70px;
+  margin-top: -60px;
 }
 
 .tableCard {
@@ -132,6 +131,7 @@
   max-width: 100%;
   white-space: nowrap;
   background-color: white;
+
 }
 
 .fl-table td,
@@ -147,7 +147,8 @@
 
 .fl-table th {
   color: #ffffff;
-  background: #79a6fe;
+  /* background: #79a6fe; */
+  background: #324960;
 }
 
 .fl-table th:nth-child(odd) {
@@ -169,3 +170,4 @@
 .tabla {
   overflow-y: auto;  
 }
+

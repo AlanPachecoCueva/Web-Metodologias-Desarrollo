@@ -2,9 +2,7 @@
 using System.Net.Http;
 using System.Web;
 
-using Newtonsoft.Json;
 using static System.Net.WebRequestMethods;
-using Newtonsoft.Json.Linq;
 
 namespace API_Auth.Controllers
 {

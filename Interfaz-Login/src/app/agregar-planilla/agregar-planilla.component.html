@@ -28,7 +28,7 @@
                             </mat-form-field> -->
 
                             <mat-form-field>
-                                <mat-label>Tipo Operacion</mat-label>
+                                <mat-label>Tipo Operación</mat-label>
                                 <mat-select [(ngModel)]="element.TipoOperacion" placeholder="Tipo Operacion"
                                     (selectionChange)="actualizarValor('TipoOperacion', $event.value)"
                                     name="TipoOperacion">
@@ -71,7 +71,7 @@
                             </mat-form-field> -->
 
                             <mat-form-field>
-                                <mat-label>Movimiento Excepcion 1</mat-label>
+                                <mat-label>Movimiento Excepción 1</mat-label>
                                 <mat-select [(ngModel)]="element.MovimientoExcepcion1"
                                     placeholder="Movimiento Excepcion 1"
                                     (selectionChange)="actualizarValor('MovimientoExcepcion1', $event.value)"
@@ -90,7 +90,7 @@
                             </mat-form-field> -->
 
                             <mat-form-field>
-                                <mat-label>Movimiento Excepcion 2</mat-label>
+                                <mat-label>Movimiento Excepción 2</mat-label>
                                 <mat-select [(ngModel)]="element.MovimientoExcepcion2"
                                     placeholder="Movimiento Excepcion 2"
                                     (selectionChange)="actualizarValor('MovimientoExcepcion2', $event.value)"
@@ -111,7 +111,7 @@
 
 
                             <mat-form-field>
-                                <mat-label>Movimiento Excepcion 3</mat-label>
+                                <mat-label>Movimiento Excepción 3</mat-label>
                                 <mat-select [(ngModel)]="element.MovimientoExcepcion3"
                                     placeholder="Movimiento Excepcion 3"
                                     (selectionChange)="actualizarValor('MovimientoExcepcion3', $event.value)"
@@ -132,10 +132,10 @@
 
 
                             <mat-form-field>
-                                <mat-label>Traba_Aplica_iess</mat-label>
+                                <mat-label>Trabajador Aplica IESS</mat-label>
                                 <mat-select [(ngModel)]="element.Traba_Aplica_iess" placeholder="Traba_Aplica_iess"
                                     (selectionChange)="actualizarValor('Traba_Aplica_iess', $event.value)"
-                                    name="Traba_Aplica_iess">
+                                    name="Trabajador Aplica IESS">
                                     <mat-option *ngFor="let Traba_Aplica_iess of opcionesTraba_Aplica_iess"
                                         [value]="Traba_Aplica_iess.CodigoMovimientoExce">
                                         {{Traba_Aplica_iess.CodigoMovimientoExce}}
@@ -152,9 +152,9 @@
                             </mat-form-field> -->
 
                             <mat-form-field>
-                                <mat-label>Traba_Proyecto_imp_renta</mat-label>
+                                <mat-label>Trabajador Proyecto Impuesto Renta</mat-label>
                                 <mat-select [(ngModel)]="element.Traba_Proyecto_imp_renta"
-                                    placeholder="Traba_Proyecto_imp_renta"
+                                    placeholder="Trabajador Proyecto Impuesto Renta"
                                     (selectionChange)="actualizarValor('Traba_Proyecto_imp_renta', $event.value)"
                                     name="Traba_Proyecto_imp_renta">
                                     <mat-option *ngFor="let Traba_Proyecto_imp_renta of opcionesTrabAfecImpuestoRenta"
@@ -172,8 +172,8 @@
                             </mat-form-field> -->
 
                             <mat-form-field>
-                                <mat-label>Aplica_Proy_Renta</mat-label>
-                                <mat-select [(ngModel)]="element.Aplica_Proy_Renta" placeholder="Aplica_Proy_Renta"
+                                <mat-label>Aplica Proy Renta</mat-label>
+                                <mat-select [(ngModel)]="element.Aplica_Proy_Renta" placeholder="Aplica Proy Renta"
                                     (selectionChange)="actualizarValor('Aplica_Proy_Renta', $event.value)"
                                     name="Aplica_Proy_Renta">
                                     <mat-option value="Si">Si</mat-option>
@@ -189,8 +189,8 @@
                             </mat-form-field> -->
 
                             <mat-form-field>
-                                <mat-label>Empresa_Afecta_Iess</mat-label>
-                                <mat-select [(ngModel)]="element.Empresa_Afecta_Iess" placeholder="Empresa_Afecta_Iess"
+                                <mat-label>Empresa Afecta IESS</mat-label>
+                                <mat-select [(ngModel)]="element.Empresa_Afecta_Iess" placeholder="Empresa Afecta IESS"
                                     (selectionChange)="actualizarValor('Empresa_Afecta_Iess', $event.value)"
                                     name="Empresa_Afecta_Iess">
                                     <mat-option value="Si">Si</mat-option>
@@ -204,7 +204,7 @@
                     </div>
 
                     <div class="botonagregar">
-                        <button style="background-color: #eb5f95; color: white;" class="agregarbutton" mat-raised-button
+                        <button style="background-color: #79a6fe; color: white;" class="agregarbutton" mat-raised-button
                             focusable="false" (click)="crearNuevoCC()">
                             <mat-icon>add_circle_outline</mat-icon>
                             Agregar
