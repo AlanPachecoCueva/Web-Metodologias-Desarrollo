@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -13,7 +14,10 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'Interfaz-Login';
 
-  constructor(private router: Router) { }
+  codigo: any;
+
+  constructor(private router: Router, private route: ActivatedRoute) { };
+
 
 
 
@@ -21,4 +25,5 @@ export class AppComponent {
     const currentUrl = this.router.url;
     return currentUrl !== '/';
   }
+
 }

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Input } from '@angular/core';
+
+import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
+
+  codigo: string | null;
+
+  constructor(private localStorageService: LocalStorageService) {
+    this.codigo = this.localStorageService.obtenerDatoDelLocalStorage() || '';
+  }
+
 
 }

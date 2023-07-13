@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { LocalStorageService } from '../local-storage.service';
 
 //para hacer llamadas a la api
 import { HttpClient } from '@angular/common/http';
@@ -23,13 +24,14 @@ export class LoginComponent {
 
   emisores: any;
 
-  constructor(private router: Router, private http: HttpClient) { };
+  constructor(private router: Router, private http: HttpClient, private localStorageService: LocalStorageService) { };
 
   emisorSeleccionado: any;
 
   onEmisorSeleccionado() {
     console.log("emisorSeleccionado: ", this.emisorSeleccionado);
     // aquí puedes hacer lo que necesites con el valor seleccionado
+    
   }
 
   ngOnInit(): void {
@@ -85,7 +87,10 @@ export class LoginComponent {
 
 
       if (this.respuestaApi.OBSERVACION == "INGRESO EXITOSO") {
-        this.router.navigate(['/home', this.emisorSeleccionado.Codigo]);
+        //Guardamos el dato en el local storage
+        console.log("this.emisorSeleccionado.Codigo: ", this.emisorSeleccionado.Codigo);
+        this.localStorageService.guardarDatoEnLocalStorage(this.emisorSeleccionado.Codigo);
+        this.router.navigate(['/home']);
        
         //this.router.navigate(['/listar-trabajadores', this.emisorSeleccionado.Codigo]);
 
