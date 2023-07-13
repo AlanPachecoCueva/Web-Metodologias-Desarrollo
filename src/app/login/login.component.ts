@@ -20,12 +20,12 @@ export class LoginComponent {
   username: string = '';
   password: string = '';
   respuestaApi: any;
-
   emisores: any;
+  emisorSeleccionado: any='';  
 
   constructor(private router: Router, private http: HttpClient) { };
 
-  emisorSeleccionado: any;
+  
 
   onEmisorSeleccionado() {
     console.log("emisorSeleccionado: ", this.emisorSeleccionado);
@@ -33,6 +33,7 @@ export class LoginComponent {
   }
 
   ngOnInit(): void {
+    this.emisorSeleccionado = null;
     console.log("apiUrl: ", apiUrl);
     this.http.get(`${apiUrl}/Emisores`).subscribe(response => {
 
