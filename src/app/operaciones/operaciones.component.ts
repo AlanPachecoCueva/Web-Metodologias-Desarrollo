@@ -17,6 +17,15 @@ export class OperacionesComponent {
     console.log("codigo: ", codigo);
     this.router.navigate(['/listar-trabajadores', codigo]);
   }
+
+  goGCC(){
+    let codigo: any;
+
+    codigo = this.route.snapshot.paramMap.get('codigo') ? this.route.snapshot.paramMap.get('codigo') : "";
+    console.log("codigo: ", codigo);
+    this.router.navigate(['/gestion-cuenta-contable', codigo]);
+  }
+  
 }
 
 
