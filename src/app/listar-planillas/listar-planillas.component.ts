@@ -13,6 +13,9 @@ import Swal from 'sweetalert2'
 //URL DE LA API
 const apiUrl = environment.API_URL;
 
+import { validarCredenciales } from '../credentialsComponent';
+
+
 //CLASE para parsear el resultado de la api
 interface MovimientoPlanilla {
   CodigoConcepto: number,
@@ -112,6 +115,11 @@ export class ListarPlanillasComponent {
 
   //Borrar un centro de costos
   async btnBorrar(element: any) {
+
+
+
+
+
 
     //Validación de seguridad
     await Swal.fire({
