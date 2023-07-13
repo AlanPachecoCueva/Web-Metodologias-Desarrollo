@@ -40,6 +40,8 @@ import { EditarTrabajadorComponent } from './editar-trabajador/editar-trabajador
 import { MantenimientosComponent } from './mantenimientos/mantenimientos.component';
 import { OperacionesComponent } from './operaciones/operaciones.component';
 import { GestionCuentaContableComponent } from './gestion-cuenta-contable/gestion-cuenta-contable.component';
+import { AgregarGestionCuentaContableComponent } from './agregar-gestion-cuenta-contable/agregar-gestion-cuenta-contable.component';
+import { EditarGestionCuentaContableComponent } from './editar-gestion-cuenta-contable/editar-gestion-cuenta-contable.component';
 
 
 // Los iconos por defecto de SweetAlert2 son los siguientes: error, warning, success y question
@@ -61,7 +63,9 @@ import { GestionCuentaContableComponent } from './gestion-cuenta-contable/gestio
     EditarTrabajadorComponent,
     MantenimientosComponent,
     OperacionesComponent,
-    GestionCuentaContableComponent
+    GestionCuentaContableComponent,
+    AgregarGestionCuentaContableComponent,
+    EditarGestionCuentaContableComponent
   ],
   imports: [
     MatSelectModule,

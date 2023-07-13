@@ -40,7 +40,7 @@ export class GestionCuentaContableComponent {
   title = 'Interfaz-Login';
 
   //Para las columnas de la tabla
-  displayedColumns: string[] = ['CodigoConceptoNomina', 'DescripcionConcepto', 'CodigoCategoriaocupacional', 'DescripcionConcepto', 'CodigoOperacion', 'CodigoCuentaContable', 'CodigoTipoCuenta', 'DescripcionCuenta'];
+  displayedColumns: string[] = ['CodigoConceptoNomina', 'DescripcionConcepto', 'CodigoCategoriaocupacional', 'DescripcionConcepto', 'CodigoOperacion', 'CodigoCuentaContable', 'CodigoTipoCuenta', 'DescripcionCuenta', 'Editar', 'Borrar'];
   gcs: GestionCC[] = [];
 
   busquedaConcepto: String = "";
