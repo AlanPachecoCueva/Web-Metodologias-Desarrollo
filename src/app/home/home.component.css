@@ -65,7 +65,11 @@
   background: #5d33e6;
 }
 
-.bannerImg {
- 
+.bannerImg { 
   margin-top: auto;
+}
+
+.udla {
+  border-color: black;
+  background-color: #5d33e6;
 }
