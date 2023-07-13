@@ -1,13 +1,13 @@
 <div *ngIf="mostrarAgregar">
-    <button class="closeBtn" mat-raised-button focusable="false" (click)="showAdd()">
-        <mat-icon fontIcon="close-box"></mat-icon>
+    <button class="closeBtn" mat-raised-button focusable="false" (click)="showAdd()" style="background-color: #79a6fe; color: white;">
+        X
     </button>
     <app-agregar-trabajador></app-agregar-trabajador>
 </div>
 
 <div *ngIf="mostrarEditar">
-    <button class="closeBtn" mat-raised-button focusable="false" (click)="showEdit()">
-        <mat-icon fontIcon="close-box"></mat-icon>
+    <button class="closeBtn" mat-raised-button focusable="false" (click)="showEdit()" style="background-color: #79a6fe; color: white;">
+        X
     </button>
     <app-editar-trabajador [element]="elementToEdit"></app-editar-trabajador>
 </div>

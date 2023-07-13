@@ -34,14 +34,12 @@
 }
 
 .inputsBusqueda {
-  margin: 20px auto;
+  margin: 2% auto;
   background: transparent;
   border-radius: 5px;
   border-style: double;
-
-  padding: 14px 10px;
-  width: 200px;
-
+  padding: 1em;
+  width: 80%;
   color: #0e0a0a;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
@@ -61,6 +59,8 @@
   font-size: 16px;
   transition: 0.3s;
   cursor: pointer;
+  padding: 10px 20px;
+  margin-bottom: 6%;
   
 }
 
@@ -91,9 +91,9 @@
 }
 
 .contenedorOpciones2 {
-  justify-content: center;
+  justify-content: flex-end;
   display: flex;
-  margin-left: 5%
+  margin-top: 10px;
   
 }
 
@@ -113,7 +113,7 @@
 .buscador {
   display: flex;
   align-items: center;
-  
+  margin-left: 1em;  
 }
 
 .busqueda {
@@ -126,7 +126,8 @@
 .search {
   display: flex;
   flex-direction: row;
-  justify-content: end;
+  justify-content: space-between;
+  align-items: center;
   
 }
 
@@ -177,4 +178,67 @@
 
 .tableCard {
   overflow-x: auto;
+}
+
+
+@media (max-width: 768px) {
+  .inputsBusqueda {
+    width: 100%;
+  }
+  
+  .busqueda {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/* Para dispositivos móviles */
+@media (max-width: 480px) {
+  /* Estilos para pantallas de hasta 480px de ancho */
+  .inputsBusqueda {
+    width: 100%;
+  }
+  
+  .busqueda {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn2 {
+    font-size: 14px; /* Ajusta el tamaño de la fuente */
+    padding: 8px 16px; /* Ajusta el relleno del botón */
+  }
+}
+
+
+
+/* Para pantallas más grandes */
+@media (max-width: 1024px) {
+  /* Estilos para pantallas de hasta 1024px de ancho */
+  .inputsBusqueda {
+    width: 100%;
+  }
+  
+  .busqueda {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Para pantallas aún más grandes */
+@media (max-width: 1200px) {
+  /* Estilos para pantallas de hasta 1200px de ancho */
+  .inputsBusqueda {
+    width: 100%;
+  }
+  
+  .busqueda {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+  }
 }
