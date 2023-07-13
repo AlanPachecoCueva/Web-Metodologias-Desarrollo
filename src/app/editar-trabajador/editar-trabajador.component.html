@@ -49,7 +49,7 @@
                                 <mat-select [(ngModel)]="element.COMP_Codigo" placeholder="Compania"
                                     (selectionChange)="actualizarValor('TipoOperacion', $event.value)" name="Compania">
                                     <mat-option *ngFor="let compania of emisores" [value]="compania.Codigo">
-                                        {{compania.Codigo}}  {{compania.NombreEmisor}}
+                                        {{compania.Codigo}} {{compania.NombreEmisor}}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
@@ -60,7 +60,7 @@
                                     (selectionChange)="actualizarValor('TipoOperacion', $event.value)"
                                     name="Tipo_trabajador">
                                     <mat-option *ngFor="let tipo of tipoTrabajador" [value]="tipo.Descripcion">
-                                        {{tipo.Descripcion}}  {{tipo.Codigo}}
+                                        {{tipo.Descripcion}} {{tipo.Codigo}}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
@@ -78,7 +78,7 @@
                                     (selectionChange)="actualizarValor('TipoOperacion', $event.value)"
                                     name="EstadoTrabajador">
                                     <mat-option *ngFor="let estado of estadosTrabajador" [value]="estado.Descripcion">
-                                        {{estado.Descripcion}}  {{estado.Codigo}}
+                                        {{estado.Descripcion}} {{estado.Codigo}}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
@@ -89,11 +89,11 @@
                                     (selectionChange)="actualizarValor('TipoOperacion', $event.value)"
                                     name="tiposContrato">
                                     <mat-option *ngFor="let tc of tiposContrato" [value]="tc.Descripcion">
-                                        {{tc.Descripcion}}  {{tc.Codigo}}
+                                        {{tc.Descripcion}} {{tc.Codigo}}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
-                            
+
                             <mat-form-field>
                                 <mat-label>FechaNacimiento</mat-label>
                                 <input name="FechaNacimiento" matInput [(ngModel)]="element.FechaNacimiento"
@@ -122,29 +122,29 @@
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
-                            
+
                             <mat-form-field>
                                 <mat-label>FormaCalculo13ro</mat-label>
-                                <input name="FormaCalculo13ro" matInput [(ngModel)]="element.FormaCalculo13ro" placeholder="FormaCalculo13ro"
-                                    value="FormaCalculo13ro">
+                                <input name="FormaCalculo13ro" matInput [(ngModel)]="element.FormaCalculo13ro"
+                                    placeholder="FormaCalculo13ro" value="FormaCalculo13ro">
                             </mat-form-field>
 
                             <mat-form-field>
                                 <mat-label>FormaCalculo14ro</mat-label>
-                                <input name="FormaCalculo14ro" matInput [(ngModel)]="element.FormaCalculo14ro" placeholder="FormaCalculo14ro"
-                                    value="FormaCalculo14ro">
+                                <input name="FormaCalculo14ro" matInput [(ngModel)]="element.FormaCalculo14ro"
+                                    placeholder="FormaCalculo14ro" value="FormaCalculo14ro">
                             </mat-form-field>
 
                             <mat-form-field>
                                 <mat-label>BoniComplementaria</mat-label>
-                                <input name="BoniComplementaria" matInput [(ngModel)]="element.BoniComplementaria" placeholder="BoniComplementaria"
-                                    value="BoniComplementaria">
+                                <input name="BoniComplementaria" matInput [(ngModel)]="element.BoniComplementaria"
+                                    placeholder="BoniComplementaria" value="BoniComplementaria">
                             </mat-form-field>
 
                             <mat-form-field>
                                 <mat-label>BoniEspecial</mat-label>
-                                <input name="BoniEspecial" matInput [(ngModel)]="element.BoniEspecial" placeholder="BoniEspecial"
-                                    value="BoniEspecial">
+                                <input name="BoniEspecial" matInput [(ngModel)]="element.BoniEspecial"
+                                    placeholder="BoniEspecial" value="BoniEspecial">
                             </mat-form-field>
                         </div>
 
@@ -172,7 +172,7 @@
                                 <mat-select [(ngModel)]="element.Genero" placeholder="Género"
                                     (selectionChange)="actualizarValor('TipoOperacion', $event.value)" name="Género">
                                     <mat-option *ngFor="let genero of generos" [value]="genero.Descripcion">
-                                        {{genero.Descripcion}}  {{genero.Codigo}}
+                                        {{genero.Descripcion}} {{genero.Codigo}}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
@@ -216,8 +216,7 @@
                             <mat-form-field>
                                 <mat-label>Tipo_Cese</mat-label>
                                 <mat-select [(ngModel)]="element.Tipo_Cese" placeholder="Tipo_Cese"
-                                    (selectionChange)="actualizarValor('TipoOperacion', $event.value)"
-                                    name="Tipo_Cese">
+                                    (selectionChange)="actualizarValor('TipoOperacion', $event.value)" name="Tipo_Cese">
                                     <mat-option *ngFor="let tc of tiposCese" [value]="tc.Descripcion">
                                         {{tc.Codigo}}
                                     </mat-option>
@@ -271,8 +270,9 @@
 
                             <mat-form-field>
                                 <mat-label>Fecha_Ult_Actualizacion</mat-label>
-                                <input name="Fecha_Ult_Actualizacion" matInput [(ngModel)]="element.Fecha_Ult_Actualizacion"
-                                    placeholder="Fecha_Ult_Actualizacion" value="Fecha_Ult_Actualizacion">
+                                <input name="Fecha_Ult_Actualizacion" matInput
+                                    [(ngModel)]="element.Fecha_Ult_Actualizacion" placeholder="Fecha_Ult_Actualizacion"
+                                    value="Fecha_Ult_Actualizacion">
                             </mat-form-field>
 
                             <mat-form-field>
@@ -288,14 +288,14 @@
 
                             <mat-form-field>
                                 <mat-label>Remuneracion_Minima</mat-label>
-                                <input name="Remuneracion_Minima" matInput [(ngModel)]="element.Remuneracion_Minima" placeholder="Remuneracion_Minima"
-                                    value="Remuneracion_Minima">
+                                <input name="Remuneracion_Minima" matInput [(ngModel)]="element.Remuneracion_Minima"
+                                    placeholder="Remuneracion_Minima" value="Remuneracion_Minima">
                             </mat-form-field>
 
                             <mat-form-field>
                                 <mat-label>Fondo_Reserva</mat-label>
-                                <input name="Fondo_Reserva" matInput [(ngModel)]="element.Fondo_Reserva" placeholder="Fondo_Reserva"
-                                    value="Fondo_Reserva">
+                                <input name="Fondo_Reserva" matInput [(ngModel)]="element.Fondo_Reserva"
+                                    placeholder="Fondo_Reserva" value="Fondo_Reserva">
                             </mat-form-field>
 
                             <mat-form-field>
@@ -306,10 +306,13 @@
                         </div>
                     </div>
 
-                    <button mat-raised-button focusable="false" (click)="crearNuevoCC()">
-                        <mat-icon fontIcon="edit">Editar</mat-icon>
-                        Editar
-                    </button>
+                    <div class="contenedorOpciones2">
+                        <button mat-raised-button style="background-color: #79a6fe; color: white;" type="submit"
+                            focusable="false" (click)="crearNuevoCC()" class="btn2">
+                            <mat-icon fontIcon="save">Actualizar</mat-icon>
+                            Guardar
+                        </button>
+                    </div>
                 </div>
             </form>
         </mat-card>

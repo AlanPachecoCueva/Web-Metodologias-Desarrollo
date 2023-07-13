@@ -39,12 +39,12 @@
   }
   
   .inputsBusqueda {
-    margin: 20px auto;
+    margin: 2% auto;
     background: transparent;
     border-radius: 5px;
     border-style: double;
-    padding: 14px 10px;
-    width: 200px;
+    padding: 1em;
+    width: 80%;
     color: #0e0a0a;
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
@@ -107,6 +107,7 @@
   .buscador {
     display: flex;
     align-items: center;
+    margin-left: 10px;
   }
   
   .busqueda {
@@ -118,7 +119,8 @@
   .search {
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .fl-table {
@@ -172,3 +174,59 @@
   }
   
   
+
+  @media (max-width: 768px) {
+    .inputsBusqueda {
+      width: 100%;
+    }
+    
+    .busqueda {
+      margin-left: 0;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+
+  /* Para dispositivos móviles */
+@media (max-width: 480px) {
+  /* Estilos para pantallas de hasta 480px de ancho */
+  .inputsBusqueda {
+    width: 100%;
+  }
+  
+  .busqueda {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/* Para pantallas más grandes */
+@media (max-width: 1024px) {
+  /* Estilos para pantallas de hasta 1024px de ancho */
+  .inputsBusqueda {
+    width: 100%;
+  }
+  
+  .busqueda {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Para pantallas aún más grandes */
+@media (max-width: 1200px) {
+  /* Estilos para pantallas de hasta 1200px de ancho */
+  .inputsBusqueda {
+    width: 100%;
+  }
+  
+  .busqueda {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+}
