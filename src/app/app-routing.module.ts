@@ -13,7 +13,7 @@ import { EditarPlanillaComponent } from './editar-planilla/editar-planilla.compo
 import { ListarTrabajadoresComponent } from './listar-trabajadores/listar-trabajadores.component';
 import { OperacionesComponent } from './operaciones/operaciones.component';
 import { MantenimientosComponent } from './mantenimientos/mantenimientos.component';
-
+import { GestionCuentaContableComponent } from './gestion-cuenta-contable/gestion-cuenta-contable.component';
 
 const routes: Routes = [
   // Otras rutas de tu aplicación
@@ -28,7 +28,8 @@ const routes: Routes = [
   { path: 'listarPlanillas', component: ListarPlanillasComponent },
   { path: 'agregarPlanilla', component: AgregarPlanillaComponent },
   { path: 'editarPlanilla/:concepto', component: EditarPlanillaComponent },
-  { path: 'listar-trabajadores/:codigo', component: ListarTrabajadoresComponent},
+  { path: 'listar-trabajadores/:codigo', component: ListarTrabajadoresComponent },
+  { path: 'gestion-cuenta-contable/:codigo' , component: GestionCuentaContableComponent },
 
 ];
 

@@ -16,42 +16,32 @@ const apiUrl = environment.API_URL;
 import { validarCredenciales } from '../credentialsComponent';
 
 
-//CLASE para parsear el resultado de la api
-interface MovimientoPlanilla {
-  CodigoConcepto: number,
-  Concepto: string,
-  Prioridad: number,
-  TipoOperacion: string,
-  Cuenta1: string,
-  Cuenta2: string,
-  Cuenta3: string,
-  Cuenta4: string,
-  MovimientoExcepcion1: string,
-  MovimientoExcepcion2: string,
-  MovimientoExcepcion3: string,
-  Aplica_iess: string,
-  Aplica_imp_renta: string,
-  Empresa_Afecta_Iess: string,
+interface GestionCC {
+  Sucursal: number,
+  CodigoConceptoNomina: number,
+  CodigoCategoriaocupacional: number,
+  DescripcionConcepto: string,
+  CodigoOperacion: string,
+  CodigoCuentaContable: number,
+  CodigoTipoCuenta: string,
+  DescripcionCuenta: string,
   Mensaje: null
 }
-
-
+//{"":"1","":"Sueldos Autoridades y Directiv","Mensaje":null}
 
 @Component({
-  selector: 'app-listar-planillas',
-  templateUrl: './listar-planillas.component.html',
-  styleUrls: ['./listar-planillas.component.css']
+  selector: 'app-gestion-cuenta-contable',
+  templateUrl: './gestion-cuenta-contable.component.html',
+  styleUrls: ['./gestion-cuenta-contable.component.css']
 })
 
-
-export class ListarPlanillasComponent {
-
+export class GestionCuentaContableComponent {
 
   title = 'Interfaz-Login';
 
   //Para las columnas de la tabla
-  displayedColumns: string[] = ['Codigo', 'Concepto', 'Prioridad', 'TipoOperacion', 'Cuenta1', 'Aplica_iess', 'Aplica_imp_renta', 'Empresa_Afecta_Iess', 'Editar', 'Borrar'];
-  planillas: MovimientoPlanilla[] = [];
+  displayedColumns: string[] = ['CodigoConceptoNomina', 'DescripcionConcepto', 'CodigoCategoriaocupacional', 'DescripcionConcepto', 'CodigoOperacion', 'CodigoCuentaContable', 'CodigoTipoCuenta', 'DescripcionCuenta'];
+  gcs: GestionCC[] = [];
 
   busquedaConcepto: String = "";
 
@@ -61,10 +51,10 @@ export class ListarPlanillasComponent {
 
   //Cuando se inicia la página, lo primero que se hace es cargar los costos
   ngOnInit(): void {
-    const url = `${apiUrl}/ListarPlanillas`;
-    this.http.get<MovimientoPlanilla[]>(`${url}`).subscribe(response => {
-      this.planillas = response;
-      console.log("this.planillas: ", this.planillas);
+    const url = `${apiUrl}/GestionCuentaContable?sucursal=` + this.route.snapshot.paramMap.get('codigo');
+    this.http.get<GestionCC[]>(`${url}`).subscribe(response => {
+      this.gcs = response;
+      console.log("this.gcs: ", this.gcs);
     });
 
     
@@ -103,11 +93,12 @@ export class ListarPlanillasComponent {
           const url = `${apiUrl}/DeleteMovimientoPlanilla?codigoMovimiento=${element.CodigoConcepto}&descripcionMovimiento=${element.Concepto}`;
 
           //Se hace la eliminación en la api
-          this.http.get<MovimientoPlanilla[]>(url).subscribe(async (response) => {
+          this.http.get<GestionCC[]>(url).subscribe(async (response) => {
 
             //Si la eliminación fue exitosa
             console.log("response[0]: ", response);
-            if (response[0].Concepto.localeCompare("Eliminación Exitosa") === 0) {
+            //[0].Concepto.localeCompare("Eliminación Exitosa") === 0
+            if (response) {
 
               await Swal.fire({
                 title: 'Eliminación correcta',
@@ -161,7 +152,7 @@ export class ListarPlanillasComponent {
       //Si hay datos válidos busca en la api
       const url = `${apiUrl}/SearchMovimientoPlanilla?concepto=${this.busquedaConcepto}`;
 
-      this.http.get<MovimientoPlanilla[]>(url).subscribe(async (response) => {
+      this.http.get<GestionCC[]>(url).subscribe(async (response) => {
 
         if (!response || response == null) {
 
@@ -176,7 +167,7 @@ export class ListarPlanillasComponent {
         }
         if (response.length > 0) {
 
-          this.planillas = response;
+          this.gcs = response;
         }
 
 
