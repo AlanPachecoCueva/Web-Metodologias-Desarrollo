@@ -175,3 +175,6 @@
   border: transparent;
 }
 
+.tableCard {
+  overflow-x: auto;
+}
