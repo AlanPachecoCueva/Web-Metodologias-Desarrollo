@@ -1,10 +1,9 @@
 .bannerImg{
   width: 100%;
   margin: 10% 0px;
-
   display: flex;
   justify-content: center;
-  background-color: #8d2232;
+  /* background-color: #8d2232; */
 }
 
 .contenedor-campos {
@@ -64,4 +63,9 @@
 
 .btn1:hover {
   background: #5d33e6;
+}
+
+.bannerImg {
+ 
+  margin-top: auto;
 }

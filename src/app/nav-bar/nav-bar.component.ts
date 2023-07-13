@@ -9,6 +9,7 @@ import { LocalStorageService } from '../local-storage.service';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
+  emisorSeleccionado: any;
 
   codigo: string | null;
 
