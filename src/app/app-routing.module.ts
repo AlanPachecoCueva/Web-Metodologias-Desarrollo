@@ -11,7 +11,8 @@ import { ListarPlanillasComponent } from './listar-planillas/listar-planillas.co
 import { AgregarPlanillaComponent } from './agregar-planilla/agregar-planilla.component';
 import { EditarPlanillaComponent } from './editar-planilla/editar-planilla.component';
 import { ListarTrabajadoresComponent } from './listar-trabajadores/listar-trabajadores.component';
-
+import { OperacionesComponent } from './operaciones/operaciones.component';
+import { MantenimientosComponent } from './mantenimientos/mantenimientos.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,8 @@ const routes: Routes = [
   { path: '', component: LoginComponent }, 
   { path: 'login', component: LoginComponent }, // Agrega esta línea para la ruta del LoginComponent
   { path: 'home/:codigo', component: HomeComponent },
+  { path: 'operaciones', component: OperacionesComponent},
+  { path: 'mantenimientos', component: MantenimientosComponent},
   { path: 'editarCC/:codigo/:nombreCC', component: EditarCentroCostoComponent},
   { path: 'nuevoCC', component: NuevoCentroCostoComponent },
   { path: 'listarcc', component : ListarCComponent},
