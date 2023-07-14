@@ -1,10 +1,20 @@
 <!-- Para que el agregar se muestre como un componente encima del resto -->
+
 <div *ngIf="mostrarAgregar">
     <button class="closeBtn" mat-raised-button focusable="false" (click)="showAdd()" style="background-color: #79a6fe; color: white;">
         X
     </button>
     <app-agregar-gestion-cuenta-contable></app-agregar-gestion-cuenta-contable>
 </div>
+
+<div *ngIf="mostrarEditar">
+    <button class="closeBtn" mat-raised-button focusable="false" (click)="showEditar()" style="background-color: #79a6fe; color: white;">
+        X
+    </button>
+    <app-editar-gestion-cuenta-contable [element]="elementToEdit"></app-editar-gestion-cuenta-contable>
+</div>
+
+
 
 
 <div class="cardContainer">
@@ -95,7 +105,7 @@
                 <ng-container matColumnDef="Editar">
                     <th mat-header-cell *matHeaderCellDef> Edición </th>
                     <td mat-cell *matCellDef="let element;">
-                        <button mat-raised-button color="edit" focusable="false" (click)="btnEditar(element)">
+                        <button mat-raised-button color="edit" focusable="false" (click)="showEditar(element)">
                             <mat-icon fontIcon="edit">Editar</mat-icon>
                             Editar
                         </button>

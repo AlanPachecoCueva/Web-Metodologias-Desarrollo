@@ -25,40 +25,40 @@
                                 </mat-select>
                             </mat-form-field>
 
-
-
-
-                            <div class="inputsSide">
-
-                                <mat-form-field>
-                                    <mat-label>Código Operación</mat-label>
-                                    <mat-select [(ngModel)]="element.CodigoOperacion" placeholder="Código Operación"
-                                        name="CodigoOperacion">
-                                        <mat-option *ngFor="let codigoC of tipoOperacion"
-                                            [value]="codigoC.CodigoTipooperacion">
-                                            {{codigoC.NombreOperacion}}
-                                        </mat-option>
-                                    </mat-select>
-                                </mat-form-field>
-
-                                <mat-form-field>
-                                    <mat-label>Código Cuenta</mat-label>
-                                    <input name="codigoCuenta" matInput [(ngModel)]="element.CodigoCuenta"
-                                        placeholder="Codigo Cuenta" value="0">
-                                </mat-form-field>
-
-                                <mat-form-field>
-                                    <mat-label>Código Tipo Cuenta</mat-label>
-                                    <mat-select [(ngModel)]="element.CodigoTipoCuenta" placeholder="Código Tipo Cuenta"
-                                        name="CodigoTipoCuenta">
-                                        <mat-option *ngFor="let codigoTC of codigoTipoCuenta" [value]="codigoTC.Codigo">
-                                            {{codigoTC.Descripcion}}
-                                        </mat-option>
-                                    </mat-select>
-                                </mat-form-field>
-                            </div>
-
                         </div>
+
+
+                        <div class="inputsSide">
+
+                            <mat-form-field>
+                                <mat-label>Código Operación</mat-label>
+                                <mat-select [(ngModel)]="element.CodigoOperacion" placeholder="Código Operación"
+                                    name="CodigoOperacion">
+                                    <mat-option *ngFor="let codigoC of tipoOperacion"
+                                        [value]="codigoC.CodigoTipooperacion">
+                                        {{codigoC.NombreOperacion}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Código Cuenta</mat-label>
+                                <input name="codigoCuenta" matInput [(ngModel)]="element.CodigoCuenta"
+                                    placeholder="Codigo Cuenta" value="0">
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Código Tipo Cuenta</mat-label>
+                                <mat-select [(ngModel)]="element.CodigoTipoCuenta" placeholder="Código Tipo Cuenta"
+                                    name="CodigoTipoCuenta">
+                                    <mat-option *ngFor="let codigoTC of codigoTipoCuenta" [value]="codigoTC.Codigo">
+                                        {{codigoTC.Descripcion}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+
                     </div>
                     <div class="botonagregar">
                         <button style="background-color: #79a6fe; color: white;" class="agregarbutton" mat-raised-button
