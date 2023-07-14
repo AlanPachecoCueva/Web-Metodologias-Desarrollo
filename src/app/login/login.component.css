@@ -3,12 +3,12 @@
   height: 100%;
   background-color: rgb(165, 165, 165);
 
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.cardContainer{
+.cardContainer {
   background-color: blue;
   /* height: 50%; */
 
@@ -17,22 +17,22 @@
   justify-content: center;
 }
 
-.matCard{
+.matCard {
   /* width:40%;
   height: 50%; */
   background-color: #A1AEF4;
-  
+
 }
 
 
-.cardTitle{
+.cardTitle {
   display: flex;
   justify-content: center;
   /* align-content: center; */
 }
 
-.imagen{
-  width:100%;
+.imagen {
+  width: 100%;
   height: 60%;
 }
 
@@ -44,7 +44,7 @@
   margin-bottom: 16px;
   margin-top: 16px;
   /* background-color: blue; */
- 
+
 }
 
 .login-form-field {
@@ -54,9 +54,7 @@
 }
 
 
-.ng-pristine {
-
-}
+.ng-pristine {}
 
 
 /* CSS Libraries Used 
@@ -69,7 +67,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
 
-body, html {
+body,
+html {
   font-family: 'Source Sans Pro', sans-serif;
   background-color: #1d243d;
   padding: 0;
@@ -82,27 +81,28 @@ body, html {
   height: 100%;
 }
 
-.container{
+.container {
   margin: 0;
   top: 50px;
   left: 50%;
   position: absolute;
   text-align: center;
   transform: translateX(-50%);
-  background-color: rgb( 33, 41, 66 );
+  background-color: rgb(33, 41, 66);
   border-radius: 9px;
   border-top: 10px solid #79a6fe;
-  border-bottom: 10px solid  #79a6fe;
+  border-bottom: 10px solid #79a6fe;
   width: 400px;
   height: 500px;
-  box-shadow: 1px 1px 108.8px 19.2px rgb(25,31,53);
+  box-shadow: 1px 1px 108.8px 19.2px rgb(25, 31, 53);
 }
 
 .box h1 {
   font-family: 'Source Sans Pro', sans-serif;
-  color: #c05c6d; 
+  color: #c05c6d;
   font-size: 18px;
-  margin-top:-30px;;
+  margin-top: -30px;
+  ;
 }
 
 .box h1 span {
@@ -119,7 +119,8 @@ body, html {
   margin-bottom: 70px;
 }
 
-.box input[type = "text"],.box input[type = "password"] {
+.box input[type="text"],
+.box input[type="password"] {
   display: block;
   margin: 20px auto;
   background: #262e49;
@@ -129,13 +130,14 @@ body, html {
   width: 320px;
   outline: none;
   color: #d6d6d6;
-      -webkit-transition: all .2s ease-out;
-    -moz-transition: all .2s ease-out;
-    -ms-transition: all .2s ease-out;
-    -o-transition: all .2s ease-out;
-    transition: all .2s ease-out;
-  
+  -webkit-transition: all .2s ease-out;
+  -moz-transition: all .2s ease-out;
+  -ms-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+
 }
+
 ::-webkit-input-placeholder {
   color: #565f79;
 }
@@ -145,8 +147,8 @@ body, html {
   
 } */
 
-a{
-  
+a {
+
   text-decoration: none;
 }
 
@@ -154,8 +156,9 @@ a:hover {
   text-decoration: underline;
 }
 
- label input[type = "checkbox"] {
-  display: none; /* hide the default checkbox */
+label input[type="checkbox"] {
+  display: none;
+  /* hide the default checkbox */
 }
 
 /* style the artificial checkbox */
@@ -172,7 +175,7 @@ label span {
 }
 
 .btn1 {
-  border:0;
+  border: 0;
   background: #eb5f95;
   color: #dfdeee;
   border-radius: 100px;
@@ -205,21 +208,21 @@ label span {
   right: 28px;
 }
 
-.dnthave{
-    position: absolute;
-    top: 92%;
-    left: 24%;
+.dnthave {
+  position: absolute;
+  top: 92%;
+  left: 24%;
 }
 
-[type=checkbox]:checked + span:before {/* <-- style its checked state */
-    font-family: FontAwesome;
-    font-size: 16px;
-    content: "\f00c";
-    position: absolute;
-    top: -4px;
-   
-    left: -1px;
-    width: 13px;
+[type=checkbox]:checked+span:before {
+  /* <-- style its checked state */
+  font-family: FontAwesome;
+  font-size: 16px;
+  content: "\f00c";
+  position: absolute;
+  top: -4px;
+  left: -1px;
+  width: 13px;
 }
 
 .typcn {
@@ -229,7 +232,7 @@ label span {
   color: #3b476b;
   font-size: 22px;
   cursor: pointer;
-}      
+}
 
 .typcn.active {
   color: #7f60eb;
@@ -262,20 +265,18 @@ label span {
   width: 320px;
   outline: none;
   color: #d6d6d6;
-      -webkit-transition: all .2s ease-out;
-    -moz-transition: all .2s ease-out;
-    -ms-transition: all .2s ease-out;
-    -o-transition: all .2s ease-out;
-    transition: all .2s ease-out;
+  -webkit-transition: all .2s ease-out;
+  -moz-transition: all .2s ease-out;
+  -ms-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  transition: all .2s ease-out;
 }
 
 .selector select {
   display: block;
- 
   background: #262e49;
   border: 0;
   border-radius: 5px;
-  
   width: 320px;
   outline: none;
   color: #ffffff;
@@ -287,3 +288,255 @@ label span {
 }
 
 
+/***********BURBUJAS*******************/
+
+
+.burbuja {
+  position: fixed;
+  left: 10%;
+  bottom: 10%;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  margin-left: 10%;
+  background-color: aqua;
+  opacity: 0.01;
+  animation: bublesAnimation 15s linear infinite;
+  z-index: 1;
+}
+
+.burbuja:nth-child(2) {
+  left: 20%;
+  bottom: 10%;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  animation-duration: 30s;
+  animation-delay: 2s;
+}
+
+.burbuja:nth-child(3) {
+  left: 30%;
+  bottom: 10%;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  animation-duration: 20s;
+  animation-delay: 1s;
+}
+
+.burbuja:nth-child(4) {
+  left: 40%;
+  bottom: 10%;
+  width: 25;
+  height: 25;
+  border-radius: 25;
+  animation-duration: 8s;
+  animation-delay: 3s;
+}
+
+.burbuja:nth-child(5) {
+  left: 50%;
+  bottom: 10%;
+  width: 33px;
+  height: 33px;
+  border-radius: 33px;
+  animation-duration: 40s;
+  animation-delay: 2s;
+}
+
+.burbuja:nth-child(6) {
+  left: 60%;
+  bottom: 10%;
+  width: 18px;
+  height: 18px;
+  border-radius: 18px;
+  animation-duration: 25s;
+  animation-delay: 4s;
+}
+
+.burbuja:nth-child(7) {
+  left: 70%;
+  bottom: 10%;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  animation-duration: 28s;
+  animation-delay: 2s;
+}
+
+.burbuja:nth-child(8) {
+  left: 80%;
+  bottom: 10%;
+  width: 27px;
+  height: 27px;
+  border-radius: 27px;
+  animation-duration: 37s;
+  animation-delay: 3s;
+}
+
+/* Second group */
+.burbuja2 {
+  position: fixed;
+  left: 10%;
+  bottom: 10%;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  margin-left: 10%;
+  background-color: rgb(25, 217, 211);
+  opacity: 0.01;
+  animation: bublesAnimation2 15s linear infinite;
+  z-index: 1;
+}
+
+.burbuja2:nth-child(1) {
+  left: 5%;
+  bottom: 10%;
+
+  width: 27px;
+  height: 27px;
+
+  border-radius: 27px;
+
+  animation-duration: 22s;
+  animation-delay: 3s;
+}
+
+.burbuja2:nth-child(2) {
+  left: -10%;
+  bottom: 10%;
+
+  width: 27px;
+  height: 27px;
+
+  border-radius: 27px;
+
+  animation-duration: 29s;
+  animation-delay: 2s;
+}
+
+.burbuja2:nth-child(3) {
+  left: 15%;
+  bottom: 10%;
+
+  width: 27px;
+  height: 27px;
+
+  border-radius: 27px;
+
+  animation-duration: 34s;
+  animation-delay: 1s;
+}
+
+.burbuja2:nth-child(4) {
+  left: -5%;
+  bottom: 10%;
+
+  width: 27px;
+  height: 27px;
+
+  border-radius: 27px;
+
+  animation-duration: 39s;
+  animation-delay: 1s;
+}
+
+.burbuja2:nth-child(5) {
+  left: 35%;
+  bottom: 10%;
+
+  width: 27px;
+  height: 27px;
+
+  border-radius: 27px;
+
+  animation-duration: 38s;
+  animation-delay: 2s;
+}
+
+.burbuja2:nth-child(6) {
+  left: 45%;
+  bottom: 10%;
+
+  width: 27px;
+  height: 27px;
+
+  border-radius: 27px;
+
+  animation-duration: 26s;
+  animation-delay: 2s;
+}
+
+.burbuja2:nth-child(7) {
+  left: 90%;
+  bottom: 10%;
+
+  width: 27px;
+  height: 27px;
+
+  border-radius: 27px;
+
+  animation-duration: 37s;
+  animation-delay: 3s;
+}
+
+.burbuja2:nth-child(8) {
+  left: 0%;
+  bottom: 10%;
+
+  width: 27px;
+  height: 27px;
+
+  border-radius: 27px;
+
+  animation-duration: 16s;
+  animation-delay: 2s;
+}
+
+@keyframes bublesAnimation {
+  0% {
+    bottom: -10%;
+  }
+
+  40% {
+    transform: translateX(-25px);
+  }
+
+  50% {
+    opacity: 0.1;
+  }
+
+  80% {
+    transform: translateX(25px);
+  }
+
+  100% {
+    opacity: 0.01;
+    bottom: 100%;
+  }
+}
+
+@keyframes bublesAnimation2 {
+  0% {
+    bottom: -10%;
+  }
+
+  40% {
+    transform: translateX(100px);
+  }
+
+  50% {
+    opacity: 0.1;
+  }
+
+  80% {
+    transform: translateY(-25px);
+  }
+
+  100% {
+    opacity: 0.01;
+
+    bottom: 100%;
+  }
+}
