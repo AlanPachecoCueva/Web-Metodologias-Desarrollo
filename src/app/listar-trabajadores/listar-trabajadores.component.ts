@@ -84,10 +84,7 @@ export class ListarTrabajadoresComponent {
     });
 
   }
-  btnEditar(element: any) {
-    this.router.navigate(['/editarPlanilla', element.Concepto]);
-  }
-
+  
   //Borrar un centro de costos
   async btnBorrar(element: any) {
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 //para hacer llamadas a la api
 import { HttpClient } from '@angular/common/http';
@@ -35,92 +35,53 @@ interface MovimientoPlanilla {
   styleUrls: ['./editar-gestion-cuenta-contable.component.css'],
 })
 export class EditarGestionCuentaContableComponent {
-  element = {
-    CodigoConcepto: 1,
-    Concepto: '',
-    Prioridad: 1,
-    TipoOperacion: '',
-    Cuenta1: '',
-    Cuenta2: '',
-    Cuenta3: '',
-    Cuenta4: '',
-    MovimientoExcepcion1: '',
-    MovimientoExcepcion2: '',
-    MovimientoExcepcion3: '',
-    Traba_Aplica_iess: '',
-    Traba_Proyecto_imp_renta: '',
-    Aplica_Proy_Renta: '',
-    Empresa_Afecta_Iess: '',
-    mensaje: null,
-  };
+  @Input() element: any;
 
-  CodigoConcepto: any;
-  tiposOperaciones: any;
-  movimientosExcepcion12: any;
-  movimientosExcepcion3: any;
-  opcionesTraba_Aplica_iess: any;
-  opcionesTrabAfecImpuestoRenta: any;
-  constructor(
-    private http: HttpClient,
-    private router: ActivatedRoute,
-    private route: Router
-  ) {}
+  // element = {
+  //   CodigoConcepto: 1,
+  //   Concepto: '',
+  //   Prioridad: 1,
+  //   TipoOperacion: '',
+  //   Cuenta1: '',
+  //   Cuenta2: '',
+  //   Cuenta3: '',
+  //   Cuenta4: '',
+  //   MovimientoExcepcion1: '',
+  //   MovimientoExcepcion2: '',
+  //   MovimientoExcepcion3: '',
+  //   Traba_Aplica_iess: '',
+  //   Traba_Proyecto_imp_renta: '',
+  //   Aplica_Proy_Renta: '',
+  //   Empresa_Afecta_Iess: '',
+  //   mensaje: null,
+  // };
 
-  actualizarValor(type: string, content: string) {
-    if (type.localeCompare('TipoOperacion') === 0) {
-      this.element.TipoOperacion = content;
-    }
-    if (type.localeCompare('MovimientoExcepcion1') === 0) {
-      this.element.MovimientoExcepcion1 = content;
-    }
-    if (type.localeCompare('MovimientoExcepcion2') === 0) {
-      this.element.MovimientoExcepcion2 = content;
-    }
-    if (type.localeCompare('MovimientoExcepcion3') === 0) {
-      this.element.MovimientoExcepcion3 = content;
-    }
-    if (type.localeCompare('Traba_Aplica_iess') === 0) {
-      this.element.Traba_Aplica_iess = content;
-    }
-    if (type.localeCompare('Traba_Proyecto_imp_renta') === 0) {
-      this.element.Traba_Proyecto_imp_renta = content;
-    }
-    if (type.localeCompare('Aplica_Proy_Renta') === 0) {
-      this.element.Aplica_Proy_Renta = content;
-    }
-    if (type.localeCompare('Empresa_Afecta_Iess') === 0) {
-      this.element.Empresa_Afecta_Iess = content;
-    }
-  }
+  categoriasOcupaciones: any;
+  tipoOperacion: any;
+  codigoTipoCuenta: any;
+
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { };
+
 
   ngOnInit(): void {
-    //Recuperar objeto a mofificar
-    let concepto: any;
+    //categoriasOcupaciones
+    this.http.get(`${apiUrl}/CategoriaOcupacional`).subscribe((response) => {
+      this.categoriasOcupaciones = response;
 
-    concepto = this.router.snapshot.paramMap.get('concepto')
-      ? this.router.snapshot.paramMap.get('concepto')
-      : '';
-    this.buscar(concepto);
-    //Recuperamos movimiento plantilla a editar
+      console.log('categoriasOcupaciones: ', this.categoriasOcupaciones);
+    });
+    //tipoOperacion
 
-    this.http.get(`${apiUrl}/TipoOperacion`).subscribe((response) => {
-      this.tiposOperaciones = response;
+    this.http.get(`${apiUrl}/tipoOperacion`).subscribe((response) => {
+      this.tipoOperacion = response;
+
+      console.log('tipoOperacion: ', this.tipoOperacion);
     });
 
-    this.http.get(`${apiUrl}/MovimientosExcepcion12`).subscribe((response) => {
-      this.movimientosExcepcion12 = response;
-    });
+    this.http.get(`${apiUrl}/TipoCuenta`).subscribe((response) => {
+      this.codigoTipoCuenta = response;
 
-    this.http.get(`${apiUrl}/MovimientosExcepcion3`).subscribe((response) => {
-      this.movimientosExcepcion3 = response;
-    });
-
-    this.http.get(`${apiUrl}/TrabaAfectaIESS`).subscribe((response) => {
-      this.opcionesTraba_Aplica_iess = response;
-    });
-
-    this.http.get(`${apiUrl}/TrabAfecImpuestoRenta`).subscribe((response) => {
-      this.opcionesTrabAfecImpuestoRenta = response;
+      console.log('codigoTipoCuenta: ', this.codigoTipoCuenta);
     });
   }
 
@@ -128,7 +89,7 @@ export class EditarGestionCuentaContableComponent {
     //Validación de seguridad
     await Swal.fire({
       title: '¡Acción crítica!',
-      text: '¿Desea editar el movimiento de planilla?',
+      text: '¿Desea editar la gestión de cuenta contable?',
       icon: 'question',
       showCancelButton: true,
       confirmButtonText: 'Aceptar',
@@ -136,118 +97,37 @@ export class EditarGestionCuentaContableComponent {
     }).then((result) => {
       if (result.isConfirmed) {
         try {
-          //Configura los valores
-          if (this.element.TipoOperacion.localeCompare('Ingresos') === 0) {
-            this.element.TipoOperacion = 'I';
-          } else {
-            this.element.TipoOperacion = 'E';
-          }
+          console.log('element a EditGestionCuentaContable: ', this.element);
+          const url = `${apiUrl}/EditGestionCuentaContable?Sucursal=${this.element.Sucursal}&CodigoConceptoNomina=${this.element.CodigoConceptoNomina}&CodigoCategoOcupacional=${this.element.CodigoCategoriaOcupacional}&CodigoOperacion=${this.element.CodigoOperacion}&CodigoCuenta=${this.element.CodigoCuenta}&CodigoTipoCuenta=${this.element.CodigoTipoCuenta}`;
 
-          if (
-            this.element.MovimientoExcepcion1.localeCompare(
-              'Horas Movimiento Planilla'
-            ) === 0
-          ) {
-            this.element.MovimientoExcepcion1 = 'H';
-          } else if (
-            this.element.MovimientoExcepcion1.localeCompare(
-              'Movimiento Planilla'
-            ) === 0
-          ) {
-            this.element.MovimientoExcepcion1 = 'M';
-          } else {
-            this.element.MovimientoExcepcion1 = 'C';
-          }
-
-          if (
-            this.element.MovimientoExcepcion2.localeCompare(
-              'Horas Movimiento Planilla'
-            ) === 0
-          ) {
-            this.element.MovimientoExcepcion2 = 'H';
-          } else if (
-            this.element.MovimientoExcepcion2.localeCompare(
-              'Movimiento Planilla'
-            ) === 0
-          ) {
-            this.element.MovimientoExcepcion2 = 'M';
-          } else {
-            this.element.MovimientoExcepcion2 = 'C';
-          }
-
-          if (this.element.MovimientoExcepcion3.localeCompare('Sierra') === 0) {
-            this.element.MovimientoExcepcion3 = 'S';
-          } else if (
-            this.element.MovimientoExcepcion3.localeCompare('Costa') === 0
-          ) {
-            this.element.MovimientoExcepcion3 = 'C';
-          } else if (
-            this.element.MovimientoExcepcion3.localeCompare('No Aplica') === 0
-          ) {
-            this.element.MovimientoExcepcion3 = 'N';
-          } else {
-            this.element.MovimientoExcepcion3 = 'X';
-          }
-
-          if (this.element.Traba_Aplica_iess.localeCompare('Si') === 0) {
-            this.element.Traba_Aplica_iess = '1';
-          } else {
-            this.element.Traba_Aplica_iess = '0';
-          }
-          if (
-            this.element.Traba_Proyecto_imp_renta.localeCompare('Aplica') === 0
-          ) {
-            this.element.Traba_Proyecto_imp_renta = '1';
-          } else {
-            this.element.Traba_Proyecto_imp_renta = '0';
-          }
-
-          if (this.element.Aplica_Proy_Renta.localeCompare('Si') === 0) {
-            this.element.Aplica_Proy_Renta = '1';
-          } else {
-            this.element.Aplica_Proy_Renta = '0';
-          }
-
-          if (this.element.Empresa_Afecta_Iess.localeCompare('Si') === 0) {
-            this.element.Empresa_Afecta_Iess = '1';
-          } else {
-            this.element.Empresa_Afecta_Iess = '0';
-          }
-          const url = `${apiUrl}/UpdateMovimientoPlanilla?codigo=${this.element.CodigoConcepto}&concepto=${this.element.Concepto}&prioridad=${this.element.Prioridad}&tipoOperacion=${this.element.TipoOperacion}&c1=${this.element.Cuenta1}&c2=${this.element.Cuenta2}&c3=${this.element.Cuenta3}&c4=${this.element.Cuenta4}&me1=${this.element.MovimientoExcepcion1}`;
-          const url2 = `&me2=${this.element.MovimientoExcepcion2}&me3=${this.element.MovimientoExcepcion3}&Traba_Aplica_iess=${this.element.Traba_Aplica_iess}&Traba_Proyecto_imp_renta=${this.element.Traba_Proyecto_imp_renta}&Aplica_Proy_Renta=${this.element.Aplica_Proy_Renta}&Empresa_Afecta_Iess=${this.element.Empresa_Afecta_Iess}`;
-
-          this.http
-            .get<MovimientoPlanilla[]>(url + url2)
-            .subscribe(async (response) => {
-              if (response == null || response == undefined) {
-                Swal.fire({
-                  title: 'Error',
-                  text: '¡El movimiento de plantilla no se actualizó correctamente!',
-                  icon: 'error',
-                  confirmButtonText: 'Aceptar',
-                });
-                return;
-              }
-
-              if (response[0].Concepto == this.element.Concepto) {
-                Swal.fire({
-                  title: 'Éxito',
-                  text: '¡El movimiento de plantilla se actualizó correctamente!',
-                  icon: 'success',
-                  confirmButtonText: 'Aceptar',
-                });
-                //Redirecciona a home
-                this.route.navigate(['/listarPlanillas']);
-              } else {
-                Swal.fire({
-                  title: 'Error',
-                  text: '¡El movimiento de plantilla no se actualizó correctamente!',
-                  icon: 'error',
-                  confirmButtonText: 'Aceptar',
-                });
-                return;
-              }
-            });
+          this.http.get<String>(url).subscribe(async (response) => {
+            console.log('La gestión de cuenta contable response: ', response);
+            if (
+              response == null ||
+              response == undefined ||
+              response != "Procedure or function TTHH_SP_TRAE_GESTION_CUENTA_CONTABLE_NOMINA_SEARCH has too many arguments specified."
+            ) {
+              await Swal.fire({
+                title: 'Actualización correcta',
+                text: '¡La gestión de cuenta contable no se actualizó correctamente!',
+                icon: 'error',
+                confirmButtonText: 'Aceptar',
+              })
+              return;
+            }else{
+              await Swal.fire({
+                title: 'Actualización correcta',
+                text: 'La gestión de cuenta contable se actualizó correctamente',
+                icon: 'success',
+                confirmButtonText: 'Aceptar',
+              })
+              //Redirecciona a home
+              this.router.navigate([
+                '/gestion-cuenta-contable',
+                this.route.snapshot.paramMap.get('codigo'),
+              ]);
+            } 
+          });
         } catch (error) {
           console.log('error:', error);
         }
@@ -264,102 +144,7 @@ export class EditarGestionCuentaContableComponent {
     });
   }
 
-  buscar(concepto: String) {
-    //Si el nombre está vacío no busca
-    if (concepto.length < 1) {
-      return;
-    }
-    try {
-      //Si hay datos válidos busca en la api
-      const url = `${apiUrl}/SearchMovimientoPlanilla?concepto=${concepto}`;
-
-      this.http.get<MovimientoPlanilla[]>(url).subscribe(async (response) => {
-        if (!response || response == null) {
-          await Swal.fire({
-            title: 'Búsqueda incorrecta',
-            text: 'No se encontró un centro de costos con la descripción proporcionada',
-            icon: 'error',
-            confirmButtonText: 'Aceptar',
-          });
-          this.route.navigate(['/listarPlanillas']);
-          return;
-        }
-        if (response.length > 0) {
-          //this.router.navigate(['/editarPlanilla', element.Concepto]);
-          this.CodigoConcepto = response[0].CodigoConcepto;
-          (this.element.CodigoConcepto = response[0].CodigoConcepto),
-            (this.element.Concepto = response[0].Concepto);
-          this.element.Prioridad = response[0].Prioridad;
-
-          if (response[0].TipoOperacion.localeCompare('E') === 0) {
-            this.element.TipoOperacion = 'Egresos';
-          } else {
-            this.element.TipoOperacion = 'Ingresos';
-          }
-
-          this.element.Cuenta1 = response[0].Cuenta1;
-          this.element.Cuenta2 = response[0].Cuenta2;
-          this.element.Cuenta3 = response[0].Cuenta3;
-          this.element.Cuenta4 = response[0].Cuenta4;
-
-          if (response[0].MovimientoExcepcion1.localeCompare('H') === 0) {
-            this.element.MovimientoExcepcion1 = 'Horas Movimiento Planilla';
-          } else if (
-            response[0].MovimientoExcepcion1.localeCompare('M') === 0
-          ) {
-            this.element.MovimientoExcepcion1 = 'Movimiento Planilla';
-          } else {
-            this.element.MovimientoExcepcion1 = 'Cuenta Corriente';
-          }
-
-          if (response[0].MovimientoExcepcion2.localeCompare('H') === 0) {
-            this.element.MovimientoExcepcion2 = 'Horas Movimiento Planilla';
-          } else if (
-            response[0].MovimientoExcepcion2.localeCompare('M') === 0
-          ) {
-            this.element.MovimientoExcepcion2 = 'Movimiento Planilla';
-          } else {
-            this.element.MovimientoExcepcion2 = 'Cuenta Corriente';
-          }
-          this.element.MovimientoExcepcion3 = response[0].MovimientoExcepcion3;
-          if (
-            response[0].MovimientoExcepcion3.localeCompare('No procesar') === 0
-          ) {
-            this.element.MovimientoExcepcion3 = 'No Procesar';
-          }
-
-          if (response[0].Aplica_iess.localeCompare('Si Aplica') === 0) {
-            this.element.Traba_Aplica_iess = 'Si';
-          } else {
-            this.element.Traba_Aplica_iess = 'No';
-          }
-
-          if (response[0].Aplica_imp_renta.localeCompare('No Aplica') === 0) {
-            this.element.Aplica_Proy_Renta = 'No';
-          } else {
-            this.element.Aplica_Proy_Renta = 'Si';
-          }
-
-          if (
-            response[0].Empresa_Afecta_Iess.localeCompare('Si Aplica') === 0
-          ) {
-            this.element.Empresa_Afecta_Iess = 'Si';
-          } else {
-            this.element.Empresa_Afecta_Iess = 'No';
-          }
-
-          this.element.mensaje = response[0].Mensaje;
-        }
-      });
-    } catch (error) {
-      console.error(
-        'Error en búsqueda en editar movimiento de planilla:',
-        error
-      );
-    }
-  }
-
   navegarAtras() {
-    this.route.navigate(['/listarPlanillas']);
+    this.router.navigate(['/listarPlanillas']);
   }
 }
