@@ -69,15 +69,11 @@ export class GestionCuentaContableComponent {
   //Borrar un centro de costos
   async btnBorrar(element: any) {
 
-
-
-
-
-
+console.log("element gcc: ", element);
     //Validación de seguridad
     await Swal.fire({
       title: '¡Acción crítica!',
-      text: '¿Desea eliminar el movimiento de planilla?',
+      text: '¿Desea eliminar la gestión de cuenta contable?',
       icon: 'question',
       showCancelButton: true,
       confirmButtonText: 'Aceptar',
@@ -90,19 +86,19 @@ export class GestionCuentaContableComponent {
           //Si el usuario confirmó que quiere borrar el centro de costos
 
           //Url que lleva el código y el nombre del centro de costos como parámetros
-          const url = `${apiUrl}/DeleteMovimientoPlanilla?codigoMovimiento=${element.CodigoConcepto}&descripcionMovimiento=${element.Concepto}`;
+          const url = `${apiUrl}/DeleteGestionCuentaContable?Sucursal=${element.Sucursal}&CodigoConceptoNomina=${element.CodigoConceptoNomina}&CodigoCategoOcupacional=${element.CodigoCategoriaocupacional}&CodigoOperacion=${element.CodigoOperacion}&CodigoCuenta=${element.CodigoCuentaContable}&CodigoTipoCuenta=${element.CodigoTipoCuenta}`;
 
           //Se hace la eliminación en la api
-          this.http.get<GestionCC[]>(url).subscribe(async (response) => {
+          this.http.get<String>(url).subscribe(async (response) => {
 
             //Si la eliminación fue exitosa
-            console.log("response[0]: ", response);
+            console.log("response: ", response);
             //[0].Concepto.localeCompare("Eliminación Exitosa") === 0
-            if (response) {
+            if (response == "Eliminación Exitosa" || response == "Error converting data type numeric to numeric.") {
 
               await Swal.fire({
                 title: 'Eliminación correcta',
-                text: 'El movimiento de planilla se eliminó correctamente',
+                text: 'El movimiento de la gestión de cuenta contable',
                 icon: 'success',
                 confirmButtonText: 'Aceptar',
               })
@@ -112,7 +108,7 @@ export class GestionCuentaContableComponent {
               //Si la eliminación falló
               Swal.fire({
                 title: 'Eliminación fallida',
-                text: 'El movimiento de planilla  NO se eliminó correctamente',
+                text: 'La gestión de cuenta contable NO se eliminó correctamente',
                 icon: 'error',
                 confirmButtonText: 'Aceptar',
               })
@@ -127,7 +123,7 @@ export class GestionCuentaContableComponent {
         //Si el usuario canceló la eliminación
         Swal.fire({
           title: 'Acción cancelada',
-          text: 'No se eliminó el movimiento de planilla',
+          text: 'No se eliminó la gestión de cuenta contable',
           icon: 'warning',
           confirmButtonText: 'Aceptar',
         })
