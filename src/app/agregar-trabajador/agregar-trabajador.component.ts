@@ -72,10 +72,10 @@ export class AgregarTrabajadorComponent {
     Telefono_Movil: '',
     Genero: '',
     Nro_Cuenta_Bancaria: '',
-    Codigo_Categoria_Ocupacion: '',
-    Ocupacion: '2',
+    Codigo_Categoria_Ocupacion: 0,
+    Ocupacion: 2,
     Centro_Costos: 1,
-    Nivel_Salarial: '',
+    Nivel_Salarial: 1,
     EstadoTrabajador: '',
     Tipo_Contrato: '',
     Tipo_Cese: '',
@@ -100,7 +100,6 @@ export class AgregarTrabajadorComponent {
   };
 
   tiposOperaciones: any;
-
   movimientosExcepcion12: any;
   movimientosExcepcion3: any;
   opcionesTraba_Aplica_iess: any;

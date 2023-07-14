@@ -66,31 +66,6 @@ export class AgregarGestionCuentaContableComponent {
   }
 
   actualizarValor(type: string, content: string) {
-    // console.log('Actualiza: ', type, content);
-    // if (type.localeCompare('TipoOperacion') === 0) {
-    //   this.element.TipoOperacion = content;
-    // }
-    // if (type.localeCompare('MovimientoExcepcion1') === 0) {
-    //   this.element.MovimientoExcepcion1 = content;
-    // }
-    // if (type.localeCompare('MovimientoExcepcion2') === 0) {
-    //   this.element.MovimientoExcepcion2 = content;
-    // }
-    // if (type.localeCompare('MovimientoExcepcion3') === 0) {
-    //   this.element.MovimientoExcepcion3 = content;
-    // }
-    // if (type.localeCompare('Traba_Aplica_iess') === 0) {
-    //   this.element.Traba_Aplica_iess = content;
-    // }
-    // if (type.localeCompare('Traba_Proyecto_imp_renta') === 0) {
-    //   this.element.Traba_Proyecto_imp_renta = content;
-    // }
-    // if (type.localeCompare('Aplica_Proy_Renta') === 0) {
-    //   this.element.Aplica_Proy_Renta = content;
-    // }
-    // if (type.localeCompare('Empresa_Afecta_Iess') === 0) {
-    //   this.element.Empresa_Afecta_Iess = content;
-    // }
   }
 
   crearNuevoCC() {
